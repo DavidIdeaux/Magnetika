@@ -1,0 +1,2879 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ValueConstraints</name>
+    </assembly>
+    <members>
+        <member name="T:ValueConstraints.ValueControls.ValueColorAttribute">
+            <summary>
+            Defines drawer for ValueColor with a min and max color values
+            </summary>
+        </member>
+        <member name="M:ValueConstraints.ValueControls.ValueColorAttribute.#ctor">
+            <summary>
+            Constructor for defines drawer for ValueColor with a min and max color values
+            </summary>
+        </member>
+        <member name="T:ValueConstraints.ValueControls.Rotator3Attribute">
+            <summary>
+            Defines drawer for Rotator with a min and max vector values to rotate a transform
+            </summary>
+        </member>
+        <member name="M:ValueConstraints.ValueControls.Rotator3Attribute.#ctor(System.Boolean)">
+            <summary>
+            Constructor to set show label
+            </summary>
+            <param name="useLabel">Show or hide the field name</param>
+        </member>
+        <member name="M:ValueConstraints.ValueControls.Rotator3Attribute.#ctor">
+            <summary>
+            Constructor to set show label
+            </summary>
+        </member>
+        <member name="T:ValueConstraints.ValueControls.Behaviours.Waypoint3DBehaviour">
+            <summary>
+            Positions a transform along the minimum and maximum 3D waypoint vectors
+            </summary>
+        </member>
+        <member name="F:ValueConstraints.ValueControls.Behaviours.Waypoint3DBehaviour.m_ValueWaypoint">
+            <summary>
+            Defines a controller for the Value classes as Vector3 values for waypoint positioning
+            </summary>
+        </member>
+        <member name="F:ValueConstraints.ValueControls.Behaviours.Waypoint3DBehaviour.m_NextIndex">
+            <summary>
+            Next waypoint index depends on direction and scale
+            </summary>
+        </member>
+        <member name="P:ValueConstraints.ValueControls.Behaviours.Waypoint3DBehaviour.valueWaypoint">
+            <summary>
+            Defines a controller for the Value classes as Vector3 values for waypoint positioning
+            </summary>
+        </member>
+        <member name="P:ValueConstraints.ValueControls.Behaviours.Waypoint3DBehaviour.valueControl">
+            <summary>
+            Access to local value control type
+            </summary>
+        </member>
+        <member name="M:ValueConstraints.ValueControls.Behaviours.Waypoint3DBehaviour.Awake">
+            <summary>
+            Used to set variable values
+            </summary>
+        </member>
+        <member name="M:ValueConstraints.ValueControls.Behaviours.Waypoint3DBehaviour.AddNode(UnityEngine.Vector3)">
+            <summary>
+            Adds a position to waypoint node list
+            </summary>
+            <param name="position">Position to add to node list</param>
+        </member>
+        <member name="M:ValueConstraints.ValueControls.Behaviours.Waypoint3DBehaviour.Reset">
+            <summary>
+            Reset to default values
+            </summary>
+        </member>
+        <member name="M:ValueConstraints.ValueControls.Behaviours.Waypoint3DBehaviour.CalculateCurrentIndex">
+            <summary>
+            Sets the current index for use in route traversal
+            </summary>
+        </member>
+        <member name="M:ValueConstraints.ValueControls.Behaviours.Waypoint3DBehaviour.GetValue">
+            <summary>
+            Get the value by type to set the member variable value
+            </summary>
+            <returns>Value type after Value reference to Value Constraints calculation</returns>
+        </member>
+        <member name="M:ValueConstraints.ValueControls.Behaviours.Waypoint3DBehaviour.CheckScaleChanged">
+            <summary>
+            Checks if the scale has changed to update the min max vectors
+            </summary>
+        </member>
+        <member name="M:ValueConstraints.ValueControls.Behaviours.Waypoint3DBehaviour.InitilizeComponent">
+            <summary>
+            Initilize default values for transform position reference
+            </summary>
+        </member>
+        <member name="T:ValueConstraints.ValueControls.Behaviours.Waypoint2DBehaviour">
+            <summary>
+            Positions a transform along the minimum and maximum 2D waypoint vectors
+            </summary>
+        </member>
+        <member name="F:ValueConstraints.ValueControls.Behaviours.Waypoint2DBehaviour.m_ValueWaypoint">
+            <summary>
+            Defines a controller for the Value classes as Vector3 values for waypoint positioning
+            </summary>
+        </member>
+        <member name="F:ValueConstraints.ValueControls.Behaviours.Waypoint2DBehaviour.m_NextIndex">
+            <summary>
+            Next waypoint index depends on direction and scale
+            </summary>
+        </member>
+        <member name="P:ValueConstraints.ValueControls.Behaviours.Waypoint2DBehaviour.valueWaypoint">
+            <summary>
+            Defines a controller for the Value classes as Vector3 values for waypoint positioning
+            </summary>
+        </member>
+        <member name="P:ValueConstraints.ValueControls.Behaviours.Waypoint2DBehaviour.valueControl">
+            <summary>
+            Access to local value control type
+            </summary>
+        </member>
+        <member name="M:ValueConstraints.ValueControls.Behaviours.Waypoint2DBehaviour.Awake">
+            <summary>
+            Used to set variable values
+            </summary>
+        </member>
+        <member name="M:ValueConstraints.ValueControls.Behaviours.Waypoint2DBehaviour.AddNode(UnityEngine.Vector3)">
+            <summary>
+            Adds a position to waypoint node list
+            </summary>
+            <param name="position">Position to add to node list</param>
+        </member>
+        <member name="M:ValueConstraints.ValueControls.Behaviours.Waypoint2DBehaviour.Reset">
+            <summary>
+            Reset to default values
+            </summary>
+        </member>
+        <member name="M:ValueConstraints.ValueControls.Behaviours.Waypoint2DBehaviour.CalculateCurrentIndex">
+            <summary>
+            Sets the current index for use in route traversal
+            </summary>
+        </member>
+        <member name="M:ValueConstraints.ValueControls.Behaviours.Waypoint2DBehaviour.GetValue">
+            <summary>
+            Get the value by type to set the member variable value
+            </summary>
+            <returns>Value type after Value reference to Value Constraints calculation</returns>
+        </member>
+        <member name="M:ValueConstraints.ValueControls.Behaviours.Waypoint2DBehaviour.CheckScaleChanged">
+            <summary>
+            Checks if the scale has changed to update the min max vectors
+            </summary>
+        </member>
+        <member name="M:ValueConstraints.ValueControls.Behaviours.Waypoint2DBehaviour.InitilizeComponent">
+            <summary>
+            Initilize default values for transform position reference
+            </summary>
+        </member>
+        <member name="T:ValueConstraints.ValueControls.Behaviours.Rotator3DBehaviour">
+            <summary>
+            Class for Value Member Rotator3 references to rotate a transform
+            </summary>
+        </member>
+        <member name="F:ValueConstraints.ValueControls.Behaviours.Rotator3DBehaviour.m_ValueControl">
+            <summary>
+            Access to local value control type
+            </summary>
+        </member>
+        <member name="P:ValueConstraints.ValueControls.Behaviours.Rotator3DBehaviour.valueControl">
+            <summary>
+            Access to local value control type
+            </summary>
+        </member>
+        <member name="M:ValueConstraints.ValueControls.Behaviours.Rotator3DBehaviour.GetValue">
+            <summary>
+            Get the value by type to set the member variable value
+            </summary>
+            <returns>Value type after Value reference to Value Constraints calculation</returns>
+        </member>
+        <member name="M:ValueConstraints.ValueControls.Behaviours.Rotator3DBehaviour.InitilizeComponent">
+            <summary>
+            Initilize default values for transform rotation reference
+            </summary>
+        </member>
+        <member name="T:ValueConstraints.ValueControls.Behaviours.Rotator2DBehaviour">
+            <summary>
+            Class for Value Member Rotator2 references to rotate a transform
+            </summary>
+        </member>
+        <member name="F:ValueConstraints.ValueControls.Behaviours.Rotator2DBehaviour.m_ValueControl">
+            <summary>
+            Access to local value control type
+            </summary>
+        </member>
+        <member name="P:ValueConstraints.ValueControls.Behaviours.Rotator2DBehaviour.valueControl">
+            <summary>
+            Access to local value control type
+            </summary>
+        </member>
+        <member name="M:ValueConstraints.ValueControls.Behaviours.Rotator2DBehaviour.GetValue">
+            <summary>
+            Get the value by type to set the member variable value
+            </summary>
+            <returns>Value type after Value reference to Value Constraints calculation</returns>
+        </member>
+        <member name="M:ValueConstraints.ValueControls.Behaviours.Rotator2DBehaviour.InitilizeComponent">
+            <summary>
+            Initilize default values for transform rotation reference
+            </summary>
+        </member>
+        <member name="T:ValueConstraints.ValueControls.Behaviours.Position3DBehaviour">
+            <summary>
+            Positions a transform along the minimum and maximum 3D vectors
+            </summary>
+        </member>
+        <member name="F:ValueConstraints.ValueControls.Behaviours.Position3DBehaviour.m_ValuePosition">
+            <summary>
+            Access to local value control type
+            </summary>
+        </member>
+        <member name="P:ValueConstraints.ValueControls.Behaviours.Position3DBehaviour.valuePosition">
+            <summary>
+            Defines a controller for the Value classes as Vector3 values for positioning
+            </summary>
+        </member>
+        <member name="P:ValueConstraints.ValueControls.Behaviours.Position3DBehaviour.valueControl">
+            <summary>
+            Access to local value control type
+            </summary>
+        </member>
+        <member name="M:ValueConstraints.ValueControls.Behaviours.Position3DBehaviour.GetValue">
+            <summary>
+            Get the value by type to set the member variable value
+            </summary>
+            <returns>Value type after Value reference to Value Constraints calculation</returns>
+        </member>
+        <member name="M:ValueConstraints.ValueControls.Behaviours.Position3DBehaviour.InitilizeComponent">
+            <summary>
+            Initilize default values for transform position reference
+            </summary>
+        </member>
+        <member name="T:ValueConstraints.ValueControls.Behaviours.Position2DBehaviour">
+            <summary>
+            Positions a transform along the minimum and maximum 2D vectors
+            </summary>
+        </member>
+        <member name="F:ValueConstraints.ValueControls.Behaviours.Position2DBehaviour.m_ValuePosition">
+            <summary>
+            Access to local value control type
+            </summary>
+        </member>
+        <member name="P:ValueConstraints.ValueControls.Behaviours.Position2DBehaviour.valuePosition">
+            <summary>
+            Defines a controller for the Value classes as Vector2 values for positioning
+            </summary>
+        </member>
+        <member name="P:ValueConstraints.ValueControls.Behaviours.Position2DBehaviour.valueControl">
+            <summary>
+            Access to local value control type
+            </summary>
+        </member>
+        <member name="M:ValueConstraints.ValueControls.Behaviours.Position2DBehaviour.GetValue">
+            <summary>
+            Get the value by type to set the member variable value
+            </summary>
+            <returns>Value type after Value reference to Value Constraints calculation</returns>
+        </member>
+        <member name="M:ValueConstraints.ValueControls.Behaviours.Position2DBehaviour.InitilizeComponent">
+            <summary>
+            Initilize default values for transform position reference
+            </summary>
+        </member>
+        <member name="T:ValueConstraints.ValueControls.Behaviours.ColorReference">
+            <summary>
+            Class for Value Member Color references
+            </summary>
+        </member>
+        <member name="F:ValueConstraints.ValueControls.Behaviours.ColorReference.m_ValueColor">
+            <summary>
+            Access to local value color type
+            </summary>
+        </member>
+        <member name="P:ValueConstraints.ValueControls.Behaviours.ColorReference.valueColor">
+            <summary>
+            Access to local value color type
+            </summary>
+        </member>
+        <member name="P:ValueConstraints.ValueControls.Behaviours.ColorReference.valueControl">
+            <summary>
+            Access to local value control type
+            </summary>
+        </member>
+        <member name="M:ValueConstraints.ValueControls.Behaviours.ColorReference.GetValue">
+            <summary>
+            Get the value by type to set the member variable value
+            </summary>
+            <returns>Value type after Value reference to Value Constraints calculation</returns>
+        </member>
+        <member name="T:ValueConstraints.ValueControls.Behaviours.FloatReference">
+            <summary>
+            Class for Value Member Float references
+            </summary>
+        </member>
+        <member name="F:ValueConstraints.ValueControls.Behaviours.FloatReference.m_ValueControl">
+            <summary>
+            Access to local value control type
+            </summary>
+        </member>
+        <member name="P:ValueConstraints.ValueControls.Behaviours.FloatReference.valueControl">
+            <summary>
+            Access to local value control type
+            </summary>
+        </member>
+        <member name="M:ValueConstraints.ValueControls.Behaviours.FloatReference.GetValue">
+            <summary>
+            Get the value by type to set the member variable value
+            </summary>
+            <returns>Value type after Value reference to Value Constraints calculation</returns>
+        </member>
+        <member name="T:ValueConstraints.ValueControls.Behaviours.IntReference">
+            <summary>
+            Class for Value Member Int references
+            </summary>
+        </member>
+        <member name="F:ValueConstraints.ValueControls.Behaviours.IntReference.m_ValueControl">
+            <summary>
+            Access to local value control type
+            </summary>
+        </member>
+        <member name="P:ValueConstraints.ValueControls.Behaviours.IntReference.valueControl">
+            <summary>
+            Access to local value control type
+            </summary>
+        </member>
+        <member name="M:ValueConstraints.ValueControls.Behaviours.IntReference.GetValue">
+            <summary>
+            Get the value by type to set the member variable value
+            </summary>
+            <returns>Value type after Value reference to Value Constraints calculation</returns>
+        </member>
+        <member name="T:ValueConstraints.ValueControls.Behaviours.MaterialReference">
+            <summary>
+            Class for Value Member Material references
+            </summary>
+        </member>
+        <member name="F:ValueConstraints.ValueControls.Behaviours.MaterialReference.MINIMUM_TITLE">
+            <summary>
+            Label for the MinMaterial property
+            </summary>
+        </member>
+        <member name="F:ValueConstraints.ValueControls.Behaviours.MaterialReference.MAXIMUM_TITLE">
+            <summary>
+            Label for the MaxMaterial property
+            </summary>
+        </member>
+        <member name="F:ValueConstraints.ValueControls.Behaviours.MaterialReference.REQUIRED_REFERENCE_FORMAT">
+            <summary>
+            Format for showing reasin foe error
+            </summary>
+        </member>
+        <member name="F:ValueConstraints.ValueControls.Behaviours.MaterialReference.m_ValueMaterial">
+            <summary>
+            Access to local value material type
+            </summary>
+        </member>
+        <member name="P:ValueConstraints.ValueControls.Behaviours.MaterialReference.valueMaterial">
+            <summary>
+            Access to local value material type
+            </summary>
+        </member>
+        <member name="P:ValueConstraints.ValueControls.Behaviours.MaterialReference.valueControl">
+            <summary>
+            Access to local value control type
+            </summary>
+        </member>
+        <member name="M:ValueConstraints.ValueControls.Behaviours.MaterialReference.Awake">
+            <summary>
+            Called to setup variables
+            </summary>
+        </member>
+        <member name="M:ValueConstraints.ValueControls.Behaviours.MaterialReference.GetValue">
+            <summary>
+            Get the value by type to set the member variable value
+            </summary>
+            <returns>Value type after Value reference to Value Constraints calculation</returns>
+        </member>
+        <member name="T:ValueConstraints.ValueControls.Behaviours.MemberReference`1">
+            <summary>
+            Class for Value Member references
+            </summary>
+            <typeparam name="TReturnType">Type to reference</typeparam>
+        </member>
+        <member name="F:ValueConstraints.ValueControls.Behaviours.MemberReference`1.m_Trans">
+            <summary>
+            Access to local cached transform set in Awake() message
+            </summary>
+        </member>
+        <member name="F:ValueConstraints.ValueControls.Behaviours.MemberReference`1.m_GetValue">
+            <summary>
+            Gets the current value from component
+            </summary>
+        </member>
+        <member name="P:ValueConstraints.ValueControls.Behaviours.MemberReference`1.component">
+            <summary>
+            Accessor to Component
+            </summary>
+        </member>
+        <member name="P:ValueConstraints.ValueControls.Behaviours.MemberReference`1.memberType">
+            <summary>
+            Accessor to Member Type
+            </summary>
+        </member>
+        <member name="P:ValueConstraints.ValueControls.Behaviours.MemberReference`1.memberName">
+            <summary>
+            Accessor to Member Name
+            </summary>
+        </member>
+        <member name="P:ValueConstraints.ValueControls.Behaviours.MemberReference`1.memberIndex">
+            <summary>
+            Accessor to Member Index
+            </summary>
+        </member>
+        <member name="P:ValueConstraints.ValueControls.Behaviours.MemberReference`1.valueControl">
+            <summary>
+            Access to local value control type
+            </summary>
+        </member>
+        <member name="M:ValueConstraints.ValueControls.Behaviours.MemberReference`1.InitilizeComponent">
+            <summary>
+            Initilize default values
+            <para>Overide in derived class to initilize values</para>
+            </summary>
+        </member>
+        <member name="M:ValueConstraints.ValueControls.Behaviours.MemberReference`1.Awake">
+            <summary>
+            Called to initialize or setup variables
+            </summary>
+        </member>
+        <member name="M:ValueConstraints.ValueControls.Behaviours.MemberReference`1.Start">
+            <summary>
+            Calls Prepare method on start
+            </summary>
+        </member>
+        <member name="M:ValueConstraints.ValueControls.Behaviours.MemberReference`1.Prepare">
+            <summary>
+            Sets the Get and Set Value callbacks
+            </summary>
+        </member>
+        <member name="M:ValueConstraints.ValueControls.Behaviours.MemberReference`1.Reset">
+            <summary>
+            Reset to default values
+            <para>Overide in derived class to reset values</para>
+            </summary>
+        </member>
+        <member name="M:ValueConstraints.ValueControls.Behaviours.MemberReference`1.FixedUpdate">
+            <summary>
+            Updates member value
+            </summary>
+        </member>
+        <member name="M:ValueConstraints.ValueControls.Behaviours.MemberReference`1.SetValue(`0)">
+            <summary>
+            Get the value by type to set the member variable value
+            </summary>
+            <returns>Value type after Value reference to Value Constraints calculation</returns>
+        </member>
+        <member name="M:ValueConstraints.ValueControls.Behaviours.MemberReference`1.GetValue">
+            <summary>
+            Get the value by type to set the member variable value
+            </summary>
+            <returns>Value type after Value reference to Value Constraints calculation</returns>
+        </member>
+        <member name="T:ValueConstraints.ValueControls.Behaviours.Vector2Reference">
+            <summary>
+            Class for Value Member Vector2 references
+            </summary>
+        </member>
+        <member name="F:ValueConstraints.ValueControls.Behaviours.Vector2Reference.m_ValueVector">
+            <summary>
+            Access to local value Vector2 type
+            </summary>
+        </member>
+        <member name="P:ValueConstraints.ValueControls.Behaviours.Vector2Reference.valueVector">
+            <summary>
+            Access to local value Vector type
+            </summary>
+        </member>
+        <member name="P:ValueConstraints.ValueControls.Behaviours.Vector2Reference.valueControl">
+            <summary>
+            Access to local value control type
+            </summary>
+        </member>
+        <member name="M:ValueConstraints.ValueControls.Behaviours.Vector2Reference.GetValue">
+            <summary>
+            Get the value by type to set the member variable value
+            </summary>
+            <returns>Value type after Value reference to Value Constraints calculation</returns>
+        </member>
+        <member name="T:ValueConstraints.ValueControls.Behaviours.Vector3Reference">
+            <summary>
+            Class for Value Member Vector3 references
+            </summary>
+        </member>
+        <member name="F:ValueConstraints.ValueControls.Behaviours.Vector3Reference.m_ValueVector">
+            <summary>
+            Access to local value Vector2 type
+            </summary>
+        </member>
+        <member name="P:ValueConstraints.ValueControls.Behaviours.Vector3Reference.valueVector">
+            <summary>
+            Access to local value Vector type
+            </summary>
+        </member>
+        <member name="P:ValueConstraints.ValueControls.Behaviours.Vector3Reference.valueControl">
+            <summary>
+            Access to local value control type
+            </summary>
+        </member>
+        <member name="M:ValueConstraints.ValueControls.Behaviours.Vector3Reference.GetValue">
+            <summary>
+            Get the value by type to set the member variable value
+            </summary>
+            <returns>Value type after Value reference to Value Constraints calculation</returns>
+        </member>
+        <member name="M:ValueConstraints.ValueControls.Behaviours.Vector3Reference.GetValue(System.Single)">
+            <summary>
+            Get the value by type to set the member variable value
+            </summary>
+            <param name="deltaTime">Time.deltaTime at runtime, supply time passed in editor</param>
+            <returns>Value type after Value reference to Value Constraints calculation</returns>
+        </member>
+        <member name="T:ValueConstraints.ValueControls.MoveHandleType">
+            <summary>
+            Defines which positioning handle is used
+            </summary>
+        </member>
+        <member name="F:ValueConstraints.ValueControls.MoveHandleType.None">
+            <summary>
+            Draw no handles.
+            </summary>
+        </member>
+        <member name="F:ValueConstraints.ValueControls.MoveHandleType.PositionHandle">
+            <summary>
+            Uses position handles.
+            </summary>
+        </member>
+        <member name="F:ValueConstraints.ValueControls.MoveHandleType.FreeMoveHandle">
+            <summary>
+            Uses free move handles with no constraints.
+            </summary>
+        </member>
+        <member name="F:ValueConstraints.ValueControls.MoveHandleType.DisplayHandle">
+            <summary>
+            Shows handles for reference and can not alter the positions
+            </summary>
+        </member>
+        <member name="T:ValueConstraints.ValueControls.RotatorData">
+            <summary>
+            Axis direction at which to calculate angles
+            </summary>
+        </member>
+        <member name="F:ValueConstraints.ValueControls.RotatorData.angle">
+            <summary>
+            Axis direction at which to calculate angles
+            <para>x, y, z return value from a vector</para>
+            </summary>
+        </member>
+        <member name="M:ValueConstraints.ValueControls.RotatorData.#ctor(System.Func{UnityEngine.Vector3,System.Single})">
+            <summary>
+            Constructor
+            </summary>
+            <param name="angle">Axis direction at which to calculate angles
+            <para>x, y, z return value from a vector</para></param>
+        </member>
+        <member name="T:ValueConstraints.ValueControls.SceneData">
+            <summary>
+            Scene view handle color
+            </summary>
+        </member>
+        <member name="F:ValueConstraints.ValueControls.SceneData.axisColor">
+            <summary>
+            Color to draw scene view handles
+            </summary>
+        </member>
+        <member name="M:ValueConstraints.ValueControls.SceneData.#ctor(UnityEngine.Color)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="axisColor">Color to draw scene view handles</param>
+        </member>
+        <member name="T:ValueConstraints.ValueControls.VectorData">
+            <summary>
+            Values to draw rotatoe scene view disk and current indicators
+            </summary>
+        </member>
+        <member name="F:ValueConstraints.ValueControls.VectorData.crossPlane">
+            <summary>
+            Axis about which to draw the disk
+            </summary>
+        </member>
+        <member name="F:ValueConstraints.ValueControls.VectorData.normal">
+            <summary>
+            Normal direction to orient the disk
+            </summary>
+        </member>
+        <member name="F:ValueConstraints.ValueControls.VectorData.from">
+            <summary>
+            Normalized direction to start the disk drawing
+            </summary>
+        </member>
+        <member name="M:ValueConstraints.ValueControls.VectorData.#ctor(UnityEngine.Vector3,UnityEngine.Vector3,UnityEngine.Vector3)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="crossPlane">Axis about which to draw the disk</param>
+            <param name="normal">Normal direction to orient the disk</param>
+            <param name="from">Normalized direction to start the disk drawing</param>
+        </member>
+        <member name="M:ValueConstraints.ValueControls.VectorData.#ctor(ValueConstraints.ValueControls.VectorData)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="vectorData">Vector data to copy values from</param>
+        </member>
+        <member name="T:ValueConstraints.ValueControls.ValueRotator3">
+            <summary>
+            Class for Value Rotator3D references
+            </summary>
+        </member>
+        <member name="F:ValueConstraints.ValueControls.ValueRotator3.Empty">
+            <summary>
+            Defines an empty or blank value
+            </summary>
+        </member>
+        <member name="M:ValueConstraints.ValueControls.ValueRotator3.#ctor">
+            <summary>
+            Constructor
+            </summary>
+        </member>
+        <member name="T:ValueConstraints.ValueControls.ValueRotator2">
+            <summary>
+            Class for Value Rotator2D references
+            </summary>
+        </member>
+        <member name="F:ValueConstraints.ValueControls.ValueRotator2.Empty">
+            <summary>
+            Defines an empty or blank value
+            </summary>
+        </member>
+        <member name="M:ValueConstraints.ValueControls.ValueRotator2.#ctor">
+            <summary>
+            Constructor
+            </summary>
+        </member>
+        <member name="T:ValueConstraints.ValueControls.ValueRotator">
+            <summary>
+            Class for Value Rotator references
+            </summary>
+        </member>
+        <member name="F:ValueConstraints.ValueControls.ValueRotator.Empty">
+            <summary>
+            Defines an empty or blank value
+            </summary>
+        </member>
+        <member name="P:ValueConstraints.ValueControls.ValueRotator.Up">
+            <summary>
+            Up direction orientated vector axis data
+            </summary>
+        </member>
+        <member name="P:ValueConstraints.ValueControls.ValueRotator.Forward">
+            <summary>
+            Forward direction orientated vector axis data
+            </summary>
+        </member>
+        <member name="P:ValueConstraints.ValueControls.ValueRotator.Right">
+            <summary>
+            Right direction orientated vector axis data
+            </summary>
+        </member>
+        <member name="P:ValueConstraints.ValueControls.ValueRotator.alignToParent">
+            <summary>
+            Locks the local rotation to the parent rotation
+            <para>Used when localEulerAngles are used and there is a parent transform</para>
+            </summary>
+        </member>
+        <member name="P:ValueConstraints.ValueControls.ValueRotator.X">
+            <summary>
+            Rotator for x axis
+            </summary>
+        </member>
+        <member name="P:ValueConstraints.ValueControls.ValueRotator.Y">
+            <summary>
+            Rotator for y axis
+            </summary>
+        </member>
+        <member name="P:ValueConstraints.ValueControls.ValueRotator.Z">
+            <summary>
+            Rotator for z axis
+            </summary>
+        </member>
+        <member name="P:ValueConstraints.ValueControls.ValueRotator.radius">
+            <summary>
+            Draw radius for rotator disk
+            </summary>
+        </member>
+        <member name="P:ValueConstraints.ValueControls.ValueRotator.resolution">
+            <summary>
+            Draw resolution for rotator path trace
+            </summary>
+        </member>
+        <member name="M:ValueConstraints.ValueControls.ValueRotator.#ctor">
+            <summary>
+            Constructor
+            </summary>
+        </member>
+        <member name="T:ValueConstraints.ValueControls.SelectionType">
+            <summary>
+            Selection type for amount of scene view handles
+            </summary>
+        </member>
+        <member name="F:ValueConstraints.ValueControls.SelectionType.None">
+            <summary>
+            No selection handles
+            </summary>
+        </member>
+        <member name="F:ValueConstraints.ValueControls.SelectionType.Single">
+            <summary>
+            Single or one selection handle
+            </summary>
+        </member>
+        <member name="F:ValueConstraints.ValueControls.SelectionType.Double">
+            <summary>
+            Double is current and previous selection handle
+            </summary>
+        </member>
+        <member name="F:ValueConstraints.ValueControls.SelectionType.All">
+            <summary>
+            Show all selection handles
+            </summary>
+        </member>
+        <member name="T:ValueConstraints.ValueControls.Rotator">
+            <summary>
+            Draws scene view representation of the vector angles
+            </summary>
+        </member>
+        <member name="P:ValueConstraints.ValueControls.Rotator.axis">
+            <summary>
+            Draw the disk in the scene
+            </summary>
+        </member>
+        <member name="P:ValueConstraints.ValueControls.Rotator.trace">
+            <summary>
+            Draw the trace path in the scene
+            </summary>
+        </member>
+        <member name="P:ValueConstraints.ValueControls.Rotator.angle">
+            <summary>
+            Angle between the min and max Vectors
+            </summary>
+        </member>
+        <member name="P:ValueConstraints.ValueControls.Rotator.vectorData">
+            <summary>
+            Values to draw rotatoe scene view disk and current indicators
+            </summary>
+        </member>
+        <member name="P:ValueConstraints.ValueControls.Rotator.sceneData">
+            <summary>
+            Scene view handle color
+            </summary>
+        </member>
+        <member name="P:ValueConstraints.ValueControls.Rotator.rotatorData">
+            <summary>
+            Axis direction at which to calculate angles
+            </summary>
+        </member>
+        <member name="P:ValueConstraints.ValueControls.Rotator.showCurrentLine">
+            <summary>
+            Show the current value line for the value Vector
+            </summary>
+        </member>
+        <member name="M:ValueConstraints.ValueControls.Rotator.#ctor">
+            <summary>
+            Constructor
+            </summary>
+        </member>
+        <member name="T:ValueConstraints.ValueControls.ValueColorFloat">
+            <summary>
+            Class for Value Color references
+            </summary>
+        </member>
+        <member name="F:ValueConstraints.ValueControls.ValueColorFloat.Empty">
+            <summary>
+            Defines an empty or blank value
+            </summary>
+        </member>
+        <member name="P:ValueConstraints.ValueControls.ValueColorFloat.minColor">
+            <summary>
+            Minimum color value
+            </summary>
+        </member>
+        <member name="P:ValueConstraints.ValueControls.ValueColorFloat.maxColor">
+            <summary>
+            Maximum color value
+            </summary>
+        </member>
+        <member name="M:ValueConstraints.ValueControls.ValueColorFloat.#ctor">
+            <summary>
+            Constructor
+            </summary>
+        </member>
+        <member name="T:ValueConstraints.ValueControls.ValueMaterialFloat">
+            <summary>
+            Class for Value Material references
+            </summary>
+        </member>
+        <member name="F:ValueConstraints.ValueControls.ValueMaterialFloat.Empty">
+            <summary>
+            Defines an empty or blank value
+            </summary>
+        </member>
+        <member name="P:ValueConstraints.ValueControls.ValueMaterialFloat.minMaterial">
+            <summary>
+            Minimum material value
+            </summary>
+        </member>
+        <member name="P:ValueConstraints.ValueControls.ValueMaterialFloat.maxMaterial">
+            <summary>
+            Maximum material value
+            </summary>
+        </member>
+        <member name="M:ValueConstraints.ValueControls.ValueMaterialFloat.#ctor">
+            <summary>
+            Constructor
+            </summary>
+        </member>
+        <member name="T:ValueConstraints.ValueControls.ValuePosition2">
+            <summary>
+            Defines a controller for the Value classes as Vector2 values for positioning
+            </summary>
+        </member>
+        <member name="F:ValueConstraints.ValueControls.ValuePosition2.Empty">
+            <summary>
+            Defines an empty or blank value
+            </summary>
+        </member>
+        <member name="P:ValueConstraints.ValueControls.ValuePosition2.lockTransform">
+            <summary>
+            Locking the transform allows for independent minimum and maximum Vectors adjustment.
+            </summary>
+        </member>
+        <member name="P:ValueConstraints.ValueControls.ValuePosition2.moveHandleType">
+            <summary>
+            Which scene view modification handle to use.
+            </summary>
+        </member>
+        <member name="P:ValueConstraints.ValueControls.ValuePosition2.minVec">
+            <summary>
+            Minimum vector limit
+            </summary>
+        </member>
+        <member name="P:ValueConstraints.ValueControls.ValuePosition2.maxVec">
+            <summary>
+            Maximum vector limit
+            </summary>
+        </member>
+        <member name="P:ValueConstraints.ValueControls.ValuePosition2.currentTemp">
+            <summary>
+            Temp value to accurate scale interger types
+            </summary>
+        </member>
+        <member name="M:ValueConstraints.ValueControls.ValuePosition2.#ctor(System.Single,System.Single,System.Single,System.Single,System.Single,ValueConstraints.ValueControls.ActionType)">
+            <summary>
+            Constructor to manually create
+            </summary>
+            <param name="minimum">Minimum value</param>
+            <param name="maximum">Maximum value</param>
+            <param name="current">Current value</param>
+            <param name="maxDelta">Max Delta or maximum change per update value</param>
+            <param name="scale">Scale value how much to change Max Delta by</param>
+            <param name="actionType">The action type to preform</param>
+        </member>
+        <member name="M:ValueConstraints.ValueControls.ValuePosition2.#ctor">
+            <summary>
+            Constructor generaly used for objects that will copy values from another
+            </summary>
+        </member>
+        <member name="M:ValueConstraints.ValueControls.ValuePosition2.DoAction(UnityEngine.Vector3@,System.Single)">
+            <summary>
+            Perform selected action using Vector2.Lerp
+            </summary>
+            <param name="position">The position to modify properties.</param>
+            <param name="deltaTime">Time change between updates.</param>
+            <returns>Value generated from method call usually the current value.</returns>
+        </member>
+        <member name="M:ValueConstraints.ValueControls.ValuePosition2.Copy(ValueConstraints.Interfaces.IValuePosition)">
+            <summary>
+            Copies all source values to the current object.
+            <para>Use this method to avoid creating a new object or to reuse this object.</para>
+            </summary>
+            <param name="source">The source object to copy values from.</param>
+        </member>
+        <member name="T:ValueConstraints.ValueControls.ValuePosition3">
+            <summary>
+            Defines a controller for the Value classes as Vector3 values for positioning
+            </summary>
+        </member>
+        <member name="F:ValueConstraints.ValueControls.ValuePosition3.Empty">
+            <summary>
+            Defines an empty or blank value
+            </summary>
+        </member>
+        <member name="P:ValueConstraints.ValueControls.ValuePosition3.lockTransform">
+            <summary>
+            Locking the transform allows for independent minimum and maximum Vectors adjustment.
+            </summary>
+        </member>
+        <member name="P:ValueConstraints.ValueControls.ValuePosition3.moveHandleType">
+            <summary>
+            Which scene view modification handle to use.
+            </summary>
+        </member>
+        <member name="P:ValueConstraints.ValueControls.ValuePosition3.currentTemp">
+            <summary>
+            Temp value to accurate scale interger types
+            </summary>
+        </member>
+        <member name="M:ValueConstraints.ValueControls.ValuePosition3.#ctor(System.Single,System.Single,System.Single,System.Single,System.Single,ValueConstraints.ValueControls.ActionType)">
+            <summary>
+            Constructor to manually create
+            </summary>
+            <param name="minimum">Minimum value</param>
+            <param name="maximum">Maximum value</param>
+            <param name="current">Current value</param>
+            <param name="maxDelta">Max Delta or maximum change per update value</param>
+            <param name="scale">Scale value how much to change Max Delta by</param>
+            <param name="actionType">The action type to preform</param>
+        </member>
+        <member name="M:ValueConstraints.ValueControls.ValuePosition3.#ctor">
+            <summary>
+            Constructor generally used for objects that will copy values from another
+            </summary>
+        </member>
+        <member name="M:ValueConstraints.ValueControls.ValuePosition3.DoAction(UnityEngine.Vector3@,System.Single)">
+            <summary>
+            Preform selected action using Vector3.Lerp
+            </summary>
+            <param name="position">The position to modify properties.</param>
+            <param name="deltaTime">Time change between updates.</param>
+            <returns>Value generated from method call usually the current value.</returns>
+        </member>
+        <member name="M:ValueConstraints.ValueControls.ValuePosition3.Copy(ValueConstraints.Interfaces.IValuePosition)">
+            <summary>
+            Copies all source values to the current object.
+            <para>Use this method to avoid creating a new object or to reuse this object.</para>
+            </summary>
+            <param name="source">The source object to copy values from.</param>
+        </member>
+        <member name="T:ValueConstraints.ValueControls.ValueVector2">
+            <summary>
+            Defines a controller for the Value classes as Vector3 values
+            </summary>
+        </member>
+        <member name="M:ValueConstraints.ValueControls.ValueVector2.#ctor(System.Single,System.Single,System.Single,System.Single,System.Single,ValueConstraints.ValueControls.ActionType)">
+            <summary>
+            Constructor to manually create
+            </summary>
+            <param name="minimum">Minimum value</param>
+            <param name="maximum">Maximum value</param>
+            <param name="current">Current value</param>
+            <param name="maxDelta">Max Delta or maximum change per update value</param>
+            <param name="scale">Scale value how much to change Max Delta by</param>
+            <param name="actionType">The action type to preform</param>
+        </member>
+        <member name="M:ValueConstraints.ValueControls.ValueVector2.#ctor">
+            <summary>
+            Constructor generaly used for objects that will copy values from another
+            </summary>
+        </member>
+        <member name="T:ValueConstraints.ValueControls.ValueVectorFloat`1">
+            <summary>
+            Defines a controller for the Value classes as Vector2 and Vector3 values
+            </summary>
+            <typeparam name="V">Type of Vector2 or Vector3</typeparam>
+        </member>
+        <member name="F:ValueConstraints.ValueControls.ValueVectorFloat`1.Empty">
+            <summary>
+            Defines an empty or blank value
+            </summary>
+        </member>
+        <member name="P:ValueConstraints.ValueControls.ValueVectorFloat`1.minVec">
+            <summary>
+            Minimum vector limit
+            </summary>
+        </member>
+        <member name="P:ValueConstraints.ValueControls.ValueVectorFloat`1.maxVec">
+            <summary>
+            Maximum vector limit
+            </summary>
+        </member>
+        <member name="P:ValueConstraints.ValueControls.ValueVectorFloat`1.timeCurve">
+            <summary>
+            Animation curve to evaluate and animate the current value
+            </summary>
+        </member>
+        <member name="M:ValueConstraints.ValueControls.ValueVectorFloat`1.#ctor(System.Single,System.Single,System.Single,System.Single,System.Single,ValueConstraints.ValueControls.ActionType)">
+            <summary>
+            Constructor to manually create
+            </summary>
+            <param name="minimum">Minimum value</param>
+            <param name="maximum">Maximum value</param>
+            <param name="current">Current value</param>
+            <param name="maxDelta">Max Delta or maximum change per update value</param>
+            <param name="scale">Scale value how much to change Max Delta by</param>
+            <param name="actionType">The action type to preform</param>
+        </member>
+        <member name="M:ValueConstraints.ValueControls.ValueVectorFloat`1.#ctor">
+            <summary>
+            Constructor generaly used for objects that will copy values from another
+            </summary>
+        </member>
+        <member name="M:ValueConstraints.ValueControls.ValueVectorFloat`1.Set(`0,`0)">
+            <summary>
+            Sets the underlying minimum and maximum vector values
+            </summary>
+            <param name="minVec">Minimum vector value</param>
+            <param name="maxVec">Maximum vector value</param>
+        </member>
+        <member name="M:ValueConstraints.ValueControls.ValueVectorFloat`1.DoAction(System.Single)">
+            <summary>
+            Perform selected action.
+            <para>Action uses the time curve to evaluate and animate the current value.</para>
+            </summary>
+            <param name="deltaTime">Time change between updates.</param>
+            <returns>Value generated from method call usually the current value.</returns>
+        </member>
+        <member name="M:ValueConstraints.ValueControls.ValueVectorFloat`1.Copy(ValueConstraints.ValueControls.ValueVectorFloat{`0})">
+            <summary>
+            Copies all source values to the current object.
+            <para>Use this method to avoid creating a new object or to reuse this object.</para>
+            </summary>
+            <param name="source">The source object to copy values from.</param>
+        </member>
+        <member name="T:ValueConstraints.ValueControls.ActionType">
+            <summary>
+            Type of action to perform on the Value class.
+            </summary>
+        </member>
+        <member name="F:ValueConstraints.ValueControls.ActionType.None">
+            <summary>
+            No action or not set
+            </summary>
+        </member>
+        <member name="F:ValueConstraints.ValueControls.ActionType.Random">
+            <summary>
+            Randomize the current value
+            </summary>
+        </member>
+        <member name="F:ValueConstraints.ValueControls.ActionType.Wrap">
+            <summary>
+            Wrap the current value
+            <para>NOTE: direction can be set independently</para>
+            </summary>
+        </member>
+        <member name="F:ValueConstraints.ValueControls.ActionType.PingPong">
+            <summary>
+            Ping pong the current value
+            </summary>
+        </member>
+        <member name="T:ValueConstraints.ValueControls.ValueActions">
+            <summary>
+            Defines Value actions to perform on a Value class.
+            </summary>
+        </member>
+        <member name="M:ValueConstraints.ValueControls.ValueActions.DoAction``1(ValueConstraints.Interfaces.IValueLimits{``0},System.Single)">
+            <summary>
+            Perform an action on a Value class
+            </summary>
+            <typeparam name="T">Type of value class</typeparam>
+            <param name="limits">Value class to perform the action on</param>
+            <param name="deltaTime">Time change between updates</param>
+            <returns>Value generated from method call usualy the current value.</returns>
+        </member>
+        <member name="T:ValueConstraints.ValueControls.ValueVector3">
+            <summary>
+            Defines a controller for the Value classes as Vector3 values
+            </summary>
+        </member>
+        <member name="M:ValueConstraints.ValueControls.ValueVector3.#ctor(System.Single,System.Single,System.Single,System.Single,System.Single,ValueConstraints.ValueControls.ActionType)">
+            <summary>
+            Constructor to manually create
+            </summary>
+            <param name="minimum">Minimum value</param>
+            <param name="maximum">Maximum value</param>
+            <param name="current">Current value</param>
+            <param name="maxDelta">Max Delta or maximum change per update value</param>
+            <param name="scale">Scale value how much to change Max Delta by</param>
+            <param name="actionType">The action type to perform</param>
+        </member>
+        <member name="M:ValueConstraints.ValueControls.ValueVector3.#ctor">
+            <summary>
+            Constructor generally used for objects that will copy values from another
+            </summary>
+        </member>
+        <member name="T:ValueConstraints.ValueControls.ValueWaypoint2">
+            <summary>
+            Class for Value Waypoint2D references
+            </summary>
+        </member>
+        <member name="F:ValueConstraints.ValueControls.ValueWaypoint2.Empty">
+            <summary>
+            Defines an empty or blank value
+            </summary>
+        </member>
+        <member name="F:ValueConstraints.ValueControls.ValueWaypoint2.m_CurrentIndex">
+            <summary>
+            Current waypoint index depends on direction and scale
+            </summary>
+        </member>
+        <member name="F:ValueConstraints.ValueControls.ValueWaypoint2.m_MinIndex">
+            <summary>
+            Minimum vector index depends on direction and scale
+            </summary>
+        </member>
+        <member name="F:ValueConstraints.ValueControls.ValueWaypoint2.m_MaxIndex">
+            <summary>
+            Minimum vector index depends on direction and scale
+            </summary>
+        </member>
+        <member name="P:ValueConstraints.ValueControls.ValueWaypoint2.currentIndex">
+            <summary>
+            Current waypoint index depends on direction and scale
+            </summary>
+        </member>
+        <member name="P:ValueConstraints.ValueControls.ValueWaypoint2.minIndex">
+            <summary>
+            Minimum vector index depends on direction and scale
+            </summary>
+        </member>
+        <member name="P:ValueConstraints.ValueControls.ValueWaypoint2.maxIndex">
+            <summary>
+            Maximum vector index depends on direction and scale
+            </summary>
+        </member>
+        <member name="P:ValueConstraints.ValueControls.ValueWaypoint2.selectionType">
+            <summary>
+            Amount of nodes to select for modification
+            </summary>
+        </member>
+        <member name="P:ValueConstraints.ValueControls.ValueWaypoint2.nodes">
+            <summary>
+            Nodes to move through
+            </summary>
+        </member>
+        <member name="M:ValueConstraints.ValueControls.ValueWaypoint2.#ctor">
+            <summary>
+            Constructor
+            </summary>
+        </member>
+        <member name="M:ValueConstraints.ValueControls.ValueWaypoint2.Copy(ValueConstraints.Interfaces.IValueWaypoint)">
+            <summary>
+            Copies all source values to the current object.
+            <para>Use this method to avoid creating a new object or to resuse this object.</para>
+            </summary>
+            <param name="source">The source object to copy values from.</param>
+        </member>
+        <member name="M:ValueConstraints.ValueControls.ValueWaypoint2.Set(ValueConstraints.ValueControls.SelectionType,System.Int32,System.Int32,System.Int32,UnityEngine.Vector2[])">
+            <summary>
+            Set local values to sorce values
+            </summary>
+            <param name="selectionType">Amount of nodes to select for modification</param>
+            <param name="currentIndex">Current waypoint index depends on direction and scale</param>
+            <param name="minIndex">Minimum vector index depends on direction and scale</param>
+            <param name="maxIndex">Maximum vector index depends on direction and scale</param>
+            <param name="nodes">Nodes to move through</param>
+        </member>
+        <member name="T:ValueConstraints.ValueControls.ValueWaypoint3">
+            <summary>
+            Class for Value Waypoint3D references
+            </summary>
+        </member>
+        <member name="F:ValueConstraints.ValueControls.ValueWaypoint3.Empty">
+            <summary>
+            Defines an empty or blank value
+            </summary>
+        </member>
+        <member name="F:ValueConstraints.ValueControls.ValueWaypoint3.m_CurrentIndex">
+            <summary>
+            Current waypoint index depends on direction and scale
+            </summary>
+        </member>
+        <member name="F:ValueConstraints.ValueControls.ValueWaypoint3.m_MinIndex">
+            <summary>
+            Minimum vector index depends on direction and scale
+            </summary>
+        </member>
+        <member name="F:ValueConstraints.ValueControls.ValueWaypoint3.m_MaxIndex">
+            <summary>
+            Minimum vector index depends on direction and scale
+            </summary>
+        </member>
+        <member name="P:ValueConstraints.ValueControls.ValueWaypoint3.currentIndex">
+            <summary>
+            Current waypoint index depends on direction and scale
+            </summary>
+        </member>
+        <member name="P:ValueConstraints.ValueControls.ValueWaypoint3.minIndex">
+            <summary>
+            Minimum vector index depends on direction and scale
+            </summary>
+        </member>
+        <member name="P:ValueConstraints.ValueControls.ValueWaypoint3.maxIndex">
+            <summary>
+            Maximum vector index depends on direction and scale
+            </summary>
+        </member>
+        <member name="P:ValueConstraints.ValueControls.ValueWaypoint3.selectionType">
+            <summary>
+            Amount of nodes to select for modification
+            </summary>
+        </member>
+        <member name="P:ValueConstraints.ValueControls.ValueWaypoint3.nodes">
+            <summary>
+            Nodes to move through
+            </summary>
+        </member>
+        <member name="M:ValueConstraints.ValueControls.ValueWaypoint3.#ctor">
+            <summary>
+            Constructor
+            </summary>
+        </member>
+        <member name="M:ValueConstraints.ValueControls.ValueWaypoint3.Copy(ValueConstraints.Interfaces.IValueWaypoint)">
+            <summary>
+            Copies all source values to the current object.
+            <para>Use this method to avoid creating a new object or to resuse this object.</para>
+            </summary>
+            <param name="source">The source object to copy values from.</param>
+        </member>
+        <member name="M:ValueConstraints.ValueControls.ValueWaypoint3.Set(ValueConstraints.ValueControls.SelectionType,System.Int32,System.Int32,System.Int32,UnityEngine.Vector3[])">
+            <summary>
+            Set local values to sorce values
+            </summary>
+            <param name="selectionType">Amount of nodes to select for modification</param>
+            <param name="currentIndex">Current waypoint index depends on direction and scale</param>
+            <param name="minIndex">Minimum vector index depends on direction and scale</param>
+            <param name="maxIndex">Maximum vector index depends on direction and scale</param>
+            <param name="nodes">Nodes to move through</param>
+        </member>
+        <member name="T:ValueConstraints.ValueControls.ValueControlInt">
+            <summary>
+            Defines a controller for the Value classes as integers
+            </summary>
+        </member>
+        <member name="F:ValueConstraints.ValueControls.ValueControlInt.Empty">
+            <summary>
+            Defines an empty or blank value
+            </summary>
+        </member>
+        <member name="P:ValueConstraints.ValueControls.ValueControlInt.actionType">
+            <summary>
+            The action type to preform
+            </summary>
+        </member>
+        <member name="M:ValueConstraints.ValueControls.ValueControlInt.#ctor(System.Int32,System.Int32,System.Int32,System.Int32,System.Single,ValueConstraints.ValueControls.ActionType,System.Boolean)">
+            <summary>
+            Constructor to manually create
+            </summary>
+            <param name="minimum">Minimum value</param>
+            <param name="maximum">Maximum value</param>
+            <param name="current">Current value</param>
+            <param name="maxDelta">Max Delta or maximum change per update value</param>
+            <param name="scale">Scale value how much to change Max Delta by</param>
+            <param name="actionType">The action type to preform</param>
+            <param name="loop">Preform the action only once or continuously</param>
+        </member>
+        <member name="M:ValueConstraints.ValueControls.ValueControlInt.#ctor">
+            <summary>
+            Constructor generally used for objects that will copy values from another
+            </summary>
+        </member>
+        <member name="M:ValueConstraints.ValueControls.ValueControlInt.Set(ValueConstraints.ValueControls.ActionType,System.Boolean)">
+            <summary>
+            Sets local variables to values passed in
+            </summary>
+            <param name="actionType">ActionType value</param>
+            <param name="loop">Preform the action only once or continuously</param>
+        </member>
+        <member name="M:ValueConstraints.ValueControls.ValueControlInt.Copy(ValueConstraints.Interfaces.IValueControl)">
+            <summary>
+            Copies all source values to the current object.
+            <para>Use this method to avoid creating a new object or to reuse this object.</para>
+            <para>WARNING: float to int is a loss of data may apply to this method.</para>
+            </summary>
+            <param name="source">The source object to copy values from.</param>
+        </member>
+        <member name="M:ValueConstraints.ValueControls.ValueControlInt.Copy(ValueConstraints.Interfaces.BaseValues.ILimits{System.Single})">
+            <summary>
+            Copies all source values to the current object.
+            </summary>
+            <param name="source">The source object to copy values from.</param>
+        </member>
+        <member name="M:ValueConstraints.ValueControls.ValueControlInt.Copy(ValueConstraints.Interfaces.BaseValues.IControl{System.Single})">
+            <summary>
+            Copies all source values to the current object.
+            </summary>
+            <param name="source">The source object to copy values from.</param>
+        </member>
+        <member name="M:ValueConstraints.ValueControls.ValueControlInt.DoAction(System.Single)">
+            <summary>
+            Perform selected action
+            </summary>
+            <param name="deltaTime">Time change between updates</param>
+            <returns>Value generated from method call usually the current value.</returns>
+        </member>
+        <member name="T:ValueConstraints.ValueControls.ValueControlFloat">
+            <summary>
+            Defines a controller for the Value classes as float values
+            </summary>
+        </member>
+        <member name="F:ValueConstraints.ValueControls.ValueControlFloat.Empty">
+            <summary>
+            Defines an empty or blank value
+            </summary>
+        </member>
+        <member name="P:ValueConstraints.ValueControls.ValueControlFloat.actionType">
+            <summary>
+            The action type to preform
+            </summary>
+        </member>
+        <member name="M:ValueConstraints.ValueControls.ValueControlFloat.#ctor(System.Single,System.Single,System.Single,System.Single,System.Single,ValueConstraints.ValueControls.ActionType,System.Boolean)">
+            <summary>
+            Constructor to manually create
+            </summary>
+            <param name="minimum">Minimum value</param>
+            <param name="maximum">Maximum value</param>
+            <param name="current">Current value</param>
+            <param name="maxDelta">Max Delta or maximum change per update value</param>
+            <param name="scale">Scale value how much to change Max Delta by</param>
+            <param name="actionType">The action type to preform</param>
+            <param name="loop">Preform the action only once or continuously</param>
+        </member>
+        <member name="M:ValueConstraints.ValueControls.ValueControlFloat.#ctor">
+            <summary>
+            Constructor generally used for objects that will copy values from another
+            </summary>
+        </member>
+        <member name="M:ValueConstraints.ValueControls.ValueControlFloat.Set(ValueConstraints.ValueControls.ActionType,System.Boolean)">
+            <summary>
+            Sets local variables to values passed in
+            </summary>
+            <param name="actionType">ActionType value</param>
+            <param name="loop">Preform the action only once or continuously</param>
+        </member>
+        <member name="M:ValueConstraints.ValueControls.ValueControlFloat.Copy(ValueConstraints.Interfaces.IValueControl)">
+            <summary>
+            Copies all source values to the current object.
+            <para>Use this methos to avoid creating a new object or to resuse this object.</para>
+            </summary>
+            <param name="source">The source object to copy values from.</param>
+        </member>
+        <member name="M:ValueConstraints.ValueControls.ValueControlFloat.Copy(ValueConstraints.Interfaces.BaseValues.IBounds{System.Single})">
+            <summary>
+            Copies all source values to the current object.
+            <para>Use this methos to avoid creating a new object or to resuse this object.</para>
+            </summary>
+            <param name="source">The source object to copy values from.</param>
+        </member>
+        <member name="M:ValueConstraints.ValueControls.ValueControlFloat.Copy(ValueConstraints.Interfaces.BaseValues.IDigit{System.Single})">
+            <summary>
+            Copies all source values to the current object.
+            <para>Use this methos to avoid creating a new object or to resuse this object.</para>
+            </summary>
+            <param name="source">The source object to copy values from.</param>
+        </member>
+        <member name="M:ValueConstraints.ValueControls.ValueControlFloat.Copy(ValueConstraints.Interfaces.BaseValues.ILimits{System.Single})">
+            <summary>
+            Copies all source values to the current object.
+            <para>Use this methos to avoid creating a new object or to resuse this object.</para>
+            </summary>
+            <param name="source">The source object to copy values from.</param>
+        </member>
+        <member name="M:ValueConstraints.ValueControls.ValueControlFloat.Copy(ValueConstraints.Interfaces.BaseValues.IControl{System.Single})">
+            <summary>
+            Copies all source values to the current object.
+            <para>Use this methos to avoid creating a new object or to resuse this object.</para>
+            </summary>
+            <param name="source">The source object to copy values from.</param>
+        </member>
+        <member name="M:ValueConstraints.ValueControls.ValueControlFloat.DoAction(System.Single)">
+            <summary>
+            Preform selected action
+            </summary>
+            <param name="deltaTime">Time change between updates</param>
+            <returns>Value generated form method call usualy the current value.</returns>
+        </member>
+        <member name="T:ValueConstraints.Interfaces.BaseValues.IControl`2">
+            <summary>
+            Defines a controller for the Value classes also defines the type of currentTemp
+            </summary>
+            <typeparam name="TMain">Type to use</typeparam>
+            <typeparam name="TTemp">Type to use for the currentTemp variable</typeparam>
+        </member>
+        <member name="P:ValueConstraints.Interfaces.BaseValues.IControl`2.actionType">
+            <summary>
+            The action type to preform
+            </summary>
+        </member>
+        <member name="M:ValueConstraints.Interfaces.BaseValues.IControl`2.Copy(ValueConstraints.Interfaces.BaseValues.IControl{`0})">
+            <summary>
+            Copies all source values to the current object.
+            <para>Use this method to avoid creating a new object or to resuse this object.</para>
+            </summary>
+            <param name="source">The source object to copy values from.</param>
+        </member>
+        <member name="M:ValueConstraints.Interfaces.BaseValues.IControl`2.DoAction(System.Single)">
+            <summary>
+            Preform selected action
+            </summary>
+            <param name="deltaTime">Time change between updates</param>
+            <returns>Value generated form method call usually the current value.</returns>
+        </member>
+        <member name="T:ValueConstraints.Interfaces.BaseValues.IControl`1">
+            <summary>
+            Defines a controller for the Value classes as floats and integers
+            </summary>
+            <typeparam name="TMain">Type to use</typeparam>
+        </member>
+        <member name="T:ValueConstraints.Interfaces.BaseValues.ILimits`2">
+            <summary>
+            Interface defining a minimum and maximum bounds with a current value scale and delta changes also defines the type of currentTemp
+            </summary>
+            <typeparam name="TMain">Type to use</typeparam>
+            <typeparam name="TTemp">Type to use for the currentTemp variable</typeparam>
+        </member>
+        <member name="P:ValueConstraints.Interfaces.BaseValues.ILimits`2.direction">
+            <summary>
+            Direction of value change
+            </summary>
+        </member>
+        <member name="P:ValueConstraints.Interfaces.BaseValues.ILimits`2.currentTemp">
+            <summary>
+            Temp value to accurate scale interger types
+            </summary>
+        </member>
+        <member name="P:ValueConstraints.Interfaces.BaseValues.ILimits`2.maxDelta">
+            <summary>
+            Max Delta or maximum change per update value accessor
+            </summary>
+        </member>
+        <member name="P:ValueConstraints.Interfaces.BaseValues.ILimits`2.scale">
+            <summary>
+            Scale value accessor
+            </summary>
+        </member>
+        <member name="P:ValueConstraints.Interfaces.BaseValues.ILimits`2.loop">
+            <summary>
+            Preform the action only once or continuously
+            </summary>
+        </member>
+        <member name="M:ValueConstraints.Interfaces.BaseValues.ILimits`2.Prepare">
+            <summary>
+            Prepares the internal variables to be used
+            </summary>
+        </member>
+        <member name="M:ValueConstraints.Interfaces.BaseValues.ILimits`2.Wrap(System.Single)">
+            <summary>
+            Wraps the current value between minimum and maximum
+            </summary>
+            <param name="deltaTime">Time change between updates</param>
+            <returns>Current value after wrap update</returns>
+        </member>
+        <member name="M:ValueConstraints.Interfaces.BaseValues.ILimits`2.PingPong(System.Single)">
+            <summary>
+            Ping pongs the current value between minimum and maximum
+            </summary>
+            <param name="deltaTime">Time change between updates</param>
+            <returns>Current value after ping pong update</returns>
+        </member>
+        <member name="M:ValueConstraints.Interfaces.BaseValues.ILimits`2.Copy(ValueConstraints.Interfaces.BaseValues.ILimits{`0})">
+            <summary>
+            Copies all source values to the current object.
+            <para>Use this method to avoid creating a new object or to reuse this object.</para>
+            </summary>
+            <param name="source">The source object to copy values from.</param>
+        </member>
+        <member name="T:ValueConstraints.Interfaces.BaseValues.ILimits`1">
+            <summary>
+            Interface defining a minimum and maximum bounds with a current value scale and delta changes
+            </summary>
+            <typeparam name="TMain">Type to use</typeparam>
+        </member>
+        <member name="T:ValueConstraints.Interfaces.BaseValues.IDigit`1">
+            <summary>
+            Interface defining a minimum and maximum bounds with a current value
+            </summary>
+            <typeparam name="TMain">Type to use</typeparam>
+        </member>
+        <member name="P:ValueConstraints.Interfaces.BaseValues.IDigit`1.current">
+            <summary>
+            Current value accessor
+            </summary>
+        </member>
+        <member name="P:ValueConstraints.Interfaces.BaseValues.IDigit`1.RandomCurrent">
+            <summary>
+            Should return and set current to a random value between the minimum and maximum range.
+            <para>Overide in derived classes to provide useful functionality.</para>
+            </summary>
+        </member>
+        <member name="M:ValueConstraints.Interfaces.BaseValues.IDigit`1.Clamp">
+            <summary>
+            Clamps the current value between minimum and maximum
+            </summary>
+        </member>
+        <member name="M:ValueConstraints.Interfaces.BaseValues.IDigit`1.Flip">
+            <summary>
+            Flips the current value from minimum and maximum and vice-versa
+            </summary>
+        </member>
+        <member name="M:ValueConstraints.Interfaces.BaseValues.IDigit`1.Copy(ValueConstraints.Interfaces.BaseValues.IDigit{`0})">
+            <summary>
+            Copies all source values to the current object.
+            <para>Use this method to avoid creating a new object or to reuse this object.</para>
+            </summary>
+            <param name="source">The source object to copy values from.</param>
+        </member>
+        <member name="T:ValueConstraints.Interfaces.BaseValues.IBounds`1">
+            <summary>
+            Interface defining a minimum and maximum bounds
+            </summary>
+            <typeparam name="TMain">Type to use</typeparam>
+        </member>
+        <member name="P:ValueConstraints.Interfaces.BaseValues.IBounds`1.minimumLimit">
+            <summary>
+            Minimum Limit value accessor
+            </summary>
+        </member>
+        <member name="P:ValueConstraints.Interfaces.BaseValues.IBounds`1.maximumLimit">
+            <summary>
+            Minimum Limit value accessor
+            </summary>
+        </member>
+        <member name="P:ValueConstraints.Interfaces.BaseValues.IBounds`1.minimum">
+            <summary>
+            Minimum value accessor
+            </summary>
+        </member>
+        <member name="P:ValueConstraints.Interfaces.BaseValues.IBounds`1.maximum">
+            <summary>
+            Minimum value accessor
+            </summary>
+        </member>
+        <member name="P:ValueConstraints.Interfaces.BaseValues.IBounds`1.RandomValue">
+            <summary>
+            Should return a random value between the minimum and maximum range.
+            <para>Overide in derived classes to provide useful functionailty.</para>
+            </summary>
+        </member>
+        <member name="P:ValueConstraints.Interfaces.BaseValues.IBounds`1.Length">
+            <summary>
+            Should return length between the minimum and maximum range.
+            <para>Overide in derived classes to provide useful functionailty.</para>
+            </summary>
+        </member>
+        <member name="M:ValueConstraints.Interfaces.BaseValues.IBounds`1.Copy(ValueConstraints.Interfaces.BaseValues.IBounds{`0})">
+            <summary>
+            Copies all source values to the current object.
+            <para>Use this methos to avoid creating a new object or to resuse this object.</para>
+            </summary>
+            <param name="source">The source object to copy values from.</param>
+        </member>
+        <member name="T:ValueConstraints.Interfaces.IValueRotator">
+            <summary>
+            Common interface defining a value rotator
+            </summary>
+        </member>
+        <member name="P:ValueConstraints.Interfaces.IValueRotator.alignToParent">
+            <summary>
+            Locks the local rotation to the parent rotation
+            <para>Used when localEulerAngles are used and there is a parent transform</para>
+            </summary>
+        </member>
+        <member name="P:ValueConstraints.Interfaces.IValueRotator.X">
+            <summary>
+            Rotator for x axis
+            </summary>
+        </member>
+        <member name="P:ValueConstraints.Interfaces.IValueRotator.Y">
+            <summary>
+            Rotator for y axis
+            </summary>
+        </member>
+        <member name="P:ValueConstraints.Interfaces.IValueRotator.Z">
+            <summary>
+            Rotator for z axis
+            </summary>
+        </member>
+        <member name="P:ValueConstraints.Interfaces.IValueRotator.radius">
+            <summary>
+            Draw radius for rotator disk
+            </summary>
+        </member>
+        <member name="P:ValueConstraints.Interfaces.IValueRotator.resolution">
+            <summary>
+            Draw resolution for rotator path trace
+            </summary>
+        </member>
+        <member name="T:ValueConstraints.Interfaces.IValuePosition">
+            <summary>
+            Defines an interface for the Value classes as Vector value actions with position handles
+            </summary>
+        </member>
+        <member name="P:ValueConstraints.Interfaces.IValuePosition.lockTransform">
+            <summary>
+            Locking the transform allows for independent minimum and maximum Vectors adjustment
+            </summary>
+        </member>
+        <member name="P:ValueConstraints.Interfaces.IValuePosition.moveHandleType">
+            <summary>
+            Which scene view modification handle to use.
+            </summary>
+        </member>
+        <member name="M:ValueConstraints.Interfaces.IValuePosition.Copy(ValueConstraints.Interfaces.IValuePosition)">
+            <summary>
+            Copies all source values to the current object.
+            <para>Use this method to avoid creating a new object or to resuse this object.</para>
+            </summary>
+            <param name="source">The source object to copy values from.</param>
+        </member>
+        <member name="M:ValueConstraints.Interfaces.IValuePosition.DoAction(UnityEngine.Vector3@,System.Single)">
+            <summary>
+            Perform selected action using Vector Lerp
+            </summary>
+            <param name="position">The position to modify properties.</param>
+            <param name="deltaTime">Time change between updates.</param>
+            <returns>Value generated from method call usually the current value.</returns>
+        </member>
+        <member name="T:ValueConstraints.Interfaces.IValueWaypoint">
+            <summary>
+            Defines an interface for the Value classes as Waypoint value actions
+            </summary>
+        </member>
+        <member name="P:ValueConstraints.Interfaces.IValueWaypoint.currentIndex">
+            <summary>
+            Current waypoint index depends on direction and scale
+            </summary>
+        </member>
+        <member name="P:ValueConstraints.Interfaces.IValueWaypoint.minIndex">
+            <summary>
+            Minimum vector index depends on direction and scale
+            </summary>
+        </member>
+        <member name="P:ValueConstraints.Interfaces.IValueWaypoint.maxIndex">
+            <summary>
+            Maximum vector index depends on direction and scale
+            </summary>
+        </member>
+        <member name="P:ValueConstraints.Interfaces.IValueWaypoint.selectionType">
+            <summary>
+            Amount of nodes to select for modification
+            </summary>
+        </member>
+        <member name="P:ValueConstraints.Interfaces.IValueWaypoint.nodes">
+            <summary>
+            Nodes to move through
+            </summary>
+        </member>
+        <member name="M:ValueConstraints.Interfaces.IValueWaypoint.Copy(ValueConstraints.Interfaces.IValueWaypoint)">
+            <summary>
+            Copies all source values to the current object.
+            <para>Use this method to avoid creating a new object or to resuse this object.</para>
+            </summary>
+            <param name="source">The source object to copy values from.</param>
+        </member>
+        <member name="T:ValueConstraints.Interfaces.IValueVector">
+            <summary>
+            Defines an interface for the Value classes as Vector value actions
+            </summary>
+        </member>
+        <member name="P:ValueConstraints.Interfaces.IValueVector.minVec">
+            <summary>
+            Minimum vector limit
+            </summary>
+        </member>
+        <member name="P:ValueConstraints.Interfaces.IValueVector.maxVec">
+            <summary>
+            Maximum vector limit
+            </summary>
+        </member>
+        <member name="T:ValueConstraints.Interfaces.IValueControl">
+            <summary>
+            Defines a controller for the Value classes as floats and integers
+            </summary>
+        </member>
+        <member name="M:ValueConstraints.Interfaces.IValueControl.Copy(ValueConstraints.Interfaces.IValueControl)">
+            <summary>
+            Copies all source values to the current object.
+            <para>Use this method to avoid creating a new object or to resuse this object.</para>
+            </summary>
+            <param name="source">The source object to copy values from.</param>
+        </member>
+        <member name="T:ValueConstraints.Interfaces.IValueSingle">
+            <summary>
+            Defines a minimum and maximum bounds with a current value scale and delta changes as floats and integers
+            </summary>
+        </member>
+        <member name="E:ValueConstraints.Interfaces.IValueSingle.onClamp">
+            <summary>
+            Invoked when Clamp is called at the min and max limit
+            </summary>
+        </member>
+        <member name="M:ValueConstraints.Interfaces.IValueSingle.FlipDirection">
+            <summary>
+            Flips the direction value from -1 and 1 and vice-versa
+            </summary>
+        </member>
+        <member name="M:ValueConstraints.Interfaces.IValueSingle.Copy(ValueConstraints.Interfaces.IValueSingle)">
+            <summary>
+            Copies all source values to the current object.
+            <para>Use this method to avoid creating a new object or to reuse this object.</para>
+            </summary>
+            <param name="source">The source object to copy values from.</param>
+        </member>
+        <member name="T:ValueConstraints.Interfaces.IValueLimits">
+            <summary>
+            Common interface defining a minimum and maximum bounds with a current value scale and delta changes
+            </summary>
+        </member>
+        <member name="M:ValueConstraints.Interfaces.IValueLimits.Copy(ValueConstraints.Interfaces.IValueLimits)">
+            <summary>
+            Copies all source values to the current object.
+            <para>Use this method to avoid creating a new object or to resuse this object.</para>
+            </summary>
+            <param name="source">The source object to copy values from.</param>
+        </member>
+        <member name="T:ValueConstraints.Interfaces.IValueLimits`1">
+            <summary>
+            Interface defining a minimum and maximum bounds with a current value scale and delta changes
+            </summary>
+            <typeparam name="TMain">Comparable type to use</typeparam>
+        </member>
+        <member name="M:ValueConstraints.Interfaces.IValueLimits`1.Copy(ValueConstraints.Interfaces.IValueLimits{`0})">
+            <summary>
+            Copies all source values to the current object.
+            <para>Use this method to avoid creating a new object or to reuse this object.</para>
+            </summary>
+            <param name="source">The source object to copy values from.</param>
+        </member>
+        <member name="T:ValueConstraints.Interfaces.IValueDigit">
+            <summary>
+            Common interface defining a minimum and maximum bounds with a current value
+            </summary>
+        </member>
+        <member name="M:ValueConstraints.Interfaces.IValueDigit.Copy(ValueConstraints.Interfaces.IValueDigit)">
+            <summary>
+            Copies all source values to the current object.
+            <para>Use this method to avoid creating a new object or to reuse this object.</para>
+            </summary>
+            <param name="source">The source object to copy values from.</param>
+        </member>
+        <member name="T:ValueConstraints.Interfaces.IValueDigit`1">
+            <summary>
+            Interface defining a minimum and maximum bounds with a current value
+            </summary>
+            <typeparam name="TMain">Comparable type to use</typeparam>
+        </member>
+        <member name="M:ValueConstraints.Interfaces.IValueDigit`1.Copy(ValueConstraints.Interfaces.IValueDigit{`0})">
+            <summary>
+            Copies all source values to the current object.
+            <para>Use this method to avoid creating a new object or to reuse this object.</para>
+            </summary>
+            <param name="source">The source object to copy values from.</param>
+        </member>
+        <member name="T:ValueConstraints.Interfaces.IValueBounds">
+            <summary>
+            Common interface defining a minimum and maximum bounds
+            </summary>
+        </member>
+        <member name="M:ValueConstraints.Interfaces.IValueBounds.Copy(ValueConstraints.Interfaces.IValueBounds)">
+            <summary>
+            Copies all source values to the current object.
+            <para>Use this methos to avoid creating a new object or to resuse this object.</para>
+            </summary>
+            <param name="source">The source object to copy values from.</param>
+        </member>
+        <member name="T:ValueConstraints.Interfaces.IValueBounds`1">
+            <summary>
+            Interface defining a minimum and maximum bounds
+            </summary>
+            <typeparam name="TMain">Comparable type to use</typeparam>
+        </member>
+        <member name="M:ValueConstraints.Interfaces.IValueBounds`1.Copy(ValueConstraints.Interfaces.IValueBounds{`0})">
+            <summary>
+            Copies all source values to the current object.
+            <para>Use this methos to avoid creating a new object or to resuse this object.</para>
+            </summary>
+            <param name="source">The source object to copy values from.</param>
+        </member>
+        <member name="T:ValueConstraints.Utils.ValueRotatorUtils">
+            <summary>
+            Utility variables and methods for Value Rotator
+            </summary>
+        </member>
+        <member name="F:ValueConstraints.Utils.ValueRotatorUtils.MemberNames">
+            <summary>
+            Sets the allowed member names
+            </summary>
+        </member>
+        <member name="M:ValueConstraints.Utils.ValueRotatorUtils.UseAlign(UnityEngine.Object)">
+            <summary>
+            Return true if both conditions are met:
+            <para>Used when localEulerAngles is used and alignToParent is set to true</para>
+            </summary>
+            <param name="target">Target to check for rotator value</param>
+            <returns>Return true if both conditions are met</returns>
+        </member>
+        <member name="M:ValueConstraints.Utils.ValueRotatorUtils.UsingLocalEulerAngles(UnityEngine.Object)">
+            <summary>
+            Return true when localEulerAngles is used
+            </summary>
+            <param name="target">Target to check for rotator value</param>
+            <returns>Return true when localEulerAngles is used</returns>
+        </member>
+        <member name="T:ValueConstraints.Utils.ValueWaypointUtils">
+            <summary>
+            Utility variables and methods for Value Waypoint
+            </summary>
+        </member>
+        <member name="M:ValueConstraints.Utils.ValueWaypointUtils.AddNode(ValueConstraints.Interfaces.IValueWaypoint,UnityEngine.Vector3)">
+            <summary>
+            Adds a position to waypoint node list
+            </summary>
+            <param name="valueWaypoint">Interface to add node position</param>
+            <param name="position">Position to add to node list</param>
+        </member>
+        <member name="M:ValueConstraints.Utils.ValueWaypointUtils.SetVecsToNode(ValueConstraints.Interfaces.IValueWaypoint)">
+            <summary>
+            Sets the Min and Max Vectors to the shifted Min Max node index
+            </summary>
+            <param name="valueWaypoint">Interface to set min max vec to node position</param>
+        </member>
+        <member name="T:ValueConstraints.Utils.ValueVectorUtils">
+            <summary>
+            Utility variables and methods for Value Vectors
+            </summary>
+        </member>
+        <member name="F:ValueConstraints.Utils.ValueVectorUtils.TOOLTIP_LOCK_TRANSFORM">
+            <summary>
+            Lock transform explanation
+            </summary>
+        </member>
+        <member name="M:ValueConstraints.Utils.CompareUtils.Wrap``1(ValueConstraints.Interfaces.BaseValues.ILimits{``0},System.Single)">
+            <summary>
+            Wraps the current value between minimum and maximum
+            </summary>
+        </member>
+        <member name="M:ValueConstraints.Utils.CompareUtils.PingPong``1(ValueConstraints.Interfaces.BaseValues.ILimits{``0},System.Single)">
+            <summary>
+            Ping pongs the current value between minimum and maximum
+            </summary>
+        </member>
+        <member name="T:ValueConstraints.ValueVectorAttribute">
+            <summary>
+            Defines drawer for ValueVector with a min and max vector values
+            </summary>
+        </member>
+        <member name="M:ValueConstraints.ValueVectorAttribute.#ctor">
+            <summary>
+            Constructor for defines drawer for ValueVector with a min and max vector values
+            </summary>
+        </member>
+        <member name="T:ValueConstraints.ValueSingleAttribute">
+            <summary>
+            Defines drawer for ValueDigit with a scale value
+            <para>NOTE: 'Single' is the type interface a float values.</para>
+            </summary>
+        </member>
+        <member name="F:ValueConstraints.ValueSingleAttribute.minimumScaleLimit">
+            <summary>
+            Minimum scale bounds
+            </summary>
+        </member>
+        <member name="F:ValueConstraints.ValueSingleAttribute.maximumScaleLimit">
+            <summary>
+            Maximum scale bounds
+            </summary>
+        </member>
+        <member name="M:ValueConstraints.ValueSingleAttribute.#ctor(System.Single,System.Single,System.Boolean)">
+            <summary>
+            Constructor to set maximum and show label and scale
+            </summary>
+            <param name="minimumScaleLimit">Minimum scale bounds</param>
+            <param name="maximumScaleLimit">Maximum scale bounds</param>
+            <param name="useBoundsLabel">Show or hide the bounds field name</param>
+        </member>
+        <member name="M:ValueConstraints.ValueSingleAttribute.#ctor(System.String,System.String,System.Single,System.Single,System.Boolean)">
+            <summary>
+            Constructor to set maximum and show label and tooltip and scale
+            </summary>
+            <param name="title">Title of property</param>
+            <param name="tooltip">Tooltip of the label</param>
+            <param name="minimumScaleLimit">Minimum scale bounds</param>
+            <param name="maximumScaleLimit">Maximum scale bounds</param>
+            <param name="useBoundsLabel">Show or hide the bounds field name</param>
+        </member>
+        <member name="M:ValueConstraints.ValueSingleAttribute.#ctor(System.String,System.Single,System.Single,System.Boolean)">
+            <summary>
+            Constructor to set maximum and show label and tooltip and scale
+            <para>Minimum defaults to zero</para>
+            </summary>
+            <param name="title">Title of property</param>
+            <param name="minimumScaleLimit">Minimum scale bounds</param>
+            <param name="maximumScaleLimit">Maximum scale bounds</param>
+            <param name="useBoundsLabel">Show or hide the bounds field name</param>
+        </member>
+        <member name="T:ValueConstraints.ValueDigitAttribute">
+            <summary>
+            Defines the drawer to draw  the current value portion of the ValueDigit
+            </summary>
+        </member>
+        <member name="F:ValueConstraints.ValueDigitAttribute.title">
+            <summary>
+            Title of the label
+            <para>NOTE: 'Current' will be used if none provided.</para>
+            </summary>
+        </member>
+        <member name="F:ValueConstraints.ValueDigitAttribute.tooltip">
+            <summary>
+            Tooltip of the label
+            <para>NOTE: A default will be used if none provided.</para>
+            </summary>
+        </member>
+        <member name="M:ValueConstraints.ValueDigitAttribute.#ctor(System.Boolean)">
+            <summary>
+            Constructor to set show label
+            </summary>
+            <param name="useBoundsLabel">Show or hide the bounds field name</param>
+        </member>
+        <member name="M:ValueConstraints.ValueDigitAttribute.#ctor(System.String,System.String,System.Boolean)">
+            <summary>
+            Constructor to set show label and tooltip
+            </summary>
+            <param name="title">Title of property</param>
+            <param name="tooltip">Tooltip of the label</param>
+            <param name="useBoundsLabel">Show or hide the bounds field name</param>
+        </member>
+        <member name="M:ValueConstraints.ValueDigitAttribute.#ctor(System.String,System.Boolean)">
+            <summary>
+            Constructor to set show label and tooltip
+            </summary>
+            <param name="title">Title of property</param>
+            <param name="useBoundsLabel">Show or hide the bounds field name</param>
+        </member>
+        <member name="T:ValueConstraints.ValueControlAttribute">
+            <summary>
+            Defines a drawer that controls the Value classes
+            </summary>
+        </member>
+        <member name="M:ValueConstraints.ValueControlAttribute.#ctor(System.Single,System.Single,System.Boolean)">
+            <summary>
+            Constructor to set maximum and show label and scale
+            </summary>
+            <param name="minimumScaleLimit">Minimum scale bounds</param>
+            <param name="maximumScaleLimit">Maximum scale bounds</param>
+            <param name="useBoundsLabel">Show or hide the bounds field name</param>
+        </member>
+        <member name="M:ValueConstraints.ValueControlAttribute.#ctor(System.String,System.String,System.Single,System.Single,System.Boolean)">
+            <summary>
+            Constructor to set maximum and show label and tooltip and scale
+            </summary>
+            <param name="title">Title of property</param>
+            <param name="tooltip">Tooltip of the label</param>
+            <param name="minimumScaleLimit">Minimum scale bounds</param>
+            <param name="maximumScaleLimit">Maximum scale bounds</param>
+            <param name="useBoundsLabel">Show or hide the bounds field name</param>
+        </member>
+        <member name="T:ValueConstraints.ValueBoundsAttribute">
+            <summary>
+            Defines a minimum and maximum bounds
+            </summary>
+        </member>
+        <member name="F:ValueConstraints.ValueBoundsAttribute.useLabel">
+            <summary>
+            Show or hide the label
+            <para>NOTE: Control uses the enitre Inspector to show properly</para>
+            </summary>
+        </member>
+        <member name="M:ValueConstraints.ValueBoundsAttribute.#ctor(System.Boolean)">
+            <summary>
+            Constructor to set show label
+            </summary>
+            <param name="useLabel">Show or hide the field name</param>
+        </member>
+        <member name="M:ValueConstraints.ValueBoundsAttribute.#ctor">
+            <summary>
+            Constructor to set show label
+            </summary>
+        </member>
+        <member name="T:ValueConstraints.ValueConstraintsSettings">
+            <summary>
+            Setting required to manage pools
+            </summary>
+        </member>
+        <member name="P:ValueConstraints.ValueConstraintsSettings.Instance">
+            <summary>
+            Access to single instance class
+            </summary>
+        </member>
+        <member name="M:ValueConstraints.ValueConstraintsSettings.GetTryIt">
+            <summary>
+            Is this version the free Try It version
+            </summary>
+            <returns>True if this is the Try It version</returns>
+        </member>
+        <member name="M:ValueConstraints.ValueConstraintsSettings.GetInEditor">
+            <summary>
+            The project is running in the Unity Editor
+            </summary>
+            <returns>rue if this is the application is running in the Unity Editor</returns>
+        </member>
+        <member name="M:ValueConstraints.ValueConstraintsSettings.DoTryIt(System.Action)">
+            <summary>
+            Allows action to be invoked depending on is try it version
+            </summary>
+            <param name="action">The action to preform.  ie The main action to disable the functionality</param>
+        </member>
+        <member name="T:ValueConstraints.ValueBoundsInt">
+            <summary>
+            Defines a minimum and maximum bounds as integers
+            </summary>
+        </member>
+        <member name="F:ValueConstraints.ValueBoundsInt.Empty">
+            <summary>
+            Defines an empty or blank value
+            </summary>
+        </member>
+        <member name="F:ValueConstraints.ValueBoundsInt.m_MinimumLimit">
+            <summary>
+            Minimum Limit value
+            </summary>
+        </member>
+        <member name="F:ValueConstraints.ValueBoundsInt.m_MaximumLimit">
+            <summary>
+            Minimum Limit value
+            </summary>
+        </member>
+        <member name="F:ValueConstraints.ValueBoundsInt.m_Minimum">
+            <summary>
+            Minimum value
+            </summary>
+        </member>
+        <member name="F:ValueConstraints.ValueBoundsInt.m_Maximum">
+            <summary>
+            Minimum value
+            </summary>
+        </member>
+        <member name="P:ValueConstraints.ValueBoundsInt.minimumLimit">
+            <summary>
+            Minimum Limit value accessor
+            </summary>
+        </member>
+        <member name="P:ValueConstraints.ValueBoundsInt.maximumLimit">
+            <summary>
+            Maximum Limit value accessor
+            </summary>
+        </member>
+        <member name="P:ValueConstraints.ValueBoundsInt.minimum">
+            <summary>
+            Minimum value accessor
+            </summary>
+        </member>
+        <member name="P:ValueConstraints.ValueBoundsInt.maximum">
+            <summary>
+            Minimum value accessor
+            </summary>
+        </member>
+        <member name="P:ValueConstraints.ValueBoundsInt.RandomValue">
+            <summary>
+            Returns a random value between the minimum and maximum range.
+            </summary>
+        </member>
+        <member name="P:ValueConstraints.ValueBoundsInt.Length">
+            <summary>
+            Returns length between the minimum and maximum range.
+            </summary>
+        </member>
+        <member name="M:ValueConstraints.ValueBoundsInt.#ctor">
+            <summary>
+            Constructor generalLy used for objects that will copy values from another
+            </summary>
+        </member>
+        <member name="M:ValueConstraints.ValueBoundsInt.#ctor(System.Int32,System.Int32)">
+            <summary>
+            Constructor to manually create
+            </summary>
+            <param name="minimum">Minimum value</param>
+            <param name="maximum">Maximum value</param>
+        </member>
+        <member name="M:ValueConstraints.ValueBoundsInt.Set(System.Single,System.Single)">
+            <summary>
+            Sets local variables to values passed in
+            </summary>
+            <param name="minimum">Minimum value</param>
+            <param name="maximum">Maximum value</param>
+        </member>
+        <member name="M:ValueConstraints.ValueBoundsInt.Set(System.Int32,System.Int32)">
+            <summary>
+            Sets local variables to values passed in
+            </summary>
+            <param name="minimum">Minimum value</param>
+            <param name="maximum">Maximum value</param>
+        </member>
+        <member name="M:ValueConstraints.ValueBoundsInt.Set(ValueConstraints.Interfaces.BaseValues.IBounds{System.Int32})">
+            <summary>
+            Sets local variables to values passed in
+            </summary>
+            <param name="source">Source to copy values from</param>
+        </member>
+        <member name="M:ValueConstraints.ValueBoundsInt.Set(ValueConstraints.Interfaces.BaseValues.IBounds{System.Single})">
+            <summary>
+            Sets local variables to values passed in
+            </summary>
+            <param name="source">Source to copy values from</param>
+        </member>
+        <member name="M:ValueConstraints.ValueBoundsInt.Copy(ValueConstraints.Interfaces.IValueBounds)">
+            <summary>
+            Copies all source values to the current object.
+            <para>Use this method to avoid creating a new object or to reuse this object.</para>
+            <para>WARNING: float to int is a loss of data may apply to this method.</para>
+            </summary>
+            <param name="source">The source object to copy values from.</param>
+        </member>
+        <member name="M:ValueConstraints.ValueBoundsInt.Copy(ValueConstraints.Interfaces.IValueBounds{System.Int32})">
+            <summary>
+            Copies all source values to the current object.
+            <para>Use this method to avoid creating a new object or to reuse this object.</para>
+            </summary>
+            <param name="source">The source object to copy values from.</param>
+        </member>
+        <member name="M:ValueConstraints.ValueBoundsInt.Copy(ValueConstraints.Interfaces.IValueBounds{System.Single})">
+            <summary>
+            Copies all source values to the current object.
+            <para>Use this method to avoid creating a new object or to reuse this object.</para>
+            <para>WARNING: float to int is a loss of data may apply to this method.</para>
+            </summary>
+            <param name="source">The source object to copy values from.</param>
+        </member>
+        <member name="M:ValueConstraints.ValueBoundsInt.CompareTo(ValueConstraints.Interfaces.IValueBounds{System.Int32})">
+            <summary>
+            Provides implementation to order or sort its instances.
+            </summary>
+            <param name="other">Other instance of IValueBounds.</param>
+            <returns>Whether the position of the current instance in the sort order is before, after, or the same as the other</returns>
+        </member>
+        <member name="M:ValueConstraints.ValueBoundsInt.CompareTo(ValueConstraints.ValueBoundsInt)">
+            <summary>
+            Provides implementation to order or sort its instances.
+            </summary>
+            <param name="other">Other instance of ValueBoundsInt.</param>
+            <returns>Whether the position of the current instance in the sort order is before, after, or the same as the other</returns>
+        </member>
+        <member name="M:ValueConstraints.ValueBoundsInt.CompareTo(ValueConstraints.Interfaces.IValueBounds)">
+            <summary>
+            Provides implementation to order or sort its instances.
+            </summary>
+            <param name="other">Other instance of ValueBoundsInt.</param>
+            <returns>Whether the position of the current instance in the sort order is before, after, or the same as the other</returns>
+        </member>
+        <member name="M:ValueConstraints.ValueBoundsInt.CompareTo(ValueConstraints.Interfaces.IValueBounds{System.Single})">
+            <summary>
+            Provides implementation to order or sort its instances.
+            </summary>
+            <param name="other">Other instance of IValueBounds float</param>
+            <returns>Whether the position of the current instance in the sort order is before, after, or the same as the other</returns>
+        </member>
+        <member name="T:ValueConstraints.ValueBoundsFloat">
+            <summary>
+            Defines a minimum and maximum bounds as float values
+            </summary>
+        </member>
+        <member name="F:ValueConstraints.ValueBoundsFloat.Empty">
+            <summary>
+            Defines an empty or blank value
+            </summary>
+        </member>
+        <member name="F:ValueConstraints.ValueBoundsFloat.m_MinimumLimit">
+            <summary>
+            Minimum Limit value
+            </summary>
+        </member>
+        <member name="F:ValueConstraints.ValueBoundsFloat.m_MaximumLimit">
+            <summary>
+            Minimum Limit value
+            </summary>
+        </member>
+        <member name="F:ValueConstraints.ValueBoundsFloat.m_Minimum">
+            <summary>
+            Minimum value
+            </summary>
+        </member>
+        <member name="F:ValueConstraints.ValueBoundsFloat.m_Maximum">
+            <summary>
+            Minimum value
+            </summary>
+        </member>
+        <member name="P:ValueConstraints.ValueBoundsFloat.minimumLimit">
+            <summary>
+            Minimum Limit value accessor
+            </summary>
+        </member>
+        <member name="P:ValueConstraints.ValueBoundsFloat.maximumLimit">
+            <summary>
+            Maximum Limit value accessor
+            </summary>
+        </member>
+        <member name="P:ValueConstraints.ValueBoundsFloat.minimum">
+            <summary>
+            Minimum value accessor
+            </summary>
+        </member>
+        <member name="P:ValueConstraints.ValueBoundsFloat.maximum">
+            <summary>
+            Maximum value accessor
+            </summary>
+        </member>
+        <member name="P:ValueConstraints.ValueBoundsFloat.RandomValue">
+            <summary>
+            Returns a random value between the minimum and maximum range.
+            </summary>
+        </member>
+        <member name="P:ValueConstraints.ValueBoundsFloat.Length">
+            <summary>
+            Returns length between the minimum and maximum range.
+            </summary>
+        </member>
+        <member name="M:ValueConstraints.ValueBoundsFloat.#ctor">
+            <summary>
+            Constructor generally used for objects that will copy values from another
+            </summary>
+        </member>
+        <member name="M:ValueConstraints.ValueBoundsFloat.#ctor(System.Single,System.Single)">
+            <summary>
+            Constructor to manually create
+            </summary>
+            <param name="minimum">Minimum value</param>
+            <param name="maximum">Maximum value</param>
+        </member>
+        <member name="M:ValueConstraints.ValueBoundsFloat.Set(System.Single,System.Single)">
+            <summary>
+            Sets local variables to values passed in
+            </summary>
+            <param name="minimum">Minimum value</param>
+            <param name="maximum">Maximum value</param>
+        </member>
+        <member name="M:ValueConstraints.ValueBoundsFloat.Set(System.Int32,System.Int32)">
+            <summary>
+            Sets local variables to values passed in
+            </summary>
+            <param name="minimum">Minimum value</param>
+            <param name="maximum">Maximum value</param>
+        </member>
+        <member name="M:ValueConstraints.ValueBoundsFloat.Set(ValueConstraints.Interfaces.BaseValues.IBounds{System.Int32})">
+            <summary>
+            Sets local variables to values passed in
+            </summary>
+            <param name="source">Source to copy values from</param>
+        </member>
+        <member name="M:ValueConstraints.ValueBoundsFloat.Set(ValueConstraints.Interfaces.BaseValues.IBounds{System.Single})">
+            <summary>
+            Sets local variables to values passed in
+            </summary>
+            <param name="source">Source to copy values from</param>
+        </member>
+        <member name="M:ValueConstraints.ValueBoundsFloat.Copy(ValueConstraints.Interfaces.IValueBounds)">
+            <summary>
+            Copies all source values to the current object.
+            <para>Use this method to avoid creating a new object or to reuse this object.</para>
+            </summary>
+            <param name="source">The source object to copy values from.</param>
+        </member>
+        <member name="M:ValueConstraints.ValueBoundsFloat.Copy(ValueConstraints.Interfaces.IValueBounds{System.Single})">
+            <summary>
+            Copies all source values to the current object.
+            <para>Use this method to avoid creating a new object or to reuse this object.</para>
+            </summary>
+            <param name="source">The source object to copy values from.</param>
+        </member>
+        <member name="M:ValueConstraints.ValueBoundsFloat.Copy(ValueConstraints.Interfaces.IValueBounds{System.Int32})">
+            <summary>
+            Copies all source values to the current object.
+            <para>Use this method to avoid creating a new object or to reuse this object.</para>
+            </summary>
+            <param name="source">The source object to copy values from.</param>
+        </member>
+        <member name="M:ValueConstraints.ValueBoundsFloat.CompareTo(ValueConstraints.Interfaces.IValueBounds{System.Single})">
+            <summary>
+            Provides implementation to order or sort its instances.
+            </summary>
+            <param name="other">Other instance of IValueBounds.</param>
+            <returns>Whether the position of the current instance in the sort order is before, after, or the same as the other</returns>
+        </member>
+        <member name="M:ValueConstraints.ValueBoundsFloat.CompareTo(ValueConstraints.ValueBoundsFloat)">
+            <summary>
+            Provides implementation to order or sort its instances.
+            </summary>
+            <param name="other">Other instance of ValueBoundsFloat.</param>
+            <returns>Whether the position of the current instance in the sort order is before, after, or the same as the other</returns>
+        </member>
+        <member name="M:ValueConstraints.ValueBoundsFloat.CompareTo(ValueConstraints.Interfaces.IValueBounds)">
+            <summary>
+            Provides implementation to order or sort its instances.
+            </summary>
+            <param name="other">Other instance of IValueBounds.</param>
+            <returns>Whether the position of the current instance in the sort order is before, after, or the same as the other</returns>
+        </member>
+        <member name="T:ValueConstraints.ValueDigitFloat">
+            <summary>
+            Defines a minimum and maximum bounds with a current value as float values
+            </summary>
+        </member>
+        <member name="F:ValueConstraints.ValueDigitFloat.Empty">
+            <summary>
+            Defines an empty or blank value
+            </summary>
+        </member>
+        <member name="F:ValueConstraints.ValueDigitFloat.m_Current">
+            <summary>
+            Current value
+            </summary>
+        </member>
+        <member name="P:ValueConstraints.ValueDigitFloat.current">
+            <summary>
+            Current value accessor
+            </summary>
+        </member>
+        <member name="P:ValueConstraints.ValueDigitFloat.RandomCurrent">
+            <summary>
+            Return and set current to a random value between the minimum and maximum range.
+            </summary>
+        </member>
+        <member name="M:ValueConstraints.ValueDigitFloat.#ctor">
+            <summary>
+            Constructor generalLy used for objects that will copy values from another
+            </summary>
+        </member>
+        <member name="M:ValueConstraints.ValueDigitFloat.#ctor(System.Single,System.Single,System.Single)">
+            <summary>
+            Constructor to manually create
+            </summary>
+            <param name="minimum">Minimum value</param>
+            <param name="maximum">Maximum value</param>
+            <param name="current">Current value</param>
+        </member>
+        <member name="M:ValueConstraints.ValueDigitFloat.Set(System.Int32)">
+            <summary>
+            Sets the underlying variables to source
+            </summary>
+            <param name="current">Current value</param>
+        </member>
+        <member name="M:ValueConstraints.ValueDigitFloat.Set(System.Single)">
+            <summary>
+            Sets the underlying variables to source
+            </summary>
+            <param name="current">Current value</param>
+        </member>
+        <member name="M:ValueConstraints.ValueDigitFloat.Set(ValueConstraints.Interfaces.BaseValues.IDigit{System.Int32})">
+            <summary>
+            Sets local variables to values passed in
+            </summary>
+            <param name="source">Source to copy values from</param>
+        </member>
+        <member name="M:ValueConstraints.ValueDigitFloat.Set(ValueConstraints.Interfaces.BaseValues.IDigit{System.Single})">
+            <summary>
+            Sets local variables to values passed in
+            </summary>
+            <param name="source">Source to copy values from</param>
+        </member>
+        <member name="M:ValueConstraints.ValueDigitFloat.Copy(ValueConstraints.Interfaces.IValueDigit)">
+            <summary>
+            Copies all source values to the current object.
+            <para>Use this method to avoid creating a new object or to reuse this object.</para>
+            </summary>
+            <param name="source">The source object to copy values from.</param>
+        </member>
+        <member name="M:ValueConstraints.ValueDigitFloat.Copy(ValueConstraints.Interfaces.IValueDigit{System.Single})">
+            <summary>
+            Copies all source values to the current object.
+            <para>Use this method to avoid creating a new object or to reuse this object.</para>
+            </summary>
+            <param name="source">The source object to copy values from.</param>
+        </member>
+        <member name="M:ValueConstraints.ValueDigitFloat.Clamp">
+            <summary>
+            Clamps the current value between minimum and maximum
+            </summary>
+        </member>
+        <member name="M:ValueConstraints.ValueDigitFloat.Flip">
+            <summary>
+            Flips the current value from minimum and maximum and vice-versa
+            </summary>
+        </member>
+        <member name="M:ValueConstraints.ValueDigitFloat.CompareTo(ValueConstraints.Interfaces.IValueDigit{System.Single})">
+            <summary>
+            Provides implementation to order or sort its instances.
+            </summary>
+            <param name="other">Other instance of IValueDigit.</param>
+            <returns>Whether the position of the current instance in the sort order is before, after, or the same as the other</returns>
+        </member>
+        <member name="M:ValueConstraints.ValueDigitFloat.CompareTo(ValueConstraints.ValueDigitFloat)">
+            <summary>
+            Provides implementation to order or sort its instances.
+            </summary>
+            <param name="other">Other instance of ValueDigitFloat.</param>
+            <returns>Whether the position of the current instance in the sort order is before, after, or the same as the other</returns>
+        </member>
+        <member name="M:ValueConstraints.ValueDigitFloat.CompareTo(ValueConstraints.Interfaces.IValueDigit)">
+            <summary>
+            Provides implementation to order or sort its instances.
+            </summary>
+            <param name="other">Other instance of IValueDigit.</param>
+            <returns>Whether the position of the current instance in the sort order is before, after, or the same as the other</returns>
+        </member>
+        <member name="T:ValueConstraints.ValueDigitInt">
+            <summary>
+            Defines a minimum and maximum bounds with a current value as integers
+            </summary>
+        </member>
+        <member name="F:ValueConstraints.ValueDigitInt.Empty">
+            <summary>
+            Defines an empty or blank value
+            </summary>
+        </member>
+        <member name="F:ValueConstraints.ValueDigitInt.m_Current">
+            <summary>
+            Current value
+            </summary>
+        </member>
+        <member name="P:ValueConstraints.ValueDigitInt.current">
+            <summary>
+            Current value accessor
+            </summary>
+        </member>
+        <member name="P:ValueConstraints.ValueDigitInt.RandomCurrent">
+            <summary>
+            Return and set current to a random value between the minimum and maximum range.
+            </summary>
+        </member>
+        <member name="M:ValueConstraints.ValueDigitInt.#ctor">
+            <summary>
+            Constructor generaly used for objects that will copy values from another
+            </summary>
+        </member>
+        <member name="M:ValueConstraints.ValueDigitInt.#ctor(System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Constructor to manually create
+            </summary>
+            <param name="minimum">Minimum value</param>
+            <param name="maximum">Maximum value</param>
+            <param name="current">Current value</param>
+        </member>
+        <member name="M:ValueConstraints.ValueDigitInt.Set(System.Single)">
+            <summary>
+            Sets local variables to values passed in
+            </summary>
+            <param name="current">Current value</param>
+        </member>
+        <member name="M:ValueConstraints.ValueDigitInt.Set(System.Int32)">
+            <summary>
+            Sets local variables to values passed in
+            </summary>
+            <param name="current">Current value</param>
+        </member>
+        <member name="M:ValueConstraints.ValueDigitInt.Set(ValueConstraints.Interfaces.BaseValues.IDigit{System.Int32})">
+            <summary>
+            Sets local variables to values passed in
+            </summary>
+            <param name="source">Source to copy values from</param>
+        </member>
+        <member name="M:ValueConstraints.ValueDigitInt.Set(ValueConstraints.Interfaces.BaseValues.IDigit{System.Single})">
+            <summary>
+            Sets local variables to values passed in
+            </summary>
+            <param name="source">Source to copy values from</param>
+        </member>
+        <member name="M:ValueConstraints.ValueDigitInt.Copy(ValueConstraints.Interfaces.IValueDigit)">
+            <summary>
+            Copies all source values to the current object.
+            <para>Use this method to avoid creating a new object or to reuse this object.</para>
+            <para>WARNING: float to int is a loss of data may apply to this method.</para>
+            </summary>
+            <param name="source">The source object to copy values from.</param>
+        </member>
+        <member name="M:ValueConstraints.ValueDigitInt.Copy(ValueConstraints.Interfaces.IValueDigit{System.Int32})">
+            <summary>
+            Copies all source values to the current object.
+            <para>Use this method to avoid creating a new object or to reuse this object.</para>
+            </summary>
+            <param name="source">The source object to copy values from.</param>
+        </member>
+        <member name="M:ValueConstraints.ValueDigitInt.Copy(ValueConstraints.Interfaces.IValueDigit{System.Single})">
+            <summary>
+            Copies all source values to the current object.
+            <para>Use this method to avoid creating a new object or to reuse this object.</para>
+            <para>WARNING: float to int is a loss of data may apply to this method.</para>
+            </summary>
+            <param name="source">The source object to copy values from.</param>
+        </member>
+        <member name="M:ValueConstraints.ValueDigitInt.Clamp">
+            <summary>
+            Clamps the current value between minimum and maximum
+            </summary>
+        </member>
+        <member name="M:ValueConstraints.ValueDigitInt.Flip">
+            <summary>
+            Flips the current value from minimum and maximum and vice-versa
+            </summary>
+        </member>
+        <member name="M:ValueConstraints.ValueDigitInt.CompareTo(ValueConstraints.Interfaces.IValueDigit{System.Int32})">
+            <summary>
+            Provides implementation to order or sort its instances.
+            </summary>
+            <param name="other">Other instance of IValueDigit.</param>
+            <returns>Whether the position of the current instance in the sort order is before, after, or the same as the other</returns>
+        </member>
+        <member name="M:ValueConstraints.ValueDigitInt.CompareTo(ValueConstraints.ValueDigitInt)">
+            <summary>
+            Provides implementation to order or sort its instances.
+            </summary>
+            <param name="other">Other instance of ValueDigitInt.</param>
+            <returns>Whether the position of the current instance in the sort order is before, after, or the same as the other</returns>
+        </member>
+        <member name="M:ValueConstraints.ValueDigitInt.CompareTo(ValueConstraints.Interfaces.IValueDigit)">
+            <summary>
+            Provides implementation to order or sort its instances.
+            </summary>
+            <param name="other">Other instance of IValueDigit.</param>
+            <returns>Whether the position of the current instance in the sort order is before, after, or the same as the other</returns>
+        </member>
+        <member name="M:ValueConstraints.ValueDigitInt.CompareTo(ValueConstraints.Interfaces.IValueDigit{System.Single})">
+            <summary>
+            Provides implementation to order or sort its instances.
+            </summary>
+            <param name="other">Other instance of IValueDigit float</param>
+            <returns>Whether the position of the current instance in the sort order is before, after, or the same as the other</returns>
+        </member>
+        <member name="T:ValueConstraints.ValueSingleInt">
+            <summary>
+            Defines a minimum and maximum bounds with a current value scale and delta changes as integers
+            </summary>
+        </member>
+        <member name="F:ValueConstraints.ValueSingleInt.Empty">
+            <summary>
+            Defines an empty or blank value
+            </summary>
+        </member>
+        <member name="E:ValueConstraints.ValueSingleInt.onClamp">
+            <summary>
+            Invoked when Clamp is called at the min and max limit
+            </summary>
+        </member>
+        <member name="P:ValueConstraints.ValueSingleInt.maxDelta">
+            <summary>
+            Max Delta or maximum change per update value accessor
+            </summary>
+        </member>
+        <member name="P:ValueConstraints.ValueSingleInt.scale">
+            <summary>
+            Scale value accessor
+            </summary>
+        </member>
+        <member name="P:ValueConstraints.ValueSingleInt.minimumLimit">
+            <summary>
+            Minimum Limit value accessor
+            </summary>
+        </member>
+        <member name="P:ValueConstraints.ValueSingleInt.maximumLimit">
+            <summary>
+            Maximum Limit value accessor
+            </summary>
+        </member>
+        <member name="P:ValueConstraints.ValueSingleInt.current">
+            <summary>
+            Current value accessor
+            </summary>
+        </member>
+        <member name="P:ValueConstraints.ValueSingleInt.direction">
+            <summary>
+            The direction of change
+            </summary>
+        </member>
+        <member name="P:ValueConstraints.ValueSingleInt.currentTemp">
+            <summary>
+            Temp value to accurate scale integer types
+            </summary>
+        </member>
+        <member name="P:ValueConstraints.ValueSingleInt.loop">
+            <summary>
+            Preform the action only once or continuously
+            </summary>
+        </member>
+        <member name="P:ValueConstraints.ValueSingleInt.RandomCurrent">
+            <summary>
+            Return and set current to a random value between the minimum and maximum range.
+            </summary>
+        </member>
+        <member name="M:ValueConstraints.ValueSingleInt.#ctor">
+            <summary>
+            Constructor generally used for objects that will copy values from another
+            </summary>
+        </member>
+        <member name="M:ValueConstraints.ValueSingleInt.#ctor(System.Int32,System.Int32,System.Int32,System.Int32,System.Single)">
+            <summary>
+            Constructor to manually create
+            </summary>
+            <param name="minimum">Minimum value</param>
+            <param name="maximum">Maximum value</param>
+            <param name="current">Current value</param>
+            <param name="maxDelta">Max Delta or maximum change per update value</param>
+            <param name="scale">Scale value how much to change Max Delta by</param>
+        </member>
+        <member name="M:ValueConstraints.ValueSingleInt.Set(System.Single,System.Int32,System.Single)">
+            <summary>
+            Sets the underlying variables to the source value.
+            </summary>
+            <param name="maxDelta">Max Delta or maximum change per update value</param>
+            <param name="direction">The direction of change</param>
+            <param name="scale">Scale value how much to change Max Delta by</param>
+        </member>
+        <member name="M:ValueConstraints.ValueSingleInt.Set(ValueConstraints.Interfaces.BaseValues.ILimits{System.Int32})">
+            <summary>
+            Sets the underlying variables to the source value.
+            </summary>
+            <param name="source">Source to copy values from</param>
+        </member>
+        <member name="M:ValueConstraints.ValueSingleInt.Set(ValueConstraints.Interfaces.BaseValues.ILimits{System.Single})">
+            <summary>
+            Sets the underlying variables to the source value.
+            </summary>
+            <param name="source">Source to copy values from</param>
+        </member>
+        <member name="M:ValueConstraints.ValueSingleInt.Copy(ValueConstraints.Interfaces.IValueSingle)">
+            <summary>
+            Copies all source values to the current object.
+            <para>Use this method to avoid creating a new object or to reuse this object.</para>
+            <para>WARNING: float to int is a loss of data may apply to this method.</para>
+            </summary>
+            <param name="source">The source object to copy values from.</param>
+        </member>
+        <member name="M:ValueConstraints.ValueSingleInt.Copy(ValueConstraints.Interfaces.IValueLimits)">
+            <summary>
+            Copies all source values to the current object.
+            <para>Use this method to avoid creating a new object or to reuse this object.</para>
+            <para>WARNING: float to int is a loss of data may apply to this method.</para>
+            </summary>
+            <param name="source">The source object to copy values from.</param>
+        </member>
+        <member name="M:ValueConstraints.ValueSingleInt.Copy(ValueConstraints.Interfaces.IValueLimits{System.Single})">
+            <summary>
+            Copies all source values to the current object.
+            <para>Use this method to avoid creating a new object or to reuse this object.</para>
+            <para>WARNING: float to int is a loss of data may apply to this method.</para>
+            </summary>
+            <param name="source">The source object to copy values from.</param>
+        </member>
+        <member name="M:ValueConstraints.ValueSingleInt.Copy(ValueConstraints.Interfaces.IValueLimits{System.Int32})">
+            <summary>
+            Copies all source values to the current object.
+            <para>Use this method to avoid creating a new object or to reuse this object.</para>
+            </summary>
+            <param name="source">The source object to copy values from.</param>
+        </member>
+        <member name="M:ValueConstraints.ValueSingleInt.Clamp">
+            <summary>
+            Clamps the current value between minimum and maximum
+            </summary>
+        </member>
+        <member name="M:ValueConstraints.ValueSingleInt.Flip">
+            <summary>
+            Flips the current value from minimum and maximum and vice-versa
+            </summary>
+        </member>
+        <member name="M:ValueConstraints.ValueSingleInt.FlipDirection">
+            <summary>
+            Flips the direction value from -1 and 1 and vice-versa
+            </summary>
+        </member>
+        <member name="M:ValueConstraints.ValueSingleInt.Prepare">
+            <summary>
+            Prepares the internal variables to be used
+            </summary>
+        </member>
+        <member name="M:ValueConstraints.ValueSingleInt.Wrap(System.Single)">
+            <summary>
+            Wraps the current value between minimum and maximum
+            </summary>
+            <param name="deltaTime">Time change between updates</param>
+            <returns>Current value after wrap update</returns>
+        </member>
+        <member name="M:ValueConstraints.ValueSingleInt.PingPong(System.Single)">
+            <summary>
+            Ping pongs the current value between minimum and maximum
+            </summary>
+            <param name="deltaTime">Time change between updates</param>
+            <returns>Current value after ping pong update</returns>
+        </member>
+        <member name="M:ValueConstraints.ValueSingleInt.CompareTo(ValueConstraints.Interfaces.IValueSingle)">
+            <summary>
+            Provides implementation to order or sort its instances.
+            </summary>
+            <param name="other">Other instance of IValueSingle.</param>
+            <returns>Whether the position of the current instance in the sort order is before, after, or the same as the other</returns>
+        </member>
+        <member name="M:ValueConstraints.ValueSingleInt.CompareTo(ValueConstraints.Interfaces.IValueLimits)">
+            <summary>
+            Provides implementation to order or sort its instances.
+            </summary>
+            <param name="other">Other instance of IValueLimits.</param>
+            <returns>Whether the position of the current instance in the sort order is before, after, or the same as the other</returns>
+        </member>
+        <member name="M:ValueConstraints.ValueSingleInt.CompareTo(ValueConstraints.Interfaces.IValueLimits{System.Single})">
+            <summary>
+            Provides implementation to order or sort its instances.
+            </summary>
+            <param name="other">Other instance of IValueLimits float.</param>
+            <returns>Whether the position of the current instance in the sort order is before, after, or the same as the other</returns>
+        </member>
+        <member name="T:ValueConstraints.ValueSingleFloat">
+            <summary>
+            Defines a minimum and maximum bounds with a current value scale and delta changes as float values
+            </summary>
+        </member>
+        <member name="F:ValueConstraints.ValueSingleFloat.Empty">
+            <summary>
+            Defines an empty or blank value
+            </summary>
+        </member>
+        <member name="E:ValueConstraints.ValueSingleFloat.onClamp">
+            <summary>
+            Invoked when Clamp is called at the min and max limit
+            </summary>
+        </member>
+        <member name="P:ValueConstraints.ValueSingleFloat.maxDelta">
+            <summary>
+            Max Delta or maximum change per update value accessor
+            </summary>
+        </member>
+        <member name="P:ValueConstraints.ValueSingleFloat.scale">
+            <summary>
+            Scale value accessor
+            </summary>
+        </member>
+        <member name="P:ValueConstraints.ValueSingleFloat.direction">
+            <summary>
+            The direction of change
+            </summary>
+        </member>
+        <member name="P:ValueConstraints.ValueSingleFloat.currentTemp">
+            <summary>
+            Temp value to accurate scale interger types
+            </summary>
+        </member>
+        <member name="P:ValueConstraints.ValueSingleFloat.loop">
+            <summary>
+            Preform the action only once or continuously
+            </summary>
+        </member>
+        <member name="P:ValueConstraints.ValueSingleFloat.RandomCurrent">
+            <summary>
+            Return and set current to a random value between the minimum and maximum range.
+            </summary>
+        </member>
+        <member name="M:ValueConstraints.ValueSingleFloat.#ctor">
+            <summary>
+            Constructor generally used for objects that will copy values from another
+            </summary>
+        </member>
+        <member name="M:ValueConstraints.ValueSingleFloat.#ctor(System.Single,System.Single,System.Single,System.Single,System.Single)">
+            <summary>
+            Constructor to manually create
+            </summary>
+            <param name="minimum">Minimum value</param>
+            <param name="maximum">Maximum value</param>
+            <param name="current">Current value</param>
+            <param name="maxDelta">Max Delta or maximum change per update value</param>
+            <param name="scale">Scale value how much to change Max Delta by</param>
+        </member>
+        <member name="M:ValueConstraints.ValueSingleFloat.Set(System.Single,System.Int32,System.Single)">
+            <summary>
+            Sets the underlying variables to the source value.
+            </summary>
+            <param name="maxDelta">Max Delta or maximum change per update value</param>
+            <param name="direction">The direction of change</param>
+            <param name="scale">Scale value how much to change Max Delta by</param>
+        </member>
+        <member name="M:ValueConstraints.ValueSingleFloat.Set(ValueConstraints.Interfaces.BaseValues.ILimits{System.Single})">
+            <summary>
+            Sets the underlying variables to the source value.
+            </summary>
+            <param name="source">Source to copy values from</param>
+        </member>
+        <member name="M:ValueConstraints.ValueSingleFloat.Set(ValueConstraints.Interfaces.BaseValues.ILimits{System.Int32})">
+            <summary>
+            Sets the underlying variables to the source value.
+            </summary>
+            <param name="source">Source to copy values from</param>
+        </member>
+        <member name="M:ValueConstraints.ValueSingleFloat.Copy(ValueConstraints.Interfaces.IValueSingle)">
+            <summary>
+            Copies all source values to the current object.
+            <para>Use this method to avoid creating a new object or to reuse this object.</para>
+            </summary>
+            <param name="source">The source object to copy values from.</param>
+        </member>
+        <member name="M:ValueConstraints.ValueSingleFloat.Copy(ValueConstraints.Interfaces.IValueLimits)">
+            <summary>
+            Copies all source values to the current object.
+            <para>Use this method to avoid creating a new object or to reuse this object.</para>
+            </summary>
+            <param name="source">The source object to copy values from.</param>
+        </member>
+        <member name="M:ValueConstraints.ValueSingleFloat.Copy(ValueConstraints.Interfaces.IValueLimits{System.Single})">
+            <summary>
+            Copies all source values to the current object.
+            <para>Use this method to avoid creating a new object or to reuse this object.</para>
+            </summary>
+            <param name="source">The source object to copy values from.</param>
+        </member>
+        <member name="M:ValueConstraints.ValueSingleFloat.Clamp">
+            <summary>
+            Clamps the current value between minimum and maximum
+            </summary>
+        </member>
+        <member name="M:ValueConstraints.ValueSingleFloat.Flip">
+            <summary>
+            Flips the current value from minimum and maximum and vice-versa
+            </summary>
+        </member>
+        <member name="M:ValueConstraints.ValueSingleFloat.FlipDirection">
+            <summary>
+            Flips the direction value from -1 and 1 and vice-versa
+            </summary>
+        </member>
+        <member name="M:ValueConstraints.ValueSingleFloat.Prepare">
+            <summary>
+            Prepares the internal variables to be used
+            </summary>
+        </member>
+        <member name="M:ValueConstraints.ValueSingleFloat.Wrap(System.Single)">
+            <summary>
+            Wraps the current value between minimum and maximum
+            </summary>
+            <param name="deltaTime">Time change between updates</param>
+            <returns>Current value after wrap update</returns>
+        </member>
+        <member name="M:ValueConstraints.ValueSingleFloat.PingPong(System.Single)">
+            <summary>
+            Ping pongs the current value between minimum and maximum
+            </summary>
+            <param name="deltaTime">Time change between updates</param>
+            <returns>Current value after ping pong update</returns>
+        </member>
+        <member name="M:ValueConstraints.ValueSingleFloat.CompareTo(ValueConstraints.Interfaces.IValueSingle)">
+            <summary>
+            Provides implementation to order or sort its instances.
+            </summary>
+            <param name="other">Other instance of IValueSingle.</param>
+            <returns>Whether the position of the current instance in the sort order is before, after, or the same as the other</returns>
+        </member>
+        <member name="M:ValueConstraints.ValueSingleFloat.CompareTo(ValueConstraints.Interfaces.IValueLimits)">
+            <summary>
+            Provides implementation to order or sort its instances.
+            </summary>
+            <param name="other">Other instance of IValueLimits.</param>
+            <returns>Whether the position of the current instance in the sort order is before, after, or the same as the other</returns>
+        </member>
+        <member name="M:ValueConstraints.ValueSingleFloat.CompareTo(ValueConstraints.Interfaces.IValueLimits{System.Single})">
+            <summary>
+            Provides implementation to order or sort its instances.
+            </summary>
+            <param name="other">Other instance of IValueLimits float</param>
+            <returns>Whether the position of the current instance in the sort order is before, after, or the same as the other</returns>
+        </member>
+    </members>
+</doc>

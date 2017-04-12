@@ -1,0 +1,2035 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ValueConstraintsEditor</name>
+    </assembly>
+    <members>
+        <member name="T:ValueConstraintsEditor.Utils.MemberReferenceEditorUtils">
+            <summary>
+            Utility class to draw Member Reference types and interactions.
+            </summary>
+        </member>
+        <member name="M:ValueConstraintsEditor.Utils.MemberReferenceEditorUtils.GetValueControlName(UnityEditor.SerializedObject)">
+            <summary>
+            Gets the field name for the variable that implements the IValueControl interface vor the MemberReference property
+            </summary>
+            <param name="serializedObject">SerializedObject provided by the Editor class</param>
+            <returns>Property name</returns>
+        </member>
+        <member name="T:ValueConstraintsEditor.Utils.PositionEditorData">
+            <summary>
+            Position Behavoiur drawer
+            </summary>
+        </member>
+        <member name="M:ValueConstraintsEditor.Utils.PositionEditorData.#ctor(UnityEditor.SerializedObject,ValueConstraints.Interfaces.IValuePosition)">
+            <summary>
+            Constructor for 3D position drawer.
+            </summary>
+            <param name="serializedObject">SerializedObject provided by the Editor base class.</param>
+            <param name="valuePosition">Position Behaviour Interface provided by the Editor base class as the target.</param>
+        </member>
+        <member name="M:ValueConstraintsEditor.Utils.PositionEditorData.OnInspectorGUI">
+            <summary>
+            Draws position value inspector properties.
+            </summary>
+        </member>
+        <member name="M:ValueConstraintsEditor.Utils.PositionEditorData.OnUpdate">
+            <summary>
+            Update callback to provide testing.
+            </summary>
+        </member>
+        <member name="M:ValueConstraintsEditor.Utils.PositionEditorData.OnSceneGUI">
+            <summary>
+            Scene view handles drawer to provide live editing.
+            </summary>
+        </member>
+        <member name="T:ValueConstraintsEditor.Utils.ValueRotatorEditorUtils">
+            <summary>
+            Utility class to draw Value Rotator types and interactions.
+            </summary>
+        </member>
+        <member name="M:ValueConstraintsEditor.Utils.ValueRotatorEditorUtils.OnSceneGUI(UnityEngine.Object,ValueConstraints.Interfaces.IValueRotator)">
+            <summary>
+            Scene view handle drawers for Value Rotators
+            </summary>
+            <param name="target">Unity object reference</param>
+            <param name="valueRotator">ValueRotators reference</param>
+        </member>
+        <member name="M:ValueConstraintsEditor.Utils.ValueRotatorEditorUtils.SetMinMaxVectors(ValueConstraints.Interfaces.IValueRotator)">
+            <summary>
+            Sets the min and max vectors of the rotator form the x, y, z values
+            </summary>
+            <param name="valueRotator">value rotator to update</param>
+        </member>
+        <member name="T:ValueConstraintsEditor.Utils.ValuePositionEditorUtils">
+            <summary>
+            Utility class to draw Value Vector types and interactions.
+            </summary>
+        </member>
+        <member name="M:ValueConstraintsEditor.Utils.ValuePositionEditorUtils.OnInspectorGUI(ValueConstraints.Interfaces.IValuePosition,UnityEditor.SerializedProperty,UnityEditor.SerializedProperty,System.Boolean@)">
+            <summary>
+            Draws Value Vector to Inspector
+            </summary>
+        </member>
+        <member name="M:ValueConstraintsEditor.Utils.ValuePositionEditorUtils.DrawTestButton(ValueConstraints.Interfaces.IValuePosition,System.Boolean@)">
+            <summary>
+            Draws a test buton in the Inspector.
+            </summary>
+            <param name="valuePosition">Value position to test.</param>
+            <param name="testing">Testing to turn on and off.</param>
+        </member>
+        <member name="M:ValueConstraintsEditor.Utils.ValuePositionEditorUtils.GetTestButtonName(System.Boolean)">
+            <summary>
+            Getst the name for the test button depending on the test state
+            </summary>
+            <param name="testing">State of test</param>
+            <returns>Name to display on test button.</returns>
+        </member>
+        <member name="M:ValueConstraintsEditor.Utils.ValuePositionEditorUtils.DoTestingInEditor(ValueConstraints.Interfaces.IValuePosition,System.Boolean,UnityEngine.Transform,System.Single)">
+            <summary>
+            Do testing in the editor
+            </summary>
+            <param name="valuePosition">Value position to test.</param>
+            <param name="testing">Testing to turn on and off.</param>
+            <param name="transform">Transform to poisiton at minVec and maxVec.</param>
+            <param name="deltaTime">Time changed per update.</param>
+        </member>
+        <member name="M:ValueConstraintsEditor.Utils.ValuePositionEditorUtils.DrawHandlesSceneGUI(UnityEngine.Object,ValueConstraints.Interfaces.IValuePosition,UnityEngine.Transform,UnityEngine.Vector3@,UnityEngine.Vector3@)">
+            <summary>
+            Draws scene view handles.
+            </summary>
+            <param name="target">Unity Object to apply changes.</param>
+            <param name="valueVector">Value Vector to modify.</param>
+            <param name="transform">Transform attached to component.</param>
+            <param name="lastMinVec">Last minVec value to track modified values.</param>
+            <param name="lastMaxVec">Last maxVec value to track modified values.</param>
+        </member>
+        <member name="M:ValueConstraintsEditor.Utils.ValuePositionEditorUtils.SceneHandles(UnityEngine.Transform,ValueConstraints.ValueControls.MoveHandleType,UnityEngine.Vector3@,UnityEngine.Vector3@)">
+            <summary>
+            Draws scene view handles.
+            </summary>
+            <param name="transform">Transform attached to component.</param>
+            <param name="moveHandleType">Mode handle supplied from the Value Position interface</param>
+            <param name="minTrans">Minimum vector</param>
+            <param name="maxTrans">Maximum vector</param>
+        </member>
+        <member name="M:ValueConstraintsEditor.Utils.ValuePositionEditorUtils.ScenePositionHandle(UnityEngine.Transform,ValueConstraints.ValueControls.MoveHandleType,UnityEngine.Vector3@,UnityEngine.Color)">
+            <summary>
+            Draws scene view handles.
+            </summary>
+            <param name="transform">Transform attached to component.</param>
+            <param name="moveHandleType">Mode handle supplied from the Value Position interface</param>
+            <param name="position">Position to update</param>
+            <param name="handleColor">Color to draw handle</param>
+        </member>
+        <member name="T:ValueConstraintsEditor.Utils.ValueVectorEditorUtils">
+            <summary>
+            Utility class to draw Value Vector types and interactions.
+            </summary>
+        </member>
+        <member name="M:ValueConstraintsEditor.Utils.ValueVectorEditorUtils.FreeMoveHandleSize(UnityEngine.Vector3)">
+            <summary>
+            Display size for free move scene handle
+            </summary>
+            <param name="position">Position of scene view handle</param>
+            <returns>Size of scene handle</returns>
+        </member>
+        <member name="M:ValueConstraintsEditor.Utils.ValueVectorEditorUtils.DisplayHandleSize(UnityEngine.Vector3)">
+            <summary>
+            Display size display scene handle
+            </summary>
+            <param name="position">Position of scene view handle</param>
+            <returns>Size of scene handle</returns>
+        </member>
+        <member name="M:ValueConstraintsEditor.Utils.ValueVectorEditorUtils.WireSphereCap(System.Int32,UnityEngine.Vector3,UnityEngine.Quaternion,System.Single)">
+            <summary>
+            Draws a scene view handle wire sphere
+            </summary>
+            <param name="controlID">The control ID for the handle</param>
+            <param name="position">The world-space position of the handle's start point</param>
+            <param name="rotation">The rotation of the handle</param>
+            <param name="size">The size of the handle in world-space units</param>
+        </member>
+        <member name="M:ValueConstraintsEditor.Utils.ValueVectorEditorUtils.FullWireSphereCap(System.Int32,UnityEngine.Vector3,UnityEngine.Quaternion,System.Single)">
+            <summary>
+            Draws a scene view handle wire sphere on 3 angled axis
+            </summary>
+            <param name="controlID">The control ID for the handle</param>
+            <param name="position">The world-space position of the handle's start point</param>
+            <param name="rotation">The rotation of the handle</param>
+            <param name="size">The size of the handle in world-space units</param>
+        </member>
+        <member name="T:ValueConstraintsEditor.Utils.InsertType">
+            <summary>
+            What type of insert was preformed
+            </summary>
+        </member>
+        <member name="F:ValueConstraintsEditor.Utils.InsertType.First">
+            <summary>
+            Inserts node at the first index 1 (the index before the parent index 0)
+            </summary>
+        </member>
+        <member name="F:ValueConstraintsEditor.Utils.InsertType.Before">
+            <summary>
+            Inserts a node at the index before the selected index
+            </summary>
+        </member>
+        <member name="F:ValueConstraintsEditor.Utils.InsertType.After">
+            <summary>
+            Inserts a node at the index after the selected index
+            </summary>
+        </member>
+        <member name="F:ValueConstraintsEditor.Utils.InsertType.Last">
+            <summary>
+            Inserts node at the last index 
+            </summary>
+        </member>
+        <member name="T:ValueConstraintsEditor.Utils.WaypointReorderableList`1">
+            <summary>
+            Utility class to draw ReorderableList Value Vector Waypoint types and interactions.
+            </summary>
+        </member>
+        <member name="F:ValueConstraintsEditor.Utils.WaypointReorderableList`1.NODES_PROPERTY_NAME">
+            <summary>
+            Name for waypoint nodes field
+            </summary>
+        </member>
+        <member name="F:ValueConstraintsEditor.Utils.WaypointReorderableList`1.m_IsVector2">
+            <summary>
+            Gets typeof V is Vector2 or Vector3
+            </summary>
+        </member>
+        <member name="F:ValueConstraintsEditor.Utils.WaypointReorderableList`1.m_Trans">
+            <summary>
+            GameObject's transform
+            </summary>
+        </member>
+        <member name="M:ValueConstraintsEditor.Utils.WaypointReorderableList`1.#ctor(UnityEditor.SerializedObject)">
+            <summary>
+            Constructor
+            <para>Call in OnEnable ot initilize fields</para>
+            </summary>
+            <param name="serializedObject">SerializedObject passed in from Editor class</param>
+        </member>
+        <member name="M:ValueConstraintsEditor.Utils.WaypointReorderableList`1.CreateAddRoutines">
+            <summary>
+            Creates the Add dropdown menu and callbacks
+            </summary>
+        </member>
+        <member name="M:ValueConstraintsEditor.Utils.WaypointReorderableList`1.InsertAndPosition(ValueConstraintsEditor.Utils.InsertType)">
+            <summary>
+            Inserts and positions the waypoint
+            </summary>
+            <param name="insertType">Last created/inserted type</param>
+        </member>
+        <member name="M:ValueConstraintsEditor.Utils.WaypointReorderableList`1.InsertAndPosition(System.Int32,UnityEngine.Vector3)">
+            <summary>
+            Inserts and positions the waypoint
+            </summary>
+            <param name="insertIndex">Index to insert waypoint</param>
+            <param name="insertPosition">Location in world-space to position waypoint</param>
+        </member>
+        <member name="M:ValueConstraintsEditor.Utils.WaypointReorderableList`1.PositionNewNode(UnityEditor.SerializedProperty,ValueConstraintsEditor.Utils.InsertType)">
+            <summary>
+            Positions the newly created waypoint
+            </summary>
+            <param name="newProp">Newly created node property</param>
+            <param name="insertType">Last created/inserted type</param>
+        </member>
+        <member name="M:ValueConstraintsEditor.Utils.WaypointReorderableList`1.GetNodePropertyValue(UnityEditor.SerializedProperty)">
+            <summary>
+            Gets a new vector value to a single node
+            </summary>
+            <param name="nodeProp">Single node property</param>
+            <returns>Vector value to a single node</returns>
+        </member>
+        <member name="M:ValueConstraintsEditor.Utils.WaypointReorderableList`1.SetNodePropertyValue(UnityEditor.SerializedProperty,UnityEngine.Vector3)">
+            <summary>
+            Sets a new vector value to a single node
+            </summary>
+            <param name="nodeProp">Single node property</param>
+            <param name="newValue">New Vector value to set</param>
+        </member>
+        <member name="M:ValueConstraintsEditor.Utils.WaypointReorderableList`1.DrawElement(UnityEngine.Rect,System.Int32)">
+            <summary>
+            Draws element in the list in the inspector
+            </summary>
+            <param name="rect">Rect to draw property</param>
+            <param name="index">Index of property in array</param>
+            <returns>Modified Rect that placed the property</returns>
+        </member>
+        <member name="M:ValueConstraintsEditor.Utils.WaypointReorderableList`1.SceneViewDrawSelected(ValueConstraints.Interfaces.IValueWaypoint,UnityEngine.Color,System.Single)">
+            <summary>
+            Draws scene view selected index cap handles
+            </summary>
+            <param name="valueWaypoint">Value Waypoints converted from Editor class target</param>
+            <param name="handleColor">Color of handle in scene view</param>
+            <param name="size">Size of handle in scene view</param>
+        </member>
+        <member name="M:ValueConstraintsEditor.Utils.WaypointReorderableList`1.SceneViewCreateWaypoint(ValueConstraints.Interfaces.IValueWaypoint)">
+            <summary>
+            Allows the creation of new nodes along the route by scene view clicking
+            <para>Hold down shift to insert nodes at mouse line intersect point</para>
+            </summary>
+            <param name="valueWaypoint">Value Waypoints converted from Editor class target</param>
+        </member>
+        <member name="M:ValueConstraintsEditor.Utils.WaypointReorderableList`1.InsertNodeElementAtEnd">
+            <summary>
+            Inserts a node at the end of the array list
+            </summary>
+            <returns>Last inserted property node</returns>
+        </member>
+        <member name="M:ValueConstraintsEditor.Utils.WaypointReorderableList`1.InsertNodeElement(System.Int32)">
+            <summary>
+            Inserts a node at the end of the array list
+            </summary>
+            <param name="insertIndex">Index to insert node</param>
+            <returns>Last inserted property node</returns>
+        </member>
+        <member name="T:ValueConstraintsEditor.Utils.ValueWaypointEditorUtils">
+            <summary>
+            Utility class to draw Value Waypoint types and interactions.
+            </summary>
+        </member>
+        <member name="M:ValueConstraintsEditor.Utils.ValueWaypointEditorUtils.SelectionHandles(ValueConstraints.Interfaces.IValueWaypoint,UnityEngine.Object,UnityEngine.Transform,System.Int32)">
+            <summary>
+            Draws a scene view handle
+            </summary>
+            <param name="valueWaypoint">Value Waypoint to show handles for.</param>
+            <param name="target">Unity Object to apply changes.</param>
+            <param name="transform">Transform attached to component.</param>
+            <param name="currentIndex">Current selected index</param>
+        </member>
+        <member name="T:ValueConstraintsEditor.Utils.ViewerGUI">
+            <summary>
+            Defines struct to hold show/hide and enable/disable property in the inspector
+            <para>Uses EditorGUILayout to draw properties</para>
+            </summary>
+        </member>
+        <member name="M:ValueConstraintsEditor.Utils.ViewerGUI.Find(UnityEditor.SerializedProperty,System.String)">
+            <summary>
+            Uses FindPropertyRelative to find the associated property
+            </summary>
+            <param name="property">Serialized property to find names</param>
+            <param name="name">Serialized property name</param>
+            <returns>Property from the serialized object identified by the field name</returns>
+        </member>
+        <member name="M:ValueConstraintsEditor.Utils.ViewerGUI.DoLayout(UnityEditor.SerializedObject,System.String,UnityEngine.GUIContent,System.Boolean)">
+            <summary>
+            Draws a SerializedProperty for a given property name
+            <para>Uses EditorGUILayout.PropertyField</para>
+            </summary>
+        </member>
+        <member name="M:ValueConstraintsEditor.Utils.ViewerGUI.OnDraw(ValueConstraintsEditor.Utils.ViewerGUI)">
+            <summary>
+            Draws a property field
+            <para>Uses EditorGUILayout.PropertyField</para>
+            </summary>
+        </member>
+        <member name="M:ValueConstraintsEditor.Utils.ViewerGUI.OnDrawEnum``1(``0[])">
+            <summary>
+            Supply a list of Enum to use in the popup
+            <para>Uses EditorGUILayout.IntPopup</para>
+            </summary>
+            <typeparam name="T">Type to cast enum to</typeparam>
+            <param name="types">Enum Type to use</param>
+            <returns>Action to draw popup of Enum display options</returns>
+        </member>
+        <member name="M:ValueConstraintsEditor.Utils.ViewerGUI.RepaintCurrentSceneView(ValueConstraintsEditor.Utils.ViewerGUI)">
+            <summary>
+            Repaints the current drawing scene view
+            </summary>
+            <param name="viewer">Viewer passed in by event</param>
+        </member>
+        <member name="M:ValueConstraintsEditor.Utils.ViewerGUI.RepaintCurrentSceneView">
+            <summary>
+            Repaints the current drawing scene view
+            </summary>
+        </member>
+        <member name="F:ValueConstraintsEditor.Utils.ViewerGUI.property">
+            <summary>
+            Serialized property containing fields property
+            </summary>
+        </member>
+        <member name="F:ValueConstraintsEditor.Utils.ViewerGUI.label">
+            <summary>
+            Holds reference for Rect containing the property
+            </summary>
+        </member>
+        <member name="F:ValueConstraintsEditor.Utils.ViewerGUI.includeChildren">
+            <summary>
+            Include the property's children in serialized property drawing
+            </summary>
+        </member>
+        <member name="F:ValueConstraintsEditor.Utils.ViewerGUI.visible">
+            <summary>
+            Visibilty, show or not
+            </summary>
+        </member>
+        <member name="F:ValueConstraintsEditor.Utils.ViewerGUI.enabled">
+            <summary>
+            Enabled or not for editing
+            </summary>
+        </member>
+        <member name="F:ValueConstraintsEditor.Utils.ViewerGUI.changed">
+            <summary>
+            Holds reference for value changed or edited
+            </summary>
+        </member>
+        <member name="F:ValueConstraintsEditor.Utils.ViewerGUI.onDrawer">
+            <summary>
+            Event to draw property
+            <para>Default drawer uses EditorGUILayout.PropertyField</para>
+            </summary>
+        </member>
+        <member name="E:ValueConstraintsEditor.Utils.ViewerGUI.onChanged">
+            <summary>
+            Event to preform on property value changed
+            </summary>
+        </member>
+        <member name="M:ValueConstraintsEditor.Utils.ViewerGUI.#ctor(UnityEditor.SerializedProperty,UnityEngine.GUIContent,System.Boolean,System.Boolean,System.Boolean)">
+            <summary>
+            Constructor to create new viewer
+            </summary>
+            <param name="property">Serialized property</param>
+            <param name="label">Label to show for property</param>
+            <param name="visible">Visible on start</param>
+            <param name="enabled">Enabled on start</param>
+            <param name="includeChildren">Include the property's children in serialized property drawing</param>
+        </member>
+        <member name="M:ValueConstraintsEditor.Utils.ViewerGUI.#ctor(UnityEditor.SerializedProperty,System.String,UnityEngine.GUIContent,System.Boolean,System.Boolean,System.Boolean)">
+            <summary>
+            Constructor to create new viewer using FindPropertyRelative
+            </summary>
+            <param name="property">Serialized property to find names</param>
+            <param name="name">Serialized property name</param>
+            <param name="visible">Visible on start</param>
+            <param name="enabled">Enabled on start</param>
+            <param name="label">Label to show for property</param>
+            <param name="includeChildren">Include the property's children in serialized property drawing</param>
+        </member>
+        <member name="M:ValueConstraintsEditor.Utils.ViewerGUI.DrawProperty">
+            <summary>
+            Invokes the method to draw the property in a visible and enabled wrapper
+            </summary>
+            <returns>True if GUI.changed False if not</returns>
+        </member>
+        <member name="M:ValueConstraintsEditor.Utils.ViewerGUI.InvokeDrawer``1(System.Action{``0})">
+            <summary>
+            Invokes drawer and onChanged if values are not null
+            </summary>
+        </member>
+        <member name="M:ValueConstraintsEditor.Utils.ViewerGUI.Hide">
+            <summary>
+            Set visibility to false
+            </summary>
+        </member>
+        <member name="M:ValueConstraintsEditor.Utils.ViewerGUI.Show">
+            <summary>
+            Set visibility to true
+            </summary>
+        </member>
+        <member name="M:ValueConstraintsEditor.Utils.ViewerGUI.Disable">
+            <summary>
+            Set enabled to false
+            </summary>
+        </member>
+        <member name="M:ValueConstraintsEditor.Utils.ViewerGUI.Enable">
+            <summary>
+            Set enabled to true
+            </summary>
+        </member>
+        <member name="T:ValueConstraintsEditor.Utils.PropertyViewerGUI">
+            <summary>
+            Defines struct to hold show/hide and enable/disable property in the inspector
+            <para>Uses EditorGUI Rect to draw properties</para>
+            </summary>
+        </member>
+        <member name="P:ValueConstraintsEditor.Utils.PropertyViewerGUI.InspectorExpanded">
+            <summary>
+            Returns true if the inspector has a width >= 333
+            </summary>
+        </member>
+        <member name="M:ValueConstraintsEditor.Utils.PropertyViewerGUI.OnDrawGUI(ValueConstraintsEditor.Utils.PropertyViewerGUI)">
+            <summary>
+            Draws a property field
+            <para>Uses EditorGUI.PropertyField</para>
+            </summary>
+        </member>
+        <member name="M:ValueConstraintsEditor.Utils.PropertyViewerGUI.OnDrawEnumGUI``1(``0[])">
+            <summary>
+            Supply a list of Enum to use in the popup
+            <para>Uses EditorGUI.IntPopup</para>
+            </summary>
+            <typeparam name="T">Type to cast enum to</typeparam>
+            <param name="types">Enum Type to use</param>
+            <returns>Action to draw popup of Enum display options</returns>
+        </member>
+        <member name="F:ValueConstraintsEditor.Utils.PropertyViewerGUI.rect">
+            <summary>
+            Holds reference for Rect containing the property
+            </summary>
+        </member>
+        <member name="F:ValueConstraintsEditor.Utils.PropertyViewerGUI.properties">
+            <summary>
+            Serialized properties containing fields property
+            </summary>
+        </member>
+        <member name="F:ValueConstraintsEditor.Utils.PropertyViewerGUI.getRowCount">
+            <summary>
+            Evaluates amount of rows needed to draw property
+            </summary>
+        </member>
+        <member name="F:ValueConstraintsEditor.Utils.PropertyViewerGUI.getRect">
+            <summary>
+            Event to get drawing Rect for property
+            </summary>
+        </member>
+        <member name="P:ValueConstraintsEditor.Utils.PropertyViewerGUI.rowCount">
+            <summary>
+            Holds amount of rows needed to draw property
+            </summary>
+        </member>
+        <member name="P:ValueConstraintsEditor.Utils.PropertyViewerGUI.defaultDraw">
+            <summary>
+            Use default drawing call in the base call or drawing will be overriden
+            </summary>
+        </member>
+        <member name="F:ValueConstraintsEditor.Utils.PropertyViewerGUI.onDrawerGUI">
+            <summary>
+            Event to draw property
+            <para>Default drawer uses EditorGUILayout.PropertyField</para>
+            </summary>
+        </member>
+        <member name="M:ValueConstraintsEditor.Utils.PropertyViewerGUI.#ctor(System.Boolean,System.Boolean,UnityEngine.GUIContent,UnityEditor.SerializedProperty[])">
+            <summary>
+            Constructor to create new property viewer
+            </summary>
+            <param name="visible">Visible on start</param>
+            <param name="enabled">Enabled on start</param>
+            <param name="label">Label to show for property</param>
+            <param name="properties">Serialized property containing fields property</param>
+        </member>
+        <member name="M:ValueConstraintsEditor.Utils.PropertyViewerGUI.#ctor(UnityEditor.SerializedProperty,System.Boolean,System.Boolean,UnityEngine.GUIContent,System.String[])">
+            <summary>
+            Constructor to create new property viewer
+            </summary>
+            <param name="property">Serialized property to find names</param>
+            <param name="visible">Visible on start</param>
+            <param name="enabled">Enabled on start</param>
+            <param name="label">Label to show for property</param>
+            <param name="names">Serialized property names</param>
+        </member>
+        <member name="M:ValueConstraintsEditor.Utils.PropertyViewerGUI.DrawProperty(UnityEngine.Rect,System.Func{UnityEngine.Rect,UnityEngine.Rect},System.Int32)">
+            <summary>
+            Invokes the method to draw the property in a visible and enabled wrapper
+            </summary>
+            <param name="position">Rect to draw property</param>
+            <param name="getRect">How to get the Rect to draw property</param>
+            <param name="rows">How many rows/levels for rectangle</param>
+            <returns>True if GUI.changed False if not</returns>
+        </member>
+        <member name="T:ValueConstraintsEditor.Utils.PropertyValueBounds">
+            <summary>
+            Stores a property value as a common type and modifies and replaces original value
+            <para>NOTE: Defined for bound class</para>
+            </summary>
+        </member>
+        <member name="F:ValueConstraintsEditor.Utils.PropertyValueBounds.minimumLimit">
+            <summary>
+            Minimum Limit value of bounds
+            </summary>
+        </member>
+        <member name="F:ValueConstraintsEditor.Utils.PropertyValueBounds.maximumLimit">
+            <summary>
+            Maximum Limit value of bounds
+            </summary>
+        </member>
+        <member name="F:ValueConstraintsEditor.Utils.PropertyValueBounds.minimum">
+            <summary>
+            Minimum value of bounds
+            </summary>
+        </member>
+        <member name="F:ValueConstraintsEditor.Utils.PropertyValueBounds.maximum">
+            <summary>
+            Maximum value of bounds
+            </summary>
+        </member>
+        <member name="M:ValueConstraintsEditor.Utils.PropertyValueBounds.#ctor(UnityEditor.SerializedProperty,UnityEditor.SerializedProperty,UnityEditor.SerializedProperty)">
+            <summary>
+            Constructor to define class from serialized property
+            </summary>
+            <param name="property">Property to get minimum and maximum values from</param>
+            <param name="minProperty">Property to get minimum value</param>
+            <param name="maxProperty">Property to get minimum value</param>
+        </member>
+        <member name="T:ValueConstraintsEditor.Utils.PropertyValue">
+            <summary>
+            Stores a property value as a common type and modifies and replaces original value
+            <para>NOTE: Works for integer and float types only</para>
+            </summary>
+        </member>
+        <member name="F:ValueConstraintsEditor.Utils.PropertyValue.Value">
+            <summary>
+            Current value of the type
+            </summary>
+        </member>
+        <member name="P:ValueConstraintsEditor.Utils.PropertyValue.Property">
+            <summary>
+            Property being modified
+            </summary>
+        </member>
+        <member name="M:ValueConstraintsEditor.Utils.PropertyValue.#ctor(UnityEditor.SerializedProperty)">
+            <summary>
+            Constructor to declare a value object
+            </summary>
+            <param name="property">Property to track and modify</param>
+        </member>
+        <member name="P:ValueConstraintsEditor.Utils.PropertyValue.RawValue">
+            <summary>
+            Current 'Value' as original type
+            </summary>
+        </member>
+        <member name="M:ValueConstraintsEditor.Utils.PropertyValue.SetValue">
+            <summary>
+            Applies changes to the property
+            </summary>
+        </member>
+        <member name="T:ValueConstraintsEditor.Utils.DrawerUtils">
+            <summary>
+            Utility class to draw Value class types and interactions
+            </summary>
+        </member>
+        <member name="F:ValueConstraintsEditor.Utils.DrawerUtils.HELP_BOX_HEIGHT">
+            <summary>
+            Default height of help box
+            </summary>
+        </member>
+        <member name="F:ValueConstraintsEditor.Utils.DrawerUtils.HELP_MESSAGE_FORMAT">
+            <summary>
+            Default help message format
+            </summary>
+        </member>
+        <member name="F:ValueConstraintsEditor.Utils.DrawerUtils.FIX_MESSAGE_FORMAT">
+            <summary>
+            Default help console message format
+            </summary>
+        </member>
+        <member name="F:ValueConstraintsEditor.Utils.DrawerUtils.USE_ATTRIBUTE_MESSAGE_FORMAT">
+            <summary>
+            Default help format for property attribut usage
+            </summary>
+        </member>
+        <member name="F:ValueConstraintsEditor.Utils.DrawerUtils.USE_TYPES_MESSAGE_FORMAT">
+            <summary>
+            Default help format message for suggested type to use
+            </summary>
+        </member>
+        <member name="F:ValueConstraintsEditor.Utils.DrawerUtils.CLICK_HERE_MESSAGE">
+            <summary>
+            Default click here for help message
+            </summary>
+        </member>
+        <member name="P:ValueConstraintsEditor.Utils.DrawerUtils.LastHelpMessage">
+            <summary>
+            Stores last generated help message
+            </summary>
+        </member>
+        <member name="M:ValueConstraintsEditor.Utils.DrawerUtils.PropertyDrawers(UnityEngine.Rect,UnityEditor.SerializedProperty,UnityEngine.GUIContent,System.Attribute,System.Action{UnityEngine.Rect}[])">
+            <summary>
+            Draws a set of properties to the inspector
+            </summary>
+            <param name="position">Position to start drawing</param>
+            <param name="property">Main property</param>
+            <param name="label">Label to display for the property</param>
+            <param name="attribute">Property Attributes used on the field</param>
+            <param name="drawProperty">Defines how to draw each child property</param>
+        </member>
+        <member name="M:ValueConstraintsEditor.Utils.DrawerUtils.MinMaxFloatFields(UnityEngine.Rect,System.Int32,System.Int32,System.Int32,System.Single,System.Single@,System.Single@)">
+            <summary>
+            Draws a min max fields for bounds value.
+            </summary>
+            <param name="position">Position starting the top of the main property</param>
+            <param name="minIndex">Column minIndex start</param>
+            <param name="maxIndex">Column maxIndex start</param>
+            <param name="columns">Columns in row</param>
+            <param name="padding">Padding for fields left and right</param>
+            <param name="minValue">Absolute minimum bounds</param>
+            <param name="maxValue">Absolute maximum bounds</param>
+        </member>
+        <member name="M:ValueConstraintsEditor.Utils.DrawerUtils.MinMaxSliderAndFloatFields(UnityEngine.Rect,System.Int32,System.Int32,System.Single@,System.Single@,System.Single,System.Single)">
+            <summary>
+            Draws a min max silder for bounds value.
+            </summary>
+            <param name="position">Position starting the top of the main property</param>
+            <param name="startIndex">Column index start</param>
+            <param name="columns">Columns in row</param>
+            <param name="minValue">Current minimum value</param>
+            <param name="maxValue">Current maximum value</param>
+            <param name="minLimit">Absolute minimum bounds</param>
+            <param name="maxLimit">Absolute maximum bounds</param>
+        </member>
+        <member name="M:ValueConstraintsEditor.Utils.DrawerUtils.RectPad(UnityEngine.Rect@,System.Single)">
+            <summary>
+            Pads a rect on left and right
+            </summary>
+            <param name="rect">Rect to pad</param>
+            <param name="padding">Amount of padding to apply</param>
+        </member>
+        <member name="M:ValueConstraintsEditor.Utils.DrawerUtils.RectPadLeft(UnityEngine.Rect@,System.Single)">
+            <summary>
+            Pads a rect from left
+            </summary>
+            <param name="rect">Rect to pad</param>
+            <param name="padding">Amount of padding to apply</param>
+        </member>
+        <member name="M:ValueConstraintsEditor.Utils.DrawerUtils.RectPadRight(UnityEngine.Rect@,System.Single)">
+            <summary>
+            Pads a rect from right
+            </summary>
+            <param name="rect">Rect to pad</param>
+            <param name="padding">Amount of padding to apply</param>
+        </member>
+        <member name="M:ValueConstraintsEditor.Utils.DrawerUtils.GetRowsHeight(System.Int32)">
+            <summary>
+            Get the height for n amount lines/rows/levels/fields
+            </summary>
+            <param name="fields">Levels of fields to draw</param>
+            <returns>Required height</returns>
+        </member>
+        <member name="M:ValueConstraintsEditor.Utils.DrawerUtils.GetLastRect(UnityEngine.Rect,System.Int32)">
+            <summary>
+            Get the next rect to draw the next property
+            </summary>
+            <param name="position">Position starting the top of the main property</param>
+            <param name="fields">Levels of fields to calculate height</param>
+            <returns>The calculated rect for the next property</returns>
+        </member>
+        <member name="M:ValueConstraintsEditor.Utils.DrawerUtils.GetLastRowRect(UnityEngine.Rect,System.Int32)">
+            <summary>
+            Get the next rect to draw the next property
+            </summary>
+            <param name="position">Position starting the top of the main property</param>
+            <param name="fields">Levels of fields to calculate height</param>
+            <returns>The calculated rect for the next property</returns>
+        </member>
+        <member name="M:ValueConstraintsEditor.Utils.DrawerUtils.GetColumnRect(UnityEngine.Rect,System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Get the rect for a column
+            </summary>
+            <param name="position">Position from method GetLastRowRect</param>
+            <param name="level">Level or how far down to get the drawing rect</param>
+            <param name="columnIndex">Index to calculate for column rect</param>
+            <param name="columns">Columns in row/level</param>
+            <returns>Rect for a column</returns>
+        </member>
+        <member name="M:ValueConstraintsEditor.Utils.DrawerUtils.GetColumnWidth(UnityEngine.Rect,System.Int32)">
+            <summary>
+            Get the width of a column
+            </summary>
+            <param name="rect">Rect to calculate</param>
+            <param name="columns">Columns in row/level</param>
+            <returns>Width of column</returns>
+        </member>
+        <member name="M:ValueConstraintsEditor.Utils.DrawerUtils.ToggleField(UnityEngine.Rect,UnityEngine.GUIContent,System.Boolean@)">
+            <summary>
+            Draws a toggle field
+            </summary>
+            <param name="position">Position starting the top of the main property</param>
+            <param name="label">Label to display for the property</param>
+            <param name="value">Current field value</param>
+        </member>
+        <member name="M:ValueConstraintsEditor.Utils.DrawerUtils.ToggleLeftField(UnityEngine.Rect,UnityEngine.GUIContent,System.Boolean@)">
+            <summary>
+            Draws a toggle left field
+            </summary>
+            <param name="position">Position starting the top of the main property</param>
+            <param name="label">Label to display for the property</param>
+            <param name="value">Current field value</param>
+        </member>
+        <member name="M:ValueConstraintsEditor.Utils.DrawerUtils.ValueField(UnityEditor.SerializedProperty,UnityEngine.GUIContent,UnityEngine.Rect,System.Single@)">
+            <summary>
+            Draws a float of int field depending on the property type.
+            </summary>
+            <param name="property">Main property</param>
+            <param name="label">Label to display for the property</param>
+            <param name="position">Position starting the top of the main property</param>
+            <param name="value">Current field value</param>
+        </member>
+        <member name="M:ValueConstraintsEditor.Utils.DrawerUtils.GetPropertyValue(UnityEditor.SerializedProperty)">
+            <summary>
+            Gets the float or int value depending on the property type
+            </summary>
+            <param name="property">Main property</param>
+            <returns>Float, Integer, Vector2 or Vector3 value depending on the property type</returns>
+        </member>
+        <member name="M:ValueConstraintsEditor.Utils.DrawerUtils.SetPropertyValue(UnityEditor.SerializedProperty,System.Object)">
+            <summary>
+            Sets the float or int value depending on the property type
+            </summary>
+            <param name="property">Main property</param>
+            <param name="value">Float, Integer, Vector2 or Vector3 value to set</param>
+        </member>
+        <member name="M:ValueConstraintsEditor.Utils.DrawerUtils.GetFieldsHeight(System.Single,System.Int32)">
+            <summary>
+            Gets the drawing height of the property
+            </summary>
+            <param name="height">Base height</param>
+            <param name="fields">Additional fields to draw</param>
+            <returns>The height to draw the property in the inspector</returns>
+        </member>
+        <member name="M:ValueConstraintsEditor.Utils.DrawerUtils.GetHelpHeight(System.Single)">
+            <summary>
+            Gets the drawing height to help the property
+            </summary>
+            <param name="lines">Amount of lines the help box will need.</param>
+            <returns>The height to draw the property in the inspector</returns>
+        </member>
+        <member name="M:ValueConstraintsEditor.Utils.DrawerUtils.GetPropertyHeight(UnityEditor.SerializedProperty,System.Single,System.Int32,UnityEditor.SerializedProperty)">
+            <summary>
+            Gets the drawing height of current the property
+            </summary>
+            <param name="property">Main property</param>
+            <param name="height">Base height</param>
+            <param name="fields">Additional fields to draw</param>
+            <param name="childProperty">Gets the requested property to check for validity</param>
+            <returns>The height to draw the entire property drawer in the inspector</returns>
+        </member>
+        <member name="M:ValueConstraintsEditor.Utils.DrawerUtils.IsValidType(UnityEditor.SerializedProperty,UnityEditor.SerializedProperty)">
+            <summary>
+            Checks for a valid property
+            </summary>
+            <param name="property">Main property</param>
+            <param name="childProperty">Gets the requested property to check for validity</param>
+            <returns>True if the property is the requested property in the group</returns>
+        </member>
+        <member name="M:ValueConstraintsEditor.Utils.DrawerUtils.HelpBoxInvalidType``1(UnityEditor.SerializedProperty,UnityEngine.Rect,System.Reflection.FieldInfo,System.Attribute,UnityEditor.SerializedProperty)">
+            <summary>
+            Draws a help box for invalid attribute reference types
+            </summary>
+            <param name="property">Main property</param>
+            <param name="position">Position starting the top of the main property</param>
+            <param name="fieldInfo">Field info provided by the property drawer</param>
+            <param name="attribute">attribute provided by the property drawer</param>
+            <param name="childProperty">Gets the requested property to check for validity</param>
+            <returns>True if the property uses the help box</returns>
+        </member>
+        <member name="M:ValueConstraintsEditor.Utils.DrawerUtils.DebugLogHelpInfo(UnityEditor.SerializedProperty,UnityEngine.Rect,System.String,System.String,System.Action{System.Object})">
+            <summary>
+            Debug log type for output of attribute reference warning or error 
+            </summary>
+            <param name="property">Main property</param>
+            <param name="position">Position starting the top of the main property</param>
+            <param name="useTypeFormat">How to format to debug output</param>
+            <param name="validTypeNames">Valid attribute names that can be used.</param>
+            <param name="debugLog">The Debug log method to use</param>
+        </member>
+        <member name="M:ValueConstraintsEditor.Utils.DrawerUtils.Property(UnityEditor.SerializedProperty,System.String)">
+            <summary>
+            Gtes the property from the serialized object by field name
+            </summary>
+            <param name="property">Main property</param>
+            <param name="fieldName">Filed name to lookup</param>
+            <returns>Property from the serialized object identified by the field name</returns>
+        </member>
+        <member name="T:ValueConstraintsEditor.ValueDrawers.PropertyConverter">
+            <summary>
+            Converts a SerializedProperty into a Value Property Drawers Value classes drawing properties
+            </summary>
+        </member>
+        <member name="M:ValueConstraintsEditor.ValueDrawers.PropertyConverter.DrawOnGUI``2(UnityEditor.PropertyDrawer,ValueConstraintsEditor.ValueDrawers.PropertyConverter,UnityEngine.Rect,UnityEditor.SerializedProperty,UnityEngine.GUIContent,System.Func{``0,UnityEditor.SerializedProperty})">
+            <summary>
+            OnGUI drawer for the PropertyConverter
+            </summary>
+            <typeparam name="TConverter">Property converter type</typeparam>
+            <typeparam name="TValue">Type for Value Constraints</typeparam>
+            <param name="propertyDrawer">Property drawer hosting this property</param>
+            <param name="propertyConverter">Property converter to use</param>
+            <param name="position">Position to draw the property field</param>
+            <param name="property">Property field to draw</param>
+            <param name="label">Label defining the title and tooltip</param>
+            <param name="getProperty">The property callback to expose the property to test against</param>
+        </member>
+        <member name="F:ValueConstraintsEditor.ValueDrawers.PropertyConverter.level">
+            <summary>
+            Level to start drawing property
+            </summary>
+        </member>
+        <member name="P:ValueConstraintsEditor.ValueDrawers.PropertyConverter.viewerGUI">
+            <summary>
+            Defines the property viewer to control visibilty and enable/disabling of the property
+            </summary>
+        </member>
+        <member name="P:ValueConstraintsEditor.ValueDrawers.PropertyConverter.property">
+            <summary>
+            Property to convert
+            </summary>
+        </member>
+        <member name="P:ValueConstraintsEditor.ValueDrawers.PropertyConverter.label">
+            <summary>
+            Property to convert
+            </summary>
+        </member>
+        <member name="P:ValueConstraintsEditor.ValueDrawers.PropertyConverter.attribute">
+            <summary>
+            Property to convert
+            </summary>
+        </member>
+        <member name="M:ValueConstraintsEditor.ValueDrawers.PropertyConverter.#ctor(UnityEditor.SerializedProperty,UnityEngine.GUIContent,System.Attribute)">
+            <summary>
+            Constructor to define converter
+            </summary>
+            <param name="property">Property to convert</param>
+            <param name="label">Label defining the title and tooltip</param>
+            <param name="attribute">Property Attributes used on the field</param>
+        </member>
+        <member name="M:ValueConstraintsEditor.ValueDrawers.PropertyConverter.BeforeDrawProperties">
+            <summary>
+            Call this method to preform actions before the properties are drawn
+            </summary>
+        </member>
+        <member name="M:ValueConstraintsEditor.ValueDrawers.PropertyConverter.DrawProperties(UnityEngine.Rect)">
+            <summary>
+            Converts the property to drawing calls
+            </summary>
+            <param name="position">Position to draw the property field</param>
+        </member>
+        <member name="M:ValueConstraintsEditor.ValueDrawers.PropertyConverter.AfterDrawProperties">
+            <summary>
+            Call this method to preform actions after the properties are drawn
+            </summary>
+        </member>
+        <member name="P:ValueConstraintsEditor.ValueDrawers.PropertyConverter.visibleFieldCount">
+            <summary>
+            Gets the amount of visible fields and or the amount of rows needed to draw all properties
+            <para>Amount of fields/lines/rows required to draw thr property</para>
+            </summary>
+        </member>
+        <member name="M:ValueConstraintsEditor.ValueDrawers.PropertyConverter.GetLastRect(UnityEngine.Rect)">
+            <summary>
+            Get the next rect to draw the next property
+            </summary>
+            <param name="position">Position starting the top of the main property</param>
+            <returns>The calculated rect for the next property</returns>
+        </member>
+        <member name="M:ValueConstraintsEditor.ValueDrawers.PropertyConverter.GetPropertyHeight``1(System.Func{``0,UnityEditor.SerializedProperty})">
+            <summary>
+            Gets the required height to draw the property
+            </summary>
+            <typeparam name="TConverter">Property converter type</typeparam>
+            <param name="getProperty">The property callback to expose the property to test against</param>
+            <returns>The calculated height</returns>
+        </member>
+        <member name="M:ValueConstraintsEditor.ValueDrawers.PropertyConverter.AddViewer(System.Enum,ValueConstraintsEditor.Utils.PropertyViewerGUI)">
+            <summary>
+            Adds a property viewer to the collection
+            </summary>
+            <param name="ID">Id for key</param>
+            <param name="propertyViewerGUI">Vierwe to add</param>
+        </member>
+        <member name="T:ValueConstraintsEditor.ValueDrawers.Rotator3Drawer">
+            <summary>
+            Draws a Value class of ValueBoundsFloat
+            </summary>
+        </member>
+        <member name="T:ValueConstraintsEditor.ValueDrawers.RotatorDrawer">
+            <summary>
+            Draws a Value class of Rotator class
+            </summary>
+        </member>
+        <member name="M:ValueConstraintsEditor.ValueDrawers.RotatorDrawer.GetConverterInstance(UnityEditor.SerializedProperty,UnityEngine.GUIContent,System.Attribute)">
+            <summary>
+            Acces to the property converter to draw the property in the inspector
+            </summary>
+        </member>
+        <member name="M:ValueConstraintsEditor.ValueDrawers.RotatorDrawer.OnGUI(UnityEngine.Rect,UnityEditor.SerializedProperty,UnityEngine.GUIContent)">
+            <summary>
+            Draws the property to the inspector on editor updates
+            </summary>
+            <param name="position">Position to draw the property field</param>
+            <param name="property">Property field to draw</param>
+            <param name="label">Label defining the title and tooltip</param>
+        </member>
+        <member name="M:ValueConstraintsEditor.ValueDrawers.RotatorDrawer.GetPropertyHeight(UnityEditor.SerializedProperty,UnityEngine.GUIContent)">
+            <summary>
+            Gets the required height to draw the property
+            </summary>
+            <param name="property">Property being drawn</param>
+            <param name="label">Label of the property</param>
+            <returns>The calculated height</returns>
+        </member>
+        <member name="T:ValueConstraintsEditor.ValueDrawers.RotatorDrawer.RotatorConverter">
+            <summary>
+            Converts a SerializedProperty into a RotatorDrawer Value classes drawing properties
+            </summary>
+        </member>
+        <member name="T:ValueConstraintsEditor.ValueDrawers.RotatorDrawer.RotatorConverter.RotatorID">
+            <summary>
+            Property viewer id for the collection of viewers
+            </summary>
+        </member>
+        <member name="F:ValueConstraintsEditor.ValueDrawers.RotatorDrawer.RotatorConverter.RotatorID.Axis">
+            <summary>
+            Axis property GUI viewer
+            </summary>
+        </member>
+        <member name="F:ValueConstraintsEditor.ValueDrawers.RotatorDrawer.RotatorConverter.RotatorID.Trace">
+            <summary>
+            Trace property GUI viewer
+            </summary>
+        </member>
+        <member name="F:ValueConstraintsEditor.ValueDrawers.RotatorDrawer.RotatorConverter.RotatorID.Angle">
+            <summary>
+            Angle property GUI viewer
+            </summary>
+        </member>
+        <member name="M:ValueConstraintsEditor.ValueDrawers.RotatorDrawer.RotatorConverter.#ctor(UnityEditor.SerializedProperty,UnityEngine.GUIContent,System.Attribute)">
+            <summary>
+            Constructor to define converter
+            </summary>
+            <param name="property">Property field to draw</param>
+            <param name="label">Label defining the title and tooltip</param>
+            <param name="attribute">Property Attributes used on the field</param>
+        </member>
+        <member name="M:ValueConstraintsEditor.ValueDrawers.RotatorDrawer.RotatorConverter.DrawProperties(UnityEngine.Rect)">
+            <summary>
+            Converts the property to drawing calls
+            </summary>
+            <param name="position">Position to draw the property field</param>
+        </member>
+        <member name="T:ValueConstraintsEditor.ValueDrawers.ValueColorDrawer">
+            <summary>
+            Draws a Value class of ValueColorFloat class
+            </summary>
+        </member>
+        <member name="T:ValueConstraintsEditor.ValueDrawers.ValueColorFloatDrawer">
+            <summary>
+            Draws a Value class of ValueColor class
+            </summary>
+        </member>
+        <member name="M:ValueConstraintsEditor.ValueDrawers.ValueColorFloatDrawer.GetConverterInstance(UnityEditor.SerializedProperty,UnityEngine.GUIContent,System.Attribute)">
+            <summary>
+            Acces to the property converter to draw the property in the inspector
+            </summary>
+        </member>
+        <member name="M:ValueConstraintsEditor.ValueDrawers.ValueColorFloatDrawer.OnGUI(UnityEngine.Rect,UnityEditor.SerializedProperty,UnityEngine.GUIContent)">
+            <summary>
+            Draws the property to the inspector on editor updates
+            </summary>
+            <param name="position">Position to draw the property field</param>
+            <param name="property">Property field to draw</param>
+            <param name="label">Label defining the title and tooltip</param>
+        </member>
+        <member name="M:ValueConstraintsEditor.ValueDrawers.ValueColorFloatDrawer.GetPropertyHeight(UnityEditor.SerializedProperty,UnityEngine.GUIContent)">
+            <summary>
+            Gets the required height to draw the property
+            </summary>
+            <param name="property">Property being drawn</param>
+            <param name="label">Label of the property</param>
+            <returns>The calculated height</returns>
+        </member>
+        <member name="T:ValueConstraintsEditor.ValueDrawers.ValueColorFloatDrawer.ValueColorConverter">
+            <summary>
+            Converts a SerializedProperty into a ValueColorFloatDrawer Value classes drawing properties
+            </summary>
+        </member>
+        <member name="T:ValueConstraintsEditor.ValueDrawers.ValueColorFloatDrawer.ValueColorConverter.ColorID">
+            <summary>
+            Property viewer id for the collection of viewers
+            </summary>
+        </member>
+        <member name="F:ValueConstraintsEditor.ValueDrawers.ValueColorFloatDrawer.ValueColorConverter.ColorID.MinColor">
+            <summary>
+            MinColor property GUI viewer
+            </summary>
+        </member>
+        <member name="F:ValueConstraintsEditor.ValueDrawers.ValueColorFloatDrawer.ValueColorConverter.ColorID.MaxColor">
+            <summary>
+            MaxColor property GUI viewer
+            </summary>
+        </member>
+        <member name="F:ValueConstraintsEditor.ValueDrawers.ValueColorFloatDrawer.ValueColorConverter.ColorID.MatchingColor">
+            <summary>
+            MatchingColor property GUI viewer
+            </summary>
+        </member>
+        <member name="M:ValueConstraintsEditor.ValueDrawers.ValueColorFloatDrawer.ValueColorConverter.#ctor(UnityEditor.SerializedProperty,UnityEngine.GUIContent,System.Attribute)">
+            <summary>
+            Constructor to define converter
+            </summary>
+            <param name="property">Property field to draw</param>
+            <param name="label">Label defining the title and tooltip</param>
+            <param name="attribute">Property Attributes used on the field</param>
+        </member>
+        <member name="T:ValueConstraintsEditor.ValueDrawers.ValueMaterialFloatDrawer">
+            <summary>
+            Draws a Value class of ValueMaterialFloat class
+            </summary>
+        </member>
+        <member name="M:ValueConstraintsEditor.ValueDrawers.ValueMaterialFloatDrawer.GetConverterInstance(UnityEditor.SerializedProperty,UnityEngine.GUIContent,System.Attribute)">
+            <summary>
+            Acces to the property converter to draw the property in the inspector
+            </summary>
+        </member>
+        <member name="M:ValueConstraintsEditor.ValueDrawers.ValueMaterialFloatDrawer.OnGUI(UnityEngine.Rect,UnityEditor.SerializedProperty,UnityEngine.GUIContent)">
+            <summary>
+            Draws the property to the inspector on editor updates
+            </summary>
+            <param name="position">Position to draw the property field</param>
+            <param name="property">Property field to draw</param>
+            <param name="label">Label defining the title and tooltip</param>
+        </member>
+        <member name="M:ValueConstraintsEditor.ValueDrawers.ValueMaterialFloatDrawer.GetPropertyHeight(UnityEditor.SerializedProperty,UnityEngine.GUIContent)">
+            <summary>
+            Gets the required height to draw the property
+            </summary>
+            <param name="property">Property being drawn</param>
+            <param name="label">Label of the property</param>
+            <returns>The calculated height</returns>
+        </member>
+        <member name="T:ValueConstraintsEditor.ValueDrawers.ValueMaterialFloatDrawer.ValueMaterialConverter">
+            <summary>
+            Converts a SerializedProperty into a ValueMaterialFloatDrawer Value classes drawing properties
+            </summary>
+        </member>
+        <member name="T:ValueConstraintsEditor.ValueDrawers.ValueMaterialFloatDrawer.ValueMaterialConverter.MaterialID">
+            <summary>
+            Property viewer id for the collection of viewers
+            </summary>
+        </member>
+        <member name="F:ValueConstraintsEditor.ValueDrawers.ValueMaterialFloatDrawer.ValueMaterialConverter.MaterialID.MinMaterial">
+            <summary>
+            MinMaterial property GUI viewer
+            </summary>
+        </member>
+        <member name="F:ValueConstraintsEditor.ValueDrawers.ValueMaterialFloatDrawer.ValueMaterialConverter.MaterialID.MaxMaterial">
+            <summary>
+            MaxMaterial property GUI viewer
+            </summary>
+        </member>
+        <member name="F:ValueConstraintsEditor.ValueDrawers.ValueMaterialFloatDrawer.ValueMaterialConverter.MaterialID.MinNull">
+            <summary>
+            MinNull property GUI viewer
+            </summary>
+        </member>
+        <member name="F:ValueConstraintsEditor.ValueDrawers.ValueMaterialFloatDrawer.ValueMaterialConverter.MaterialID.MaxNull">
+            <summary>
+            MaxNull property GUI viewer
+            </summary>
+        </member>
+        <member name="F:ValueConstraintsEditor.ValueDrawers.ValueMaterialFloatDrawer.ValueMaterialConverter.MaterialID.MatchingMaterial">
+            <summary>
+            MatchingMaterial property GUI viewer
+            </summary>
+        </member>
+        <member name="M:ValueConstraintsEditor.ValueDrawers.ValueMaterialFloatDrawer.ValueMaterialConverter.#ctor(UnityEditor.SerializedProperty,UnityEngine.GUIContent,System.Attribute)">
+            <summary>
+            Constructor to define converter
+            </summary>
+            <param name="property">Property field to draw</param>
+            <param name="label">Label defining the title and tooltip</param>
+            <param name="attribute">Property Attributes used on the field</param>
+        </member>
+        <member name="M:ValueConstraintsEditor.ValueDrawers.ValueMaterialFloatDrawer.ValueMaterialConverter.BeforeDrawProperties">
+            <summary>
+            Call this method to preform actions before the properties are drawn
+            </summary>
+        </member>
+        <member name="T:ValueConstraintsEditor.ValueDrawers.Vector3Extensions">
+            <summary>
+            Vector3 helper to return absolute value of vector values
+            </summary>
+        </member>
+        <member name="M:ValueConstraintsEditor.ValueDrawers.Vector3Extensions.AbsVector(UnityEngine.Vector3)">
+            <summary>
+            
+            </summary>
+            <param name="value">Vector to abs</param>
+            <returns>Absolute value of vector values</returns>
+        </member>
+        <member name="T:ValueConstraintsEditor.ValueDrawers.ValueRotator2Drawer">
+            <summary>
+            Draws a Value class of ValueWaypoint2
+            </summary>
+        </member>
+        <member name="T:ValueConstraintsEditor.ValueDrawers.ValueRotator3Drawer">
+            <summary>
+            Draws a Value class of ValueWaypoint3
+            </summary>
+        </member>
+        <member name="T:ValueConstraintsEditor.ValueDrawers.ValueRotatorDrawer`1">
+            <summary>
+            Draws a Value class of ValueRotator class
+            </summary>
+            <typeparam name="V">Type of Vector to use Vector2 or Vector3</typeparam>
+        </member>
+        <member name="M:ValueConstraintsEditor.ValueDrawers.ValueRotatorDrawer`1.GetConverterInstance(UnityEditor.SerializedProperty,UnityEngine.GUIContent,System.Attribute)">
+            <summary>
+            Acces to the property converter to draw the property in the inspector
+            </summary>
+        </member>
+        <member name="M:ValueConstraintsEditor.ValueDrawers.ValueRotatorDrawer`1.OnGUI(UnityEngine.Rect,UnityEditor.SerializedProperty,UnityEngine.GUIContent)">
+            <summary>
+            Draws the property to the inspector on editor updates
+            </summary>
+            <param name="position">Position to draw the property field</param>
+            <param name="property">Property field to draw</param>
+            <param name="label">Label defining the title and tooltip</param>
+        </member>
+        <member name="M:ValueConstraintsEditor.ValueDrawers.ValueRotatorDrawer`1.GetPropertyHeight(UnityEditor.SerializedProperty,UnityEngine.GUIContent)">
+            <summary>
+            Gets the required height to draw the property
+            </summary>
+            <param name="property">Property being drawn</param>
+            <param name="label">Label of the property</param>
+            <returns>The calculated height</returns>
+        </member>
+        <member name="T:ValueConstraintsEditor.ValueDrawers.ValueRotatorDrawer`1.ValueRotatorConverter">
+            <summary>
+            Converts a SerializedProperty into a ValueRotatorDrawer Value classes drawing properties
+            </summary>
+        </member>
+        <member name="T:ValueConstraintsEditor.ValueDrawers.ValueRotatorDrawer`1.ValueRotatorConverter.RotatorID">
+            <summary>
+            Property viewer id for the collection of viewers
+            </summary>
+        </member>
+        <member name="F:ValueConstraintsEditor.ValueDrawers.ValueRotatorDrawer`1.ValueRotatorConverter.RotatorID.AlignToParent">
+            <summary>
+            AlignToParent property GUI viewer
+            </summary>
+        </member>
+        <member name="F:ValueConstraintsEditor.ValueDrawers.ValueRotatorDrawer`1.ValueRotatorConverter.RotatorID.Radius">
+            <summary>
+            Radius property GUI viewer
+            </summary>
+        </member>
+        <member name="F:ValueConstraintsEditor.ValueDrawers.ValueRotatorDrawer`1.ValueRotatorConverter.RotatorID.Resolution">
+            <summary>
+            Resolution property GUI viewer
+            </summary>
+        </member>
+        <member name="F:ValueConstraintsEditor.ValueDrawers.ValueRotatorDrawer`1.ValueRotatorConverter.RotatorID.X">
+            <summary>
+            X property GUI viewer
+            </summary>
+        </member>
+        <member name="F:ValueConstraintsEditor.ValueDrawers.ValueRotatorDrawer`1.ValueRotatorConverter.RotatorID.Y">
+            <summary>
+            Y property GUI viewer
+            </summary>
+        </member>
+        <member name="F:ValueConstraintsEditor.ValueDrawers.ValueRotatorDrawer`1.ValueRotatorConverter.RotatorID.Z">
+            <summary>
+            Z property GUI viewer
+            </summary>
+        </member>
+        <member name="F:ValueConstraintsEditor.ValueDrawers.ValueRotatorDrawer`1.ValueRotatorConverter.RotatorID.LocalRotationOneAxisOnly">
+            <summary>
+            LocalRotationOneAxisOnly property GUI viewer
+            </summary>
+        </member>
+        <member name="M:ValueConstraintsEditor.ValueDrawers.ValueRotatorDrawer`1.ValueRotatorConverter.#ctor(UnityEditor.SerializedProperty,UnityEngine.GUIContent,System.Attribute)">
+            <summary>
+            Constructor to define converter
+            </summary>
+            <param name="property">Property field to draw</param>
+            <param name="label">Label defining the title and tooltip</param>
+            <param name="attribute">Property Attributes used on the field</param>
+        </member>
+        <member name="M:ValueConstraintsEditor.ValueDrawers.ValueRotatorDrawer`1.ValueRotatorConverter.GetPropertyHeight``1(System.Func{``0,UnityEditor.SerializedProperty})">
+            <summary>
+            Gets the required height to draw the property
+            </summary>
+            <typeparam name="TConverter">Property converter type</typeparam>
+            <param name="getProperty">The property callback to expose the property to test against</param>
+            <returns>The calculated height</returns>
+        </member>
+        <member name="M:ValueConstraintsEditor.ValueDrawers.ValueRotatorDrawer`1.ValueRotatorConverter.BeforeDrawProperties">
+            <summary>
+            Call this method to preform actions before the properties are drawn
+            </summary>
+        </member>
+        <member name="T:ValueConstraintsEditor.ValueDrawers.ValuePosition2Drawer">
+            <summary>
+            Draws a Value class of ValuePosition2
+            </summary>
+        </member>
+        <member name="T:ValueConstraintsEditor.ValueDrawers.ValuePosition3Drawer">
+            <summary>
+            Draws a Value class of ValuePosition3
+            </summary>
+        </member>
+        <member name="T:ValueConstraintsEditor.ValueDrawers.ValuePositionDrawer">
+            <summary>
+            Draws a Value class of ValuePositionAttribute
+            </summary>
+        </member>
+        <member name="M:ValueConstraintsEditor.ValueDrawers.ValuePositionDrawer.GetConverterInstance(UnityEditor.SerializedProperty,UnityEngine.GUIContent,System.Attribute)">
+            <summary>
+            Acces to the property converter to draw the property in the inspector
+            </summary>
+        </member>
+        <member name="M:ValueConstraintsEditor.ValueDrawers.ValuePositionDrawer.OnGUI(UnityEngine.Rect,UnityEditor.SerializedProperty,UnityEngine.GUIContent)">
+            <summary>
+            Draws the property to the inspector on editor updates
+            </summary>
+            <param name="position">Position to draw the property field</param>
+            <param name="property">Property field to draw</param>
+            <param name="label">Label defining the title and tooltip</param>
+        </member>
+        <member name="M:ValueConstraintsEditor.ValueDrawers.ValuePositionDrawer.GetPropertyHeight(UnityEditor.SerializedProperty,UnityEngine.GUIContent)">
+            <summary>
+            Gets the required height to draw the property
+            </summary>
+            <param name="property">Property being drawn</param>
+            <param name="label">Label of the property</param>
+            <returns>The calculated height</returns>
+        </member>
+        <member name="T:ValueConstraintsEditor.ValueDrawers.ValuePositionDrawer.ValuePositionConverter">
+            <summary>
+            Converts a SerializedProperty into a ValuePositionDrawer Value classes drawing properties
+            </summary>
+        </member>
+        <member name="T:ValueConstraintsEditor.ValueDrawers.ValuePositionDrawer.ValuePositionConverter.PositionID">
+            <summary>
+            Property viewer id for the collection of viewers
+            </summary>
+        </member>
+        <member name="F:ValueConstraintsEditor.ValueDrawers.ValuePositionDrawer.ValuePositionConverter.PositionID.MoveHandleType">
+            <summary>
+            MoveHandleType property GUI viewer
+            </summary>
+        </member>
+        <member name="F:ValueConstraintsEditor.ValueDrawers.ValuePositionDrawer.ValuePositionConverter.PositionID.LockTransform">
+            <summary>
+            LockTransform property GUI viewer
+            </summary>
+        </member>
+        <member name="M:ValueConstraintsEditor.ValueDrawers.ValuePositionDrawer.ValuePositionConverter.#ctor(UnityEditor.SerializedProperty,UnityEngine.GUIContent,System.Attribute)">
+            <summary>
+            Constructor to define converter
+            </summary>
+            <param name="property">Property field to draw</param>
+            <param name="label">Label defining the title and tooltip</param>
+            <param name="attribute">Property Attributes used on the field</param>
+        </member>
+        <member name="T:ValueConstraintsEditor.ValueDrawers.ValueVector2Drawer">
+            <summary>
+            Draws a Value class of ValueVector2
+            </summary>
+        </member>
+        <member name="T:ValueConstraintsEditor.ValueDrawers.ValueVector3Drawer">
+            <summary>
+            Draws a Value class of ValueVector3
+            </summary>
+        </member>
+        <member name="T:ValueConstraintsEditor.ValueDrawers.ValueVectorDrawer">
+            <summary>
+            Draws a Value class of ValueVectorAttribute
+            </summary>
+        </member>
+        <member name="M:ValueConstraintsEditor.ValueDrawers.ValueVectorDrawer.GetConverterInstance(UnityEditor.SerializedProperty,UnityEngine.GUIContent,System.Attribute)">
+            <summary>
+            Acces to the property converter to draw the property in the inspector
+            </summary>
+        </member>
+        <member name="M:ValueConstraintsEditor.ValueDrawers.ValueVectorDrawer.OnGUI(UnityEngine.Rect,UnityEditor.SerializedProperty,UnityEngine.GUIContent)">
+            <summary>
+            Draws the property to the inspector on editor updates
+            </summary>
+            <param name="position">Position to draw the property field</param>
+            <param name="property">Property field to draw</param>
+            <param name="label">Label defining the title and tooltip</param>
+        </member>
+        <member name="M:ValueConstraintsEditor.ValueDrawers.ValueVectorDrawer.GetPropertyHeight(UnityEditor.SerializedProperty,UnityEngine.GUIContent)">
+            <summary>
+            Gets the required height to draw the property
+            </summary>
+            <param name="property">Property being drawn</param>
+            <param name="label">Label of the property</param>
+            <returns>The calculated height</returns>
+        </member>
+        <member name="T:ValueConstraintsEditor.ValueDrawers.ValueVectorDrawer.ValueVectorConverter">
+            <summary>
+            Converts a SerializedProperty into a ValueVectorDrawer Value classes drawing properties
+            </summary>
+        </member>
+        <member name="T:ValueConstraintsEditor.ValueDrawers.ValueVectorDrawer.ValueVectorConverter.VectorID">
+            <summary>
+            Property viewer id for the collection of viewers
+            </summary>
+        </member>
+        <member name="F:ValueConstraintsEditor.ValueDrawers.ValueVectorDrawer.ValueVectorConverter.VectorID.MinVec">
+            <summary>
+            MinVec property GUI viewer
+            </summary>
+        </member>
+        <member name="F:ValueConstraintsEditor.ValueDrawers.ValueVectorDrawer.ValueVectorConverter.VectorID.MaxVec">
+            <summary>
+            MaxVec property GUI viewer
+            </summary>
+        </member>
+        <member name="F:ValueConstraintsEditor.ValueDrawers.ValueVectorDrawer.ValueVectorConverter.VectorID.TimeCurve">
+            <summary>
+            TimeCurve property GUI viewer
+            </summary>
+        </member>
+        <member name="M:ValueConstraintsEditor.ValueDrawers.ValueVectorDrawer.ValueVectorConverter.#ctor(UnityEditor.SerializedProperty,UnityEngine.GUIContent,System.Attribute)">
+            <summary>
+            Constructor to define converter
+            </summary>
+            <param name="property">Property field to draw</param>
+            <param name="label">Label defining the title and tooltip</param>
+            <param name="attribute">Property Attributes used on the field</param>
+        </member>
+        <member name="T:ValueConstraintsEditor.ValueDrawers.ValueSingleIntDrawer">
+            <summary>
+            Draws a Value class of ValueSingleInt
+            </summary>
+        </member>
+        <member name="T:ValueConstraintsEditor.ValueDrawers.ValueSingleFloatDrawer">
+            <summary>
+            Draws a Value class of ValueSingleFloat
+            </summary>
+        </member>
+        <member name="T:ValueConstraintsEditor.ValueDrawers.ValueSingleDrawer">
+            <summary>
+            Draws a Value class of ValueSingleAttribute
+            </summary>
+        </member>
+        <member name="M:ValueConstraintsEditor.ValueDrawers.ValueSingleDrawer.GetConverterInstance(UnityEditor.SerializedProperty,UnityEngine.GUIContent,System.Attribute)">
+            <summary>
+            Acces to the property converter to draw the property in the inspector
+            </summary>
+        </member>
+        <member name="M:ValueConstraintsEditor.ValueDrawers.ValueSingleDrawer.OnGUI(UnityEngine.Rect,UnityEditor.SerializedProperty,UnityEngine.GUIContent)">
+            <summary>
+            Draws the property to the inspector on editor updates
+            </summary>
+            <param name="position">Position to draw the property field</param>
+            <param name="property">Property field to draw</param>
+            <param name="label">Label defining the title and tooltip</param>
+        </member>
+        <member name="M:ValueConstraintsEditor.ValueDrawers.ValueSingleDrawer.GetPropertyHeight(UnityEditor.SerializedProperty,UnityEngine.GUIContent)">
+            <summary>
+            Gets the required height to draw the property
+            </summary>
+            <param name="property">Property being drawn</param>
+            <param name="label">Label of the property</param>
+            <returns>The calculated height</returns>
+        </member>
+        <member name="T:ValueConstraintsEditor.ValueDrawers.ValueSingleDrawer.ValueSingleConverter">
+            <summary>
+            Converts a SerializedProperty into a ValueSingleDrawer Value classes drawing properties
+            </summary>
+        </member>
+        <member name="T:ValueConstraintsEditor.ValueDrawers.ValueSingleDrawer.ValueSingleConverter.SingleID">
+            <summary>
+            Property viewer id for the collection of viewers
+            </summary>
+        </member>
+        <member name="F:ValueConstraintsEditor.ValueDrawers.ValueSingleDrawer.ValueSingleConverter.SingleID.Scale">
+            <summary>
+            Scale property GUI viewer
+            </summary>
+        </member>
+        <member name="F:ValueConstraintsEditor.ValueDrawers.ValueSingleDrawer.ValueSingleConverter.SingleID.MaxDelta">
+            <summary>
+            MaxDelta property GUI viewer
+            </summary>
+        </member>
+        <member name="F:ValueConstraintsEditor.ValueDrawers.ValueSingleDrawer.ValueSingleConverter.SingleID.Direction">
+            <summary>
+            Direction property GUI viewer
+            </summary>
+        </member>
+        <member name="F:ValueConstraintsEditor.ValueDrawers.ValueSingleDrawer.ValueSingleConverter.SingleID.CurrentTemp">
+            <summary>
+            CurrentTemp property GUI viewer
+            </summary>
+        </member>
+        <member name="F:ValueConstraintsEditor.ValueDrawers.ValueSingleDrawer.ValueSingleConverter.SingleID.Loop">
+            <summary>
+            Loop property GUI viewer
+            </summary>
+        </member>
+        <member name="F:ValueConstraintsEditor.ValueDrawers.ValueSingleDrawer.ValueSingleConverter.m_ScaleValue">
+            <summary>
+            Property access to current object SerializedProperty
+            </summary>
+        </member>
+        <member name="F:ValueConstraintsEditor.ValueDrawers.ValueSingleDrawer.ValueSingleConverter.m_MaxDeltaValue">
+            <summary>
+            Property access to current object SerializedProperty
+            </summary>
+        </member>
+        <member name="P:ValueConstraintsEditor.ValueDrawers.ValueSingleDrawer.ValueSingleConverter.scaleValue">
+            <summary>
+            Property access to current object SerializedProperty
+            </summary>
+        </member>
+        <member name="P:ValueConstraintsEditor.ValueDrawers.ValueSingleDrawer.ValueSingleConverter.maxDeltaValue">
+            <summary>
+            Property access to current object SerializedProperty
+            </summary>
+        </member>
+        <member name="M:ValueConstraintsEditor.ValueDrawers.ValueSingleDrawer.ValueSingleConverter.#ctor(UnityEditor.SerializedProperty,UnityEngine.GUIContent,System.Attribute)">
+            <summary>
+            Constructor to define converter
+            </summary>
+            <param name="property">Property field to draw</param>
+            <param name="label">Label defining the title and tooltip</param>
+            <param name="attribute">Property Attributes used on the field</param>
+        </member>
+        <member name="M:ValueConstraintsEditor.ValueDrawers.ValueSingleDrawer.ValueSingleConverter.BeforeDrawProperties">
+            <summary>
+            Call this method to preform actions before the properties are drawn
+            </summary>
+        </member>
+        <member name="T:ValueConstraintsEditor.ValueDrawers.ValueDigitIntDrawer">
+            <summary>
+            Draws a Value class of ValueDigitInt
+            </summary>
+        </member>
+        <member name="T:ValueConstraintsEditor.ValueDrawers.ValueDigitFloatDrawer">
+            <summary>
+            Draws a Value class of ValueDigitFloat
+            </summary>
+        </member>
+        <member name="T:ValueConstraintsEditor.ValueDrawers.ValueDigitDrawer">
+            <summary>
+            Draws a Value class of ValueDigitAttribute
+            </summary>
+        </member>
+        <member name="M:ValueConstraintsEditor.ValueDrawers.ValueDigitDrawer.GetConverterInstance(UnityEditor.SerializedProperty,UnityEngine.GUIContent,System.Attribute)">
+            <summary>
+            Acces to the property converter to draw the property in the inspector
+            </summary>
+        </member>
+        <member name="M:ValueConstraintsEditor.ValueDrawers.ValueDigitDrawer.OnGUI(UnityEngine.Rect,UnityEditor.SerializedProperty,UnityEngine.GUIContent)">
+            <summary>
+            Draws the property to the inspaecor on editor updates
+            </summary>
+            <param name="position">Position to draw the property field</param>
+            <param name="property">Property field to draw</param>
+            <param name="label">Label defining the title and tooltip</param>
+        </member>
+        <member name="M:ValueConstraintsEditor.ValueDrawers.ValueDigitDrawer.GetPropertyHeight(UnityEditor.SerializedProperty,UnityEngine.GUIContent)">
+            <summary>
+            Gets the required height to draw the property
+            </summary>
+            <param name="property">Property being drawn</param>
+            <param name="label">Label of the property</param>
+            <returns>The calculated height</returns>
+        </member>
+        <member name="T:ValueConstraintsEditor.ValueDrawers.ValueDigitDrawer.ValueDigitConverter">
+            <summary>
+            Converts a SerializedProperty into a ValueDigitDrawer Value classes drawing properties
+            </summary>
+        </member>
+        <member name="T:ValueConstraintsEditor.ValueDrawers.ValueDigitDrawer.ValueDigitConverter.DigitID">
+            <summary>
+            Property viewer id for the collection of viewers
+            </summary>
+        </member>
+        <member name="F:ValueConstraintsEditor.ValueDrawers.ValueDigitDrawer.ValueDigitConverter.DigitID.Current">
+            <summary>
+            Current property GUI viewer
+            </summary>
+        </member>
+        <member name="M:ValueConstraintsEditor.ValueDrawers.ValueDigitDrawer.ValueDigitConverter.#ctor(UnityEditor.SerializedProperty,UnityEngine.GUIContent,System.Attribute)">
+            <summary>
+            Constructor to define converter
+            </summary>
+            <param name="property">Property field to draw</param>
+            <param name="label">Label defining the title and tooltip</param>
+            <param name="attribute">Property Attributes used on the field</param>
+        </member>
+        <member name="M:ValueConstraintsEditor.ValueDrawers.ValueDigitDrawer.LabelTooltip">
+            <summary>
+            Tooltip for the Current property
+            </summary>
+            <returns>Tooltip string</returns>
+        </member>
+        <member name="M:ValueConstraintsEditor.ValueDrawers.ValueDigitDrawer.LabelTitle">
+            <summary>
+            Title for the Current property
+            </summary>
+            <returns>Title string</returns>
+        </member>
+        <member name="T:ValueConstraintsEditor.ValueDrawers.ValueControlIntDrawer">
+            <summary>
+            Draws a Value class of ValueSingleInt
+            </summary>
+        </member>
+        <member name="T:ValueConstraintsEditor.ValueDrawers.ValueControlFloatDrawer">
+            <summary>
+            Draws a Value class of ValueControlFloat
+            </summary>
+        </member>
+        <member name="T:ValueConstraintsEditor.ValueDrawers.ValueControlDrawer">
+            <summary>
+            Draws a Value class of ValueControlAttribute
+            </summary>
+        </member>
+        <member name="M:ValueConstraintsEditor.ValueDrawers.ValueControlDrawer.GetConverterInstance(UnityEditor.SerializedProperty,UnityEngine.GUIContent,System.Attribute)">
+            <summary>
+            Acces to the property converter to draw the property in the inspector
+            </summary>
+        </member>
+        <member name="M:ValueConstraintsEditor.ValueDrawers.ValueControlDrawer.OnGUI(UnityEngine.Rect,UnityEditor.SerializedProperty,UnityEngine.GUIContent)">
+            <summary>
+            Draws the property to the inspaecor on editor updates
+            </summary>
+            <param name="position">Position to draw the property field</param>
+            <param name="property">Property field to draw</param>
+            <param name="label">Label defining the title and tooltip</param>
+        </member>
+        <member name="M:ValueConstraintsEditor.ValueDrawers.ValueControlDrawer.GetPropertyHeight(UnityEditor.SerializedProperty,UnityEngine.GUIContent)">
+            <summary>
+            Gets the required height to draw the property
+            </summary>
+            <param name="property">Property being drawn</param>
+            <param name="label">Label of the property</param>
+            <returns>The calculated height</returns>
+        </member>
+        <member name="T:ValueConstraintsEditor.ValueDrawers.ValueControlDrawer.ValueControlConverter">
+            <summary>
+            Converts a SerializedProperty into a ValueControlDrawer Value classes drawing properties
+            </summary>
+        </member>
+        <member name="T:ValueConstraintsEditor.ValueDrawers.ValueControlDrawer.ValueControlConverter.ControlID">
+            <summary>
+            Property viewer id for the collection of viewers
+            </summary>
+        </member>
+        <member name="F:ValueConstraintsEditor.ValueDrawers.ValueControlDrawer.ValueControlConverter.ControlID.ActionType">
+            <summary>
+            ActionType property GUI viewer
+            </summary>
+        </member>
+        <member name="M:ValueConstraintsEditor.ValueDrawers.ValueControlDrawer.ValueControlConverter.#ctor(UnityEditor.SerializedProperty,UnityEngine.GUIContent,System.Attribute)">
+            <summary>
+            Constructor to define converter
+            </summary>
+            <param name="property">Property field to draw</param>
+            <param name="label">Label defining the title and tooltip</param>
+            <param name="attribute">Property Attributes used on the field</param>
+        </member>
+        <member name="M:ValueConstraintsEditor.ValueDrawers.ValueControlDrawer.ValueControlConverter.BeforeDrawProperties">
+            <summary>
+            Call this method to preform actions before the properties are drawn
+            </summary>
+        </member>
+        <member name="M:ValueConstraintsEditor.ValueDrawers.ValueControlDrawer.ValueControlConverter.ActionTypeDrawer(ValueConstraints.ValueControls.ActionType[])">
+            <summary>
+            Supply a list of ActionType to use in the popup
+            <para>Leave params empty to use all ActionTypes</para>
+            </summary>
+            <param name="actionTypes">ActionType to use</param>
+            <returns>Action to draw popup of ActionType display options</returns>
+        </member>
+        <member name="T:ValueConstraintsEditor.ValueDrawers.ValueBoundsIntDrawer">
+            <summary>
+            Draws a Value class of ValueBoundsInt
+            </summary>
+        </member>
+        <member name="T:ValueConstraintsEditor.ValueDrawers.ValueBoundsFloatDrawer">
+            <summary>
+            Draws a Value class of ValueBoundsFloat
+            </summary>
+        </member>
+        <member name="T:ValueConstraintsEditor.ValueDrawers.ValueBoundsDrawer">
+            <summary>
+            Draws a Value class of ValueBoundsAttribute
+            </summary>
+        </member>
+        <member name="M:ValueConstraintsEditor.ValueDrawers.ValueBoundsDrawer.GetConverterInstance(UnityEditor.SerializedProperty,UnityEngine.GUIContent,System.Attribute)">
+            <summary>
+            Acces to the property converter to draw the property in the inspector
+            </summary>
+        </member>
+        <member name="M:ValueConstraintsEditor.ValueDrawers.ValueBoundsDrawer.OnGUI(UnityEngine.Rect,UnityEditor.SerializedProperty,UnityEngine.GUIContent)">
+            <summary>
+            Draws the property to the inspaecor on editor updates
+            </summary>
+            <param name="position">Position to draw the property field</param>
+            <param name="property">Property field to draw</param>
+            <param name="label">Label defining the title and tooltip</param>
+        </member>
+        <member name="M:ValueConstraintsEditor.ValueDrawers.ValueBoundsDrawer.GetPropertyHeight(UnityEditor.SerializedProperty,UnityEngine.GUIContent)">
+            <summary>
+            Gets the required height to draw the property
+            </summary>
+            <param name="property">Property being drawn</param>
+            <param name="label">Label of the property</param>
+            <returns>The calculated height</returns>
+        </member>
+        <member name="T:ValueConstraintsEditor.ValueDrawers.ValueBoundsDrawer.ValueBoundsConverter">
+            <summary>
+            Converts a SerializedProperty into a ValueBoundsDrawer Value classes drawing properties
+            </summary>
+        </member>
+        <member name="T:ValueConstraintsEditor.ValueDrawers.ValueBoundsDrawer.ValueBoundsConverter.BoundsID">
+            <summary>
+            Property viewer id for the collection of viewers
+            </summary>
+        </member>
+        <member name="F:ValueConstraintsEditor.ValueDrawers.ValueBoundsDrawer.ValueBoundsConverter.BoundsID.MinMaxLabel">
+            <summary>
+            MinMaxLabel property GUI viewer
+            </summary>
+        </member>
+        <member name="F:ValueConstraintsEditor.ValueDrawers.ValueBoundsDrawer.ValueBoundsConverter.BoundsID.MinMax">
+            <summary>
+            MinMax property GUI viewer
+            </summary>
+        </member>
+        <member name="F:ValueConstraintsEditor.ValueDrawers.ValueBoundsDrawer.ValueBoundsConverter.m_MinMaxValue">
+            <summary>
+            Property access to current object SerializedProperty
+            </summary>
+        </member>
+        <member name="P:ValueConstraintsEditor.ValueDrawers.ValueBoundsDrawer.ValueBoundsConverter.minMaxValue">
+            <summary>
+            Property access to current object SerializedProperty
+            </summary>
+        </member>
+        <member name="M:ValueConstraintsEditor.ValueDrawers.ValueBoundsDrawer.ValueBoundsConverter.#ctor(UnityEditor.SerializedProperty,UnityEngine.GUIContent,System.Attribute)">
+            <summary>
+            Constructor to define converter
+            </summary>
+            <param name="property">Property field to draw</param>
+            <param name="label">Label defining the title and tooltip</param>
+            <param name="attribute">Property Attributes used on the field</param>
+        </member>
+        <member name="M:ValueConstraintsEditor.ValueDrawers.ValueBoundsDrawer.ValueBoundsConverter.BeforeDrawProperties">
+            <summary>
+            Call this method to preform actions before the properties are drawn
+            </summary>
+        </member>
+        <member name="M:ValueConstraintsEditor.ValueDrawers.ValueBoundsDrawer.GetMinimumLimit(UnityEditor.SerializedProperty)">
+            <summary>
+            Gets the m_MinimumLimit property from the serialized object
+            </summary>
+            <param name="property">Property to look into</param>
+            <returns>SerializedProperty found on the serialized object</returns>
+        </member>
+        <member name="M:ValueConstraintsEditor.ValueDrawers.ValueBoundsDrawer.GetMaximumLimit(UnityEditor.SerializedProperty)">
+            <summary>
+            Gets the m_MaximumLimit property from the serialized object
+            </summary>
+            <param name="property">Property to look into</param>
+            <returns>SerializedProperty found on the serialized object</returns>
+        </member>
+        <member name="T:ValueConstraintsEditor.ValueDrawers.ValueWaypoint2Drawer">
+            <summary>
+            Draws a Value class of ValueWaypoint2
+            </summary>
+        </member>
+        <member name="T:ValueConstraintsEditor.ValueDrawers.ValueWaypoint3Drawer">
+            <summary>
+            Draws a Value class of ValueWaypoint3
+            </summary>
+        </member>
+        <member name="T:ValueConstraintsEditor.ValueDrawers.ValueWaypointDrawer`1">
+            <summary>
+            Draws a Value class of ValueWaypoint class
+            </summary>
+            <typeparam name="V">Type of Vector to use Vector2 or Vector3</typeparam>
+        </member>
+        <member name="M:ValueConstraintsEditor.ValueDrawers.ValueWaypointDrawer`1.GetConverterInstance(UnityEditor.SerializedProperty,UnityEngine.GUIContent,System.Attribute)">
+            <summary>
+            Acces to the property converter to draw the property in the inspector
+            </summary>
+        </member>
+        <member name="M:ValueConstraintsEditor.ValueDrawers.ValueWaypointDrawer`1.OnGUI(UnityEngine.Rect,UnityEditor.SerializedProperty,UnityEngine.GUIContent)">
+            <summary>
+            Draws the property to the inspector on editor updates
+            </summary>
+            <param name="position">Position to draw the property field</param>
+            <param name="property">Property field to draw</param>
+            <param name="label">Label defining the title and tooltip</param>
+        </member>
+        <member name="M:ValueConstraintsEditor.ValueDrawers.ValueWaypointDrawer`1.GetPropertyHeight(UnityEditor.SerializedProperty,UnityEngine.GUIContent)">
+            <summary>
+            Gets the required height to draw the property
+            </summary>
+            <param name="property">Property being drawn</param>
+            <param name="label">Label of the property</param>
+            <returns>The calculated height</returns>
+        </member>
+        <member name="T:ValueConstraintsEditor.ValueDrawers.ValueWaypointDrawer`1.WaypointConverter">
+            <summary>
+            Converts a SerializedProperty into a ValueWaypointDrawer Value classes drawing properties
+            </summary>
+        </member>
+        <member name="T:ValueConstraintsEditor.ValueDrawers.ValueWaypointDrawer`1.WaypointConverter.WaypointID">
+            <summary>
+            Property viewer id for the collection of viewers
+            </summary>
+        </member>
+        <member name="F:ValueConstraintsEditor.ValueDrawers.ValueWaypointDrawer`1.WaypointConverter.WaypointID.CurrentIndex">
+            <summary>
+            CurrentIndex property GUI viewer
+            </summary>
+        </member>
+        <member name="F:ValueConstraintsEditor.ValueDrawers.ValueWaypointDrawer`1.WaypointConverter.WaypointID.MinIndex">
+            <summary>
+            MinIndex property GUI viewer
+            </summary>
+        </member>
+        <member name="F:ValueConstraintsEditor.ValueDrawers.ValueWaypointDrawer`1.WaypointConverter.WaypointID.MaxIndex">
+            <summary>
+            MaxIndex property GUI viewer
+            </summary>
+        </member>
+        <member name="F:ValueConstraintsEditor.ValueDrawers.ValueWaypointDrawer`1.WaypointConverter.WaypointID.SelectionType">
+            <summary>
+            SelectionType property GUI viewer
+            </summary>
+        </member>
+        <member name="F:ValueConstraintsEditor.ValueDrawers.ValueWaypointDrawer`1.WaypointConverter.WaypointID.Nodes">
+            <summary>
+            Nodes property GUI viewer
+            </summary>
+        </member>
+        <member name="M:ValueConstraintsEditor.ValueDrawers.ValueWaypointDrawer`1.WaypointConverter.#ctor(UnityEditor.SerializedProperty,UnityEngine.GUIContent,System.Attribute)">
+            <summary>
+            Constructor to define converter
+            </summary>
+            <param name="property">Property field to draw</param>
+            <param name="label">Label defining the title and tooltip</param>
+            <param name="attribute">Property Attributes used on the field</param>
+        </member>
+        <member name="M:ValueConstraintsEditor.ValueDrawers.ValueWaypointDrawer`1.WaypointConverter.AfterDrawProperties">
+            <summary>
+            Call this method to preform actions after the properties are drawn
+            </summary>
+        </member>
+        <member name="T:ValueConstraintsEditor.ValueEditors.ColorReferenceEditor">
+            <summary>
+            Editor to present Value Color in the Inspector
+            </summary>
+        </member>
+        <member name="T:ValueConstraintsEditor.ValueEditors.FloatReferenceEditor">
+            <summary>
+            Editor to present Value Float in the Inspector
+            </summary>
+        </member>
+        <member name="T:ValueConstraintsEditor.ValueEditors.IntReferenceEditor">
+            <summary>
+            Editor to present Value Int in the Inspector
+            </summary>
+        </member>
+        <member name="T:ValueConstraintsEditor.ValueEditors.MaterialReferenceEditor">
+            <summary>
+            Editor to present Value Material in the Inspector
+            </summary>
+        </member>
+        <member name="T:ValueConstraintsEditor.ValueEditors.MemberReferenceEditor`1">
+            <summary>
+            Editor to present Value Member in the Inspector
+            </summary>
+            <typeparam name="TReturnType">Type to return, the reference type's return type</typeparam>
+        </member>
+        <member name="F:ValueConstraintsEditor.ValueEditors.MemberReferenceEditor`1.m_MemberTarget">
+            <summary>
+            Gets the member reference local target
+            </summary>
+        </member>
+        <member name="F:ValueConstraintsEditor.ValueEditors.MemberReferenceEditor`1.m_ComponentViewer">
+            <summary>
+            Viewer to draw and manage Component field
+            </summary>
+        </member>
+        <member name="F:ValueConstraintsEditor.ValueEditors.MemberReferenceEditor`1.m_MemberTypeViewer">
+            <summary>
+            Viewer to draw and manage MemberType field
+            </summary>
+        </member>
+        <member name="F:ValueConstraintsEditor.ValueEditors.MemberReferenceEditor`1.m_MemberNameViewer">
+            <summary>
+            Viewer to draw and manage MemberName field
+            </summary>
+        </member>
+        <member name="F:ValueConstraintsEditor.ValueEditors.MemberReferenceEditor`1.m_MemberIndexViewer">
+            <summary>
+            Viewer to draw and manage MemberIndex field
+            </summary>
+        </member>
+        <member name="F:ValueConstraintsEditor.ValueEditors.MemberReferenceEditor`1.m_ValueControlViewer">
+            <summary>
+            Viewer to draw and manage ValueControl field
+            </summary>
+        </member>
+        <member name="P:ValueConstraintsEditor.ValueEditors.MemberReferenceEditor`1.transform">
+            <summary>
+            Gets the transform attached to the component
+            </summary>
+        </member>
+        <member name="P:ValueConstraintsEditor.ValueEditors.MemberReferenceEditor`1.MemberNames">
+            <summary>
+            Sets the allowed member names
+            </summary>
+        </member>
+        <member name="M:ValueConstraintsEditor.ValueEditors.MemberReferenceEditor`1.OnEnable">
+            <summary>
+            Used to init variables
+            <para>Subscribe to the undoRedoPerformed event and Update callback</para>
+            </summary>
+        </member>
+        <member name="M:ValueConstraintsEditor.ValueEditors.MemberReferenceEditor`1.OnDisable">
+            <summary>
+            Used to un set variables
+            <para>Unsubscribe from the undoRedoPerformed event and Update callback</para>
+            </summary>
+        </member>
+        <member name="M:ValueConstraintsEditor.ValueEditors.MemberReferenceEditor`1.OnUndoRedo">
+            <summary>
+            Additional actions to preform on undoRedo action
+            </summary>
+        </member>
+        <member name="M:ValueConstraintsEditor.ValueEditors.MemberReferenceEditor`1.OnUpdate">
+            <summary>
+            Additional actions to preform on Editor Update action
+            </summary>
+        </member>
+        <member name="M:ValueConstraintsEditor.ValueEditors.MemberReferenceEditor`1.OnInspectorGUI">
+            <summary>
+            Draws Value Ints to Inspector
+            </summary>
+        </member>
+        <member name="T:ValueConstraintsEditor.ValueEditors.Position2DBehaviourEditor">
+            <summary>
+            Editor to present Value Position2D Vector in the Inspector
+            </summary>
+        </member>
+        <member name="T:ValueConstraintsEditor.ValueEditors.Position3DBehaviourEditor">
+            <summary>
+            Editor to present Value Position3D Vector in the Inspector
+            </summary>
+        </member>
+        <member name="T:ValueConstraintsEditor.ValueEditors.PositionBehaviourEditor">
+            <summary>
+            Editor to present Value Position 2D and 3D Vector in the Inspector
+            </summary>
+        </member>
+        <member name="M:ValueConstraintsEditor.ValueEditors.PositionBehaviourEditor.OnEnable">
+            <summary>
+            Used to init variables
+            </summary>
+        </member>
+        <member name="M:ValueConstraintsEditor.ValueEditors.PositionBehaviourEditor.OnInspectorGUI">
+            <summary>
+            Draws Value Position to Inspector
+            </summary>
+        </member>
+        <member name="M:ValueConstraintsEditor.ValueEditors.PositionBehaviourEditor.OnUpdate">
+            <summary>
+            Additional actions to preform on Editor Update action
+            <para>Updates testing and lockTransform positions</para>
+            </summary>
+        </member>
+        <member name="M:ValueConstraintsEditor.ValueEditors.PositionBehaviourEditor.OnSceneGUI">
+            <summary>
+            Draws scene view handles
+            </summary>
+        </member>
+        <member name="T:ValueConstraintsEditor.ValueEditors.MemberReferenceSceneGUIEditor`1">
+            <summary>
+            Editor to present Value Vector 2D and 3D in the Inspector
+            </summary>
+            <typeparam name="TReturnType">Type to return, the reference type's return type</typeparam>
+        </member>
+        <member name="M:ValueConstraintsEditor.ValueEditors.MemberReferenceSceneGUIEditor`1.OnSceneGUI">
+            <summary>
+            Draws scene view handles for reference editors
+            </summary>
+        </member>
+        <member name="T:ValueConstraintsEditor.ValueEditors.Rotator2DReferenceEditor">
+            <summary>
+            Editor to present Value Rotator2 in the Inspector
+            </summary>
+        </member>
+        <member name="T:ValueConstraintsEditor.ValueEditors.Rotator3DReferenceEditor">
+            <summary>
+            Editor to present Value Rotator3 in the Inspector
+            </summary>
+        </member>
+        <member name="T:ValueConstraintsEditor.ValueEditors.RotatorReferenceEditor">
+            <summary>
+            Editor to present Value Rotator 2D and 3D in the Inspector
+            </summary>
+        </member>
+        <member name="M:ValueConstraintsEditor.ValueEditors.RotatorReferenceEditor.OnEnable">
+            <summary>
+            Used to init variables
+            </summary>
+        </member>
+        <member name="M:ValueConstraintsEditor.ValueEditors.RotatorReferenceEditor.OnSceneGUI">
+            <summary>
+            Draws scene view handles for rotator reference 2D
+            </summary>
+        </member>
+        <member name="T:ValueConstraintsEditor.ValueEditors.Vector2ReferenceEditor">
+            <summary>
+            Editor to present Value Vector2 in the Inspector
+            </summary>
+        </member>
+        <member name="T:ValueConstraintsEditor.ValueEditors.Vector3ReferenceEditor">
+            <summary>
+            Editor to present Value Vector3 in the Inspector
+            </summary>
+        </member>
+        <member name="T:ValueConstraintsEditor.ValueEditors.VectorReferenceEditor`1">
+            <summary>
+            Editor to present Value Vector 2 and 3 in the Inspector
+            </summary>
+            <typeparam name="V">Type of Vector to use Vector2 or Vector3</typeparam>
+        </member>
+        <member name="T:ValueConstraintsEditor.ValueEditors.Waypoint2DBehaviourEditor">
+            <summary>
+            Draws a Value class of Waypoint2D
+            </summary>
+        </member>
+        <member name="T:ValueConstraintsEditor.ValueEditors.Waypoint3DBehaviourEditor">
+            <summary>
+            Draws a Value class of Waypoint3D
+            </summary>
+        </member>
+        <member name="T:ValueConstraintsEditor.ValueEditors.WaypointBehaviourEditor`1">
+            <summary>
+            Editor to present Value Waypoint3D Vector in the Inspector
+            </summary>
+            <typeparam name="V">Type of Vector to use Vector2 or Vector3</typeparam>
+        </member>
+        <member name="F:ValueConstraintsEditor.ValueEditors.WaypointBehaviourEditor`1.m_ReorderableWaypoint">
+            <summary>
+             Utility class to draw ReorderableList Value Vector Waypoint types and interactions.
+            </summary>
+        </member>
+        <member name="M:ValueConstraintsEditor.ValueEditors.WaypointBehaviourEditor`1.OnEnable">
+            <summary>
+            Used to init variables
+            </summary>
+        </member>
+        <member name="M:ValueConstraintsEditor.ValueEditors.WaypointBehaviourEditor`1.OnUndoRedo">
+            <summary>
+            Additional actions to preform on undoRedo action
+            <para>Clamps index to limits between -1 and list.count -1</para>
+            </summary>
+        </member>
+        <member name="M:ValueConstraintsEditor.ValueEditors.WaypointBehaviourEditor`1.OnInspectorGUI">
+            <summary>
+            Draws Value Waypoint to Inspector
+            </summary>
+        </member>
+        <member name="M:ValueConstraintsEditor.ValueEditors.WaypointBehaviourEditor`1.OnSceneGUI">
+            <summary>
+            Draws scene view handles
+            </summary>
+        </member>
+    </members>
+</doc>

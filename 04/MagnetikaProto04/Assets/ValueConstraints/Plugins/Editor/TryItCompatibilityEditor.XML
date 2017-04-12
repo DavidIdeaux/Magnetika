@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>TryItCompatibilityEditor</name>
+    </assembly>
+    <members>
+        <member name="T:TryItCompatibilityEditor.ExampleScenesWindow">
+            <summary>
+            Opens example scene picker
+            </summary>
+        </member>
+        <member name="T:TryItCompatibilityEditor.ShowTryIt">
+            <summary>
+            Checks to show TryIt version prompt to new user
+            </summary>
+        </member>
+    </members>
+</doc>

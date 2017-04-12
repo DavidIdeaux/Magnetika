@@ -1,0 +1,15 @@
+﻿<Properties StartupItem="Assembly-CSharp.csproj">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\ToAttract.cs">
+    <Files>
+      <File FileName="Assets\Scripts\JoystickTest.cs" Line="43" Column="101" />
+      <File FileName="Assets\Scripts\Magnetism.cs" Line="74" Column="11" />
+      <File FileName="Assets\Scripts\ToAttract.cs" Line="18" Column="12" />
+      <File FileName="Assets\Scripts\ToRepulse.cs" Line="20" Column="15" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>

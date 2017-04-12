@@ -1,0 +1,16 @@
+﻿<Properties StartupItem="Assembly-CSharp.csproj">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Magnetism.cs">
+    <Files>
+      <File FileName="Assets\Scripts\Magnetism.cs" Line="109" Column="10" />
+      <File FileName="Assets\Scripts\_joystick.cs" Line="10" Column="6" />
+      <File FileName="Assets\Scripts\End_MooveMagnetika.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Moove_Magnetika.cs" Line="59" Column="25" />
+      <File FileName="Assets\Scripts\ToAttract.cs" Line="22" Column="3" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>

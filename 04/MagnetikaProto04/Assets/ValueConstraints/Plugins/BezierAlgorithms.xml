@@ -1,0 +1,471 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>BezierAlgorithms</name>
+    </assembly>
+    <members>
+        <member name="T:BezierAlgorithms.CurveControlSection">
+            <summary>
+            Curve section of points to control section curve
+            </summary>
+        </member>
+        <member name="F:BezierAlgorithms.CurveControlSection.DISTANCE_MEASURE_SEGMENTS">
+            <summary>
+            Default amount of segments to use
+            </summary>
+        </member>
+        <member name="P:BezierAlgorithms.CurveControlSection.ControlNodes">
+            <summary>
+            Control nodes in an array
+            </summary>
+        </member>
+        <member name="P:BezierAlgorithms.CurveControlSection.p0">
+            <summary>
+            First control node
+            </summary>
+        </member>
+        <member name="P:BezierAlgorithms.CurveControlSection.p1">
+            <summary>
+            Last control node
+            </summary>
+        </member>
+        <member name="P:BezierAlgorithms.CurveControlSection.q0">
+            <summary>
+            First control point
+            </summary>
+        </member>
+        <member name="P:BezierAlgorithms.CurveControlSection.q1">
+            <summary>
+            Last control point
+            </summary>
+        </member>
+        <member name="P:BezierAlgorithms.CurveControlSection.distance">
+            <summary>
+            Distance of this control section calculated by using the amount of segments
+            </summary>
+        </member>
+        <member name="M:BezierAlgorithms.CurveControlSection.#ctor(BezierAlgorithms.ControlNode[],System.Int32)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="controlPoints">Control points to use for curve sections</param>
+            <param name="sectionIndex">Index to start this section</param>
+        </member>
+        <member name="M:BezierAlgorithms.CurveControlSection.CalculateCurve(System.Int32)">
+            <summary>
+            Calculate section curve
+            </summary>
+            <param name="segments">How many segments to use to calculate curve</param>
+            <returns>Collection of path nodes representing the curve</returns>
+        </member>
+        <member name="M:BezierAlgorithms.CurveControlSection.CalculateDistance(System.Int32)">
+            <summary>
+            Calculate curve distance
+            </summary>
+            <param name="segments">How many segments to use to calculate distance</param>
+        </member>
+        <member name="M:BezierAlgorithms.CurveControlSection.CalculateDistance(System.Int32,BezierAlgorithms.IControlNode[],System.Int32)">
+            <summary>
+            Calculate curve distance
+            </summary>
+            <param name="segments">How many segments to use to calculate distance</param>
+            <param name="controlPoints">Control points of curves</param>
+            <param name="index">Section index</param>
+            <returns>Distance of curve</returns>
+        </member>
+        <member name="M:BezierAlgorithms.CurveControlSection.CalculateCurve(System.Int32,BezierAlgorithms.IControlNode[],System.Int32)">
+            <summary>
+            Calculates curve
+            </summary>
+            <param name="segments">How many segments to use to calculate curve</param>
+            <param name="controlNodes">Control points to use for curve sections</param>
+            <param name="startIndex">Index to start this section</param>
+            <returns>Collection of path nodes representing the curve</returns>
+        </member>
+        <member name="T:BezierAlgorithms.BezierCurveUtils">
+            <summary>
+            Utility methods to calculate curve values
+            </summary>
+        </member>
+        <member name="M:BezierAlgorithms.BezierCurveUtils.QuadraticBezier2(UnityEngine.Vector2,UnityEngine.Vector2,UnityEngine.Vector2,System.Single)">
+            <summary>
+            Get position along quadratic curve 2D
+            </summary>
+            <param name="Start">Start position</param>
+            <param name="Control">Control node</param>
+            <param name="End">End position</param>
+            <param name="t">Time interval</param>
+            <returns>Poistion along curve set by time interval</returns>
+        </member>
+        <member name="M:BezierAlgorithms.BezierCurveUtils.QuadraticBezier3(UnityEngine.Vector3,UnityEngine.Vector3,UnityEngine.Vector3,System.Single)">
+            <summary>
+            Get position along quadratic curve 3D
+            </summary>
+            <param name="Start">Start position</param>
+            <param name="Control">Control node</param>
+            <param name="End">End position</param>
+            <param name="t">Time interval</param>
+            <returns>Poistion along curve set by time interval</returns>
+        </member>
+        <member name="M:BezierAlgorithms.BezierCurveUtils.CubicBezier2(UnityEngine.Vector2,UnityEngine.Vector2,UnityEngine.Vector2,UnityEngine.Vector2,System.Single)">
+            <summary>
+            Get position along cubic curve 2D
+            </summary>
+            <param name="s">Start position</param>
+            <param name="st">Start control node</param>
+            <param name="et">End control node</param>
+            <param name="e">End position</param>
+            <param name="t">Time interval</param>
+            <returns>Poistion along curve set by time interval</returns>
+        </member>
+        <member name="M:BezierAlgorithms.BezierCurveUtils.CubicBezier3(UnityEngine.Vector3,UnityEngine.Vector3,UnityEngine.Vector3,UnityEngine.Vector3,System.Single)">
+            <summary>
+            Get position along cubic curve 3D
+            </summary>
+            <param name="s">Start position</param>
+            <param name="st">Start control node</param>
+            <param name="et">End control node</param>
+            <param name="e">End position</param>
+            <param name="t">Time interval</param>
+            <returns>Poistion along curve set by time interval</returns>
+        </member>
+        <member name="T:BezierAlgorithms.Extensions.IndexExtensions">
+            <summary>
+            Extensions to provide index accessed collections
+            </summary>
+        </member>
+        <member name="M:BezierAlgorithms.Extensions.IndexExtensions.PreviousIndex(System.Int32,System.Int32)">
+            <summary>
+            Previous index wrapping at zero to length
+            </summary>
+            <param name="index">Current index value</param>
+            <param name="length">Maximum length exclusive</param>
+            <returns>Index after change</returns>
+        </member>
+        <member name="M:BezierAlgorithms.Extensions.IndexExtensions.NextIndex(System.Int32,System.Int32)">
+            <summary>
+            Next index wrapping at length to zero
+            </summary>
+            <param name="index">Current index value</param>
+            <param name="length">Maximum length exclusive</param>
+            <returns>Index after change</returns>
+        </member>
+        <member name="M:BezierAlgorithms.Extensions.IndexExtensions.WrapIndex(System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Wraps the value of an index
+            </summary>
+            <param name="index">Current index value</param>
+            <param name="changeValue">Amount to change by</param>
+            <param name="length">Maximum length exclusive</param>
+            <returns>Index after change</returns>
+        </member>
+        <member name="T:BezierAlgorithms.Extensions.ListExtensions">
+            <summary>
+            Helper methods for the lists.
+            </summary>
+        </member>
+        <member name="M:BezierAlgorithms.Extensions.ListExtensions.ChunkBy``1(System.Collections.Generic.List{``0},System.Int32)">
+            <summary>
+            Create chuncks of collection
+            </summary>
+            <typeparam name="T">Type of collection</typeparam>
+            <param name="list">List of collection</param>
+            <param name="totalPartitions">How many chuncks requested</param>
+            <returns>List of chuncks</returns>
+        </member>
+        <member name="T:BezierAlgorithms.Extensions.CurveExtensions">
+            <summary>
+            Extensions to support Curve nodes
+            </summary>
+        </member>
+        <member name="M:BezierAlgorithms.Extensions.CurveExtensions.IsMatchingPosition``1(``0,UnityEngine.Vector3)">
+            <summary>
+            Vector3 position matches waypoint position
+            </summary>
+            <typeparam name="T">Of IPathNode interface type</typeparam>
+            <param name="waypoint">Waypoint to check</param>
+            <param name="position">Position to check against</param>
+            <returns>True if matched False if not</returns>
+        </member>
+        <member name="M:BezierAlgorithms.Extensions.CurveExtensions.IsMatching``1(``0,UnityEngine.Vector3,UnityEngine.Quaternion)">
+            <summary>
+            Location matches waypoint position and rotation
+            </summary>
+            <typeparam name="T">Of IPathNode interface type</typeparam>
+            <param name="waypoint">Waypoint to check</param>
+            <param name="position">Position to check against</param>
+            <param name="rotation">Rotation to check against</param>
+            <returns>True if matched False if not</returns>
+        </member>
+        <member name="M:BezierAlgorithms.Extensions.CurveExtensions.FindIn``1(``0,System.Collections.Generic.IEnumerable{``0})">
+            <summary>
+            Find waypoint in list of waypoints
+            </summary>
+            <typeparam name="T">Of IPathNode interface type</typeparam>
+            <param name="waypoint">Waypoint to search for</param>
+            <param name="waypoints">Collection of waypoints</param>
+            <returns>IPathNode if found or NullPathNode</returns>
+        </member>
+        <member name="M:BezierAlgorithms.Extensions.CurveExtensions.FindAtMatchingPosition``1(System.Collections.Generic.IEnumerable{``0},UnityEngine.Vector3)">
+            <summary>
+            Find waypoint at matching position
+            </summary>
+            <typeparam name="T">Of IPathNode interface type</typeparam>
+            <param name="waypoints">Collection of waypoints</param>
+            <param name="position">Position to check against</param>
+            <returns>IPathNode if found or NullPathNode</returns>
+        </member>
+        <member name="M:BezierAlgorithms.Extensions.CurveExtensions.FindAtMatchingPosition``1(System.Collections.Generic.IEnumerable{``0},``0)">
+            <summary>
+            Find waypoint at matching position
+            </summary>
+            <typeparam name="T">Of IPathNode interface type</typeparam>
+            <param name="waypoints">Collection of waypoints</param>
+            <param name="waypoint">Waypoint to search for</param>
+            <returns>IPathNode if found or NullPathNode</returns>
+        </member>
+        <member name="M:BezierAlgorithms.Extensions.CurveExtensions.FindAtLeastDistance``1(System.Collections.Generic.IEnumerable{``0},UnityEngine.Vector3)">
+            <summary>
+            Find waypoint at least distance
+            </summary>
+            <typeparam name="T">Of IPathNode interface type</typeparam>
+            <param name="waypoints">Collection of waypoints</param>
+            <param name="position">Position to check against</param>
+            <returns>IPathNode if found or NullPathNode</returns>
+        </member>
+        <member name="M:BezierAlgorithms.Extensions.CurveExtensions.FindInAtLeastDistance``1(``0,System.Collections.Generic.IEnumerable{``0})">
+            <summary>
+            Find waypoint at least distance in collection
+            </summary>
+            <typeparam name="T">Of IPathNode interface type</typeparam>
+            <param name="waypoint">Waypoint to search for</param>
+            <param name="waypoints">Collection of waypoints</param>
+            <returns>IPathNode if found or NullPathNode</returns>
+        </member>
+        <member name="T:BezierAlgorithms.IControlNode">
+            <summary>
+            Control node interface used to calculate curve scale and trejectory
+            </summary>
+        </member>
+        <member name="P:BezierAlgorithms.IControlNode.scale">
+            <summary>
+            Scale of distance of curve
+            </summary>
+        </member>
+        <member name="T:BezierAlgorithms.IPathNode">
+            <summary>
+            Generic node along path
+            </summary>
+        </member>
+        <member name="P:BezierAlgorithms.IPathNode.index">
+            <summary>
+            Index along route
+            </summary>
+        </member>
+        <member name="P:BezierAlgorithms.IPathNode.position">
+            <summary>
+            Gets the current position of the PathNode
+            </summary>
+        </member>
+        <member name="P:BezierAlgorithms.IPathNode.rotation">
+            <summary>
+            Gets the current rotation of the PathNode
+            </summary>
+        </member>
+        <member name="M:BezierAlgorithms.IPathNode.IsEmpty">
+            <summary>
+            Defines an empty or null value PathNode
+            <para>Usually PathNode.DEFAULT_INDEX will be the null or empty condition.</para>
+            </summary>
+            <returns>True if value equals PathNode.DEFAULT_INDEX or false it index is valid</returns>
+        </member>
+        <member name="T:BezierAlgorithms.CurveControlArgs">
+            <summary>
+            Arguments passed to curve path calculator
+            </summary>
+        </member>
+        <member name="P:BezierAlgorithms.CurveControlArgs.points">
+            <summary>
+            Waypoints to use to create curves
+            </summary>
+        </member>
+        <member name="P:BezierAlgorithms.CurveControlArgs.loop">
+            <summary>
+            Loop curve route
+            </summary>
+        </member>
+        <member name="P:BezierAlgorithms.CurveControlArgs.controlSections">
+            <summary>
+            Calculated control sections
+            </summary>
+        </member>
+        <member name="M:BezierAlgorithms.CurveControlArgs.#ctor(System.Collections.Generic.IEnumerable{BezierAlgorithms.IControlNode},System.Boolean)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="points">Waypoints to use for path</param>
+            <param name="loop">Looped or not</param>
+        </member>
+        <member name="M:BezierAlgorithms.CurveControlArgs.ComputeControlPoints">
+            <summary>
+            Compute points along control section
+            </summary>
+        </member>
+        <member name="M:BezierAlgorithms.CurveControlArgs.SliceSections">
+            <summary>
+            Slice the sections for faster processing
+            </summary>
+        </member>
+        <member name="M:BezierAlgorithms.CurveControlArgs.GetComputedAndSlicedSections(BezierAlgorithms.CurveControlArgs)">
+            <summary>
+            Compute and slice sections in one call
+            </summary>
+            <param name="curveControlArgs">Arguments to pass to the curve calculator</param>
+            <returns>Calculated curve sections</returns>
+        </member>
+        <member name="M:BezierAlgorithms.CurveControlArgs.ComputeControlPoints(System.Collections.Generic.IEnumerable{BezierAlgorithms.IControlNode},System.Boolean)">
+            <summary>
+            Computes control points
+            </summary>
+            <param name="points">Waypoints to use for path</param>
+            <param name="loop">Looped or not</param>
+            <returns></returns>
+        </member>
+        <member name="M:BezierAlgorithms.CurveControlArgs.SliceSections(System.Collections.Generic.IEnumerable{BezierAlgorithms.ControlNode},System.Boolean)">
+            <summary>
+            Slice control nodes into chuncks for faster processing
+            </summary>
+            <param name="controlPoints">Collection of control nodes</param>
+            <param name="loop">Looped or not</param>
+            <returns>Chuncks of Control Sections</returns>
+        </member>
+        <member name="T:BezierAlgorithms.ControlNode">
+            <summary>
+            The path node object
+            </summary>
+        </member>
+        <member name="P:BezierAlgorithms.ControlNode.scale">
+            <summary>
+            Scale of curve
+            </summary>
+        </member>
+        <member name="M:BezierAlgorithms.ControlNode.#ctor(System.Int32,UnityEngine.Vector3,UnityEngine.Quaternion,System.Single)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="segment">Segment index</param>
+            <param name="position">3D position</param>
+            <param name="rotation">Orientation of control node</param>
+            <param name="scale">Control node scale</param>
+        </member>
+        <member name="M:BezierAlgorithms.ControlNode.CreateNode(System.Int32,UnityEngine.Vector3,UnityEngine.Quaternion,System.Single)">
+            <summary>
+            Creates new Control Node
+            </summary>
+            <param name="segment">Segment index</param>
+            <param name="position">3D position</param>
+            <param name="rotation">Orientation of control node</param>
+            <param name="scale">Control node scale</param>
+            <returns>New Control Node</returns>
+        </member>
+        <member name="M:BezierAlgorithms.ControlNode.ToString">
+            <summary>
+            Shows comprehensive representation of a control node
+            </summary>
+            <returns>ControlNode representation</returns>
+        </member>
+        <member name="T:BezierAlgorithms.NullPathNode">
+            <summary>
+            Null IPathNode interface object to use when PathNode is not set.
+            </summary>
+        </member>
+        <member name="F:BezierAlgorithms.NullPathNode.Value">
+            <summary>
+            Default null path node value
+            </summary>
+        </member>
+        <member name="M:BezierAlgorithms.NullPathNode.ToString">
+            <summary>
+            Null path node string value
+            </summary>
+            <returns>Representation of NullPathNode</returns>
+        </member>
+        <member name="T:BezierAlgorithms.PathNode">
+            <summary>
+            The path node object
+            </summary>
+        </member>
+        <member name="F:BezierAlgorithms.PathNode.DEFAULT_INDEX">
+            <summary>
+            Default index set to int.MinValue
+            </summary>
+        </member>
+        <member name="M:BezierAlgorithms.PathNode.CheckInLoS(UnityEngine.Vector3,UnityEngine.Transform,System.Single@)">
+            <summary>
+            Checks if look at transform is in line of sight
+            </summary>
+            <param name="position">Position of Path Node</param>
+            <param name="lookAt">Transform to look at</param>
+            <param name="minDistance">Minimum distance to consider</param>
+            <returns></returns>
+        </member>
+        <member name="P:BezierAlgorithms.PathNode.index">
+            <summary>
+            Index of along path
+            </summary>
+        </member>
+        <member name="P:BezierAlgorithms.PathNode.position">
+            <summary>
+            3D position
+            </summary>
+        </member>
+        <member name="P:BezierAlgorithms.PathNode.rotation">
+            <summary>
+            Orientation of path node
+            </summary>
+        </member>
+        <member name="M:BezierAlgorithms.PathNode.#ctor">
+            <summary>
+            Constructor
+            </summary>
+        </member>
+        <member name="M:BezierAlgorithms.PathNode.#ctor(System.Int32,UnityEngine.Vector3,UnityEngine.Quaternion)">
+            <summary>
+            Constructor to set values
+            </summary>
+            <param name="index">Index along path</param>
+            <param name="position">3D position</param>
+            <param name="rotation">Orientation of path node</param>
+        </member>
+        <member name="M:BezierAlgorithms.PathNode.CreateNode(System.Int32,UnityEngine.Vector3,UnityEngine.Quaternion)">
+            <summary>
+            Create a new Path Node
+            </summary>
+            <param name="index">Index along path</param>
+            <param name="position">3D position</param>
+            <param name="rotation">Orientation of path node</param>
+            <returns>New Path Node</returns>
+        </member>
+        <member name="M:BezierAlgorithms.PathNode.ToString">
+            <summary>
+            Shows comprehensive representation of a path node
+            </summary>
+            <returns>PathNode representation</returns>
+        </member>
+        <member name="M:BezierAlgorithms.PathNode.IsEmpty(BezierAlgorithms.IPathNode)">
+            <summary>
+            Defines an empty or null value PathNode
+            <para>Usually PathNode.DEFAULT_INDEX will be the null or empty condition.</para>
+            </summary>
+            <param name="pathNode">Path node to evaluate</param>
+            <returns>True if value equals null or PathNode.DEFAULT_INDEX or false it index is valid</returns>
+        </member>
+        <member name="M:BezierAlgorithms.PathNode.IsEmpty">
+            <summary>
+            Defines an empty or null value PathNode
+            <para>Usually PathNode.DEFAULT_INDEX will be the null or empty condition.</para>
+            </summary>
+            <returns>True if value equals PathNode.DEFAULT_INDEX or false it index is valid</returns>
+        </member>
+    </members>
+</doc>
