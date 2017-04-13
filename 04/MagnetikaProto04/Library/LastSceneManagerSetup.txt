@@ -1,4 +1,0 @@
-sceneSetups:
-- path: Assets/Scene/Magnetisme.unity
-  isLoaded: 1
-  isActive: 1
